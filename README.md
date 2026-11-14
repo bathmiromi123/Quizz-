@@ -6,7 +6,7 @@ Website trắc nghiệm tĩnh chạy trên **GitHub Pages**. Mỗi môn học c�
 
 **Repository:** https://github.com/bathmiromi123/Quizz-
 
-## 1. Quy trình tạo đề bằng 2 AI
+## 1. Quy trình tạo đề bằng 2 AI (Copy hết vào AI hướng dẫn cho nhanh)
 
 ### Bước 1 — AI thứ nhất (ví dụ DeepSeek): trích xuất đề, đề xuất đáp án
 
