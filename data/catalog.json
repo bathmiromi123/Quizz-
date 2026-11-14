@@ -8,6 +8,11 @@
           "term": "SP26",
           "file": "data/nwc204/SP26.json",
           "count": 100
+        },
+        {
+          "term": "FA25-RE",
+          "file": "data/nwc204/FA25-RE.json",
+          "count": 50
         }
       ]
     }
