@@ -9,6 +9,11 @@ let sourceKey='',dataFingerprint='', currentPhase='start', finishInfo=null;
 const params=new URLSearchParams(location.search);
 const requestedFile=params.get('file');
 const saveKey=()=>`quizlib:v2:${sourceKey}`;
+const starsKey=()=>`quizlib:stars:${sourceKey}`;
+let stars=new Set();
+function loadStars(){try{const arr=JSON.parse(safeStore('get',starsKey())||'[]');stars=new Set(Array.isArray(arr)?arr.filter(x=>Number.isInteger(x)&&x>=0):[])}catch{stars=new Set()}}
+function saveStars(){safeStore('set',starsKey(),JSON.stringify([...stars]))}
+function toggleStar(id){stars.has(id)?stars.delete(id):stars.add(id);saveStars();render()}
 function safeStore(action, key, val){try {if(action==='set') localStorage.setItem(key,val);else if(action==='remove')localStorage.removeItem(key);else return localStorage.getItem(key)} catch(e){return null}}
 function signature(d){return JSON.stringify(d).length+':'+d.questions.length+':'+(d.title||'')}
 function saveProgress(){
@@ -42,7 +47,7 @@ function restoreProgress(){
  }
  $('#navbox').open=Q.length<=30;show('quiz');render();
 }
-function setSource(src,d){sourceKey=src;dataFingerprint=signature(d);loadData(d);refreshResume()}
+function setSource(src,d){sourceKey=src;dataFingerprint=signature(d);loadStars();loadData(d);refreshResume()}
 
 
 function validate(d){
@@ -102,7 +107,8 @@ function render(){
   const nd=CK.filter(Boolean).length,ng=Q.filter((_,i)=>CK[i]&&right(i)).length;
   $('#live').textContent=S.mode==='instant'&&!review?'Đúng '+ng+' · Sai '+(nd-ng):'';
   $('#navsum').textContent='Danh sách câu ('+A.filter(s=>s.size).length+'/'+Q.length+' đã làm)';
-  let h='<p class="qt">'+esc(q.q)+'</p>';
+  let h='<div class="question-heading"><p class="qt">'+esc(q.q)+'</p>' +
+    '<button type="button" id="star-toggle" class="star-toggle'+(stars.has(q.id)?' starred':'')+'" aria-pressed="'+stars.has(q.id)+'" title="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'" aria-label="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'">'+(stars.has(q.id)?'★':'☆')+'</button></div>';
   if(q.img)h+='<img src="'+esc(q.img)+'" alt="">';
   if(q.multi)h+='<p class="hint">Có nhiều đáp án đúng, chọn tất cả</p>';
   h+='<div class="opts">'+q.o.map((o,i)=>{
@@ -119,12 +125,14 @@ function render(){
     if(review)c+=right(i)?' right':' wrong';
     else if(S.mode==='instant'&&CK[i])c+=right(i)?' right':' wrong';
     else if(A[i].size)c+=' done';
+    if(stars.has(Q[i].id))c+=' starred';
     if(i===cur)c+=' cur';
-    return '<button class="'+c+'" data-n="'+i+'">'+(i+1)+'</button>';
+    return '<button class="'+c+'" data-n="'+i+'" title="'+(stars.has(Q[i].id)?'Đã gắn sao':'Câu '+(i+1))+'">'+(i+1)+(stars.has(Q[i].id)?'<span class="nav-star" aria-label="Đã gắn sao">★</span>':'')+'</button>';
   }).join('');
 }
 
 $('#card').addEventListener('click',e=>{
+  if(e.target.closest('#star-toggle')){toggleStar(Q[cur].id);return}
   if(e.target.closest('#chk')){if(A[cur].size){CK[cur]=true;render();saveProgress()}return}
   const b=e.target.closest('.opt');if(!b||review||CK[cur])return;
   const i=+b.dataset.i,q=Q[cur];
