@@ -1,12 +1,7 @@
 # Quiz Library
 
 Website tĩnh dùng GitHub Pages. Mỗi môn có nhiều bộ đề theo mã SP26, SU26, FA26... và sắp xếp giảm dần theo năm, trong cùng năm FA > SU > SP.
-
-## Đưa website lên GitHub Pages
-1. Tạo repository mới trên GitHub (ví dụ `quiz-library`). Upload **toàn bộ nội dung bên trong thư mục `quiz-library`**, gồm cả `.github`, `data`, `scripts`, các file HTML/JS/CSS.
-2. Trong repository, vào **Settings > Pages > Build and deployment**, chọn **Deploy from a branch**, branch **main**, folder **/(root)** rồi Save.
-3. Truy cập đường dẫn GitHub Pages hiện trên trang Settings > Pages.
-4. Nếu GitHub Actions báo lỗi quyền ghi, vào **Settings > Actions > General > Workflow permissions** và bật **Read and write permissions**, lưu rồi chạy lại workflow **Update quiz catalog**. Trên một số repository, chính sách tổ chức có thể không cho phép quyền này; khi đó chạy script ở máy rồi commit `data/catalog.json` thủ công.
+ta/catalog.json` thủ công.
 
 ## Thêm bộ đề
 - Ví dụ môn `NWC204`, kỳ `FA27`: upload file JSON thành `data/nwc204/FA27.json`. Tên file phải theo `SPyy`, `SUyy`, `FAyy`.
