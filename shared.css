@@ -1,0 +1,7 @@
+/* Shared layout and theme selection */
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+.site-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:20px}
+.site-nav a{color:var(--acc);text-decoration:none;font-weight:600}
+.site-nav a:hover{text-decoration:underline}
+a.btn{display:inline-flex;text-decoration:none;align-items:center}

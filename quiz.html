@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<script>(function(){const a=localStorage.getItem('quizlib:theme');document.documentElement.dataset.theme=(a==='dark'||a==='light')?a:(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light')})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Làm bài · Quiz Library</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="./shared.css">
+<style>
+:root{--bg:#eceff4;--card:#fff;--ink:#14202e;--mute:#5d6b7c;--line:#d5dce6;--acc:#2457d6;--accbg:#e4ecfd;--ok:#1b7a3a;--okbg:#e2f4e8;--bad:#b42318;--badbg:#fdeceb;--warn:#8a5a00;--warnbg:#fff3d6}
+:root[data-theme="dark"]{--bg:#10151c;--card:#19212b;--ink:#e8edf4;--mute:#97a4b5;--line:#2c3744;--acc:#7da2ff;--accbg:#1d2c4d;--ok:#6fd08f;--okbg:#14301f;--bad:#ff8d82;--badbg:#3a1b19;--warn:#f1c15a;--warnbg:#3a2e12}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 "Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;line-height:1.25;margin:0 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.mute{color:var(--mute)}
+.btn{font:inherit;font-weight:600;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 18px;border-radius:10px;cursor:pointer}
+.btn:hover{border-color:var(--acc)}
+.btn:focus-visible,.opt:focus-visible,.nb:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+:root[data-theme="dark"] .btn.pri{color:#0b1220}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.set{display:grid;gap:12px;margin:18px 0}
+.set label{display:flex;gap:10px;align-items:center;justify-content:space-between}
+.set input[type=number],.set select{font:inherit;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.set input[type=number]{width:90px}
+.set .chk{justify-content:flex-start}
+details{margin-top:18px}
+summary{cursor:pointer;font-weight:600}
+textarea{width:100%;min-height:150px;margin:10px 0;padding:10px;font:13px/1.5 ui-monospace,Consolas,monospace;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.err{color:var(--bad);font-weight:500;margin:6px 0 0}
+.top{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0 10px;margin-bottom:6px}
+.top .row{justify-content:space-between}
+.track{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin-top:8px}
+#bar{height:100%;background:var(--acc);width:0;transition:width .25s}
+#timer{font-variant-numeric:tabular-nums;font-weight:600}
+#timer.low{color:var(--bad)}
+.qt{font-size:1.15rem;font-weight:600;margin:0 0 14px;white-space:pre-wrap}
+.card img{max-width:100%;border-radius:8px;margin-bottom:14px}
+.hint{display:inline-block;font-size:.85rem;background:var(--warnbg);color:var(--warn);padding:2px 10px;border-radius:20px;margin:0 0 12px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;gap:12px;text-align:left;width:100%;font:inherit;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;cursor:pointer}
+.opt b{flex:0 0 28px;height:28px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:.85rem}
+.opt span{padding-top:2px;white-space:pre-wrap}
+.opt:hover:not(:disabled){border-color:var(--acc)}
+.opt.sel{border-color:var(--acc);background:var(--accbg)}
+.opt.sel b{background:var(--acc);color:#fff}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:var(--okbg)}
+.opt.ok b{background:var(--ok);color:#fff}
+.opt.bad{border-color:var(--bad);background:var(--badbg)}
+.opt.bad b{background:var(--bad);color:#fff}
+.ex{margin-top:14px;padding:12px 14px;border-left:4px solid var(--acc);background:var(--accbg);border-radius:6px;white-space:pre-wrap}
+.act{display:flex;justify-content:space-between;gap:10px;margin:16px 0}
+.nav{display:grid;grid-template-columns:repeat(auto-fill,minmax(36px,1fr));gap:5px;max-height:240px;overflow:auto;padding:2px}
+#navsum{cursor:pointer;font-weight:600}
+.nb{font:inherit;font-size:.85rem;font-weight:600;height:34px;border-radius:8px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+.nb.done{background:var(--accbg);border-color:var(--acc)}
+.nb.right{background:var(--okbg);border-color:var(--ok);color:var(--ok)}
+.nb.wrong{background:var(--badbg);border-color:var(--bad);color:var(--bad)}
+.nb.cur{outline:2px solid var(--ink);outline-offset:1px}
+.score{font-size:3rem;font-weight:700;line-height:1.1;margin:6px 0}
+.stats{display:flex;gap:22px;flex-wrap:wrap;margin:10px 0 18px}
+.stats div{min-width:90px}.stats strong{display:block;font-size:1.3rem}
+[hidden]{display:none!important}
+.nav-actions{display:flex;align-items:center;gap:10px}
+/* Trong khi làm bài, nút giao diện nằm gọn dưới góc phải. */
+body:has(#quiz:not([hidden])) #theme-toggle{
+  position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));
+  z-index:12;box-shadow:0 3px 14px rgba(0,0,0,.16);
+}
+body:has(#quiz:not([hidden])) .wrap{padding-bottom:100px}
+@media(max-width:540px){
+  #open-settings{font-size:.82rem;padding:8px 10px}
+  body:has(#quiz:not([hidden])) #theme-toggle{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:.85rem;padding:8px 12px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav"><a href="./index.html">← Thư viện đề</a><div class="nav-actions"><button id="open-settings" class="btn" type="button" hidden>⚙ Cài đặt / Làm lượt mới</button><button type="button" id="theme-toggle" class="btn" aria-label="Đổi sáng tối">◐ Giao diện</button></div></nav>
+  <div id="load-error" class="card" hidden></div>
+
+<section id="start" class="card">
+  <h1 id="s-title"></h1>
+  <p id="s-desc" class="mute"></p>
+  <p id="s-meta" class="mute"></p>
+  <div class="set">
+    <label>Chế độ chấm
+      <select id="o-mode"><option value="instant">Báo đúng/sai ngay</option><option value="end">Chấm khi nộp bài</option></select>
+    </label>
+    <label>Thời gian (phút, 0 = không giới hạn)<input id="o-time" type="number" min="0" value="0"></label>
+    <label class="chk"><input id="o-sq" type="checkbox">Xáo thứ tự câu hỏi</label>
+    <label class="chk"><input id="o-so" type="checkbox">Xáo thứ tự đáp án</label>
+    <label class="chk"><input id="o-an" type="checkbox">Tự chuyển câu sau khi trả lời đúng</label>
+  </div>
+  <div class="row"><button id="go" class="btn pri">Bắt đầu làm bài</button><button id="resume" class="btn" hidden>Tiếp tục bài đang làm</button><button id="discard" class="btn" hidden>Xóa tiến độ cũ</button></div>
+</section>
+
+<section id="quiz" hidden>
+  <div class="top">
+    <div class="row"><span id="prog" class="mute"></span><span id="live" class="mute"></span><span id="timer"></span></div>
+    <div class="track"><div id="bar"></div></div>
+  </div>
+  <div id="card" class="card"></div>
+  <div class="act">
+    <button id="prev" class="btn">Câu trước</button>
+    <button id="next" class="btn pri">Câu sau</button>
+  </div>
+  <div class="card"><details id="navbox"><summary id="navsum">Danh sách câu</summary><div id="nav" class="nav" style="margin-top:10px"></div></details>
+    <div class="row" style="margin-top:14px">
+      <button id="submit" class="btn pri">Nộp bài</button>
+      <button id="back" class="btn" hidden>Về kết quả</button>
+    </div>
+  </div>
+</section>
+
+<section id="result" class="card" hidden>
+  <h1>Kết quả</h1>
+  <div class="score" id="r-score"></div>
+  <div class="stats" id="r-stats"></div>
+  <div class="row">
+    <button id="r-review" class="btn pri">Xem lại đáp án</button>
+    <button id="r-wrong" class="btn">Làm lại câu sai</button>
+    <button id="r-again" class="btn">Làm lại từ đầu</button><a href="./index.html" class="btn">Về thư viện</a>
+  </div>
+</section>
+
+</div>
+
+
+
+<script src="./theme.js" defer></script>
+<script src="./quiz.js" defer></script>
+
+</body>
+</html>
