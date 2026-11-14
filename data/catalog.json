@@ -15,8 +15,8 @@
           "count": 50
         },
         {
-          "term": "FA25 - FE",
-          "file": "data/nwc204/FA25 - FE.json",
+          "term": "FA25-FE",
+          "file": "data/nwc204/FA25-FE.json",
           "count": 49
         }
       ]
