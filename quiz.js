@@ -4,7 +4,7 @@ const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const toIdx=v=>typeof v==='string'?v.trim().toUpperCase().charCodeAt(0)-65:Number(v);
-let D,Q,A,CK,cur,S,tick,left,t0,review,warned,lastWrong=[];
+let D,Q,A,CK,TRY,cur,S,tick,left,t0,review,warned,lastWrong=[];
 let sourceKey='',dataFingerprint='', currentPhase='start', finishInfo=null;
 const params=new URLSearchParams(location.search);
 const requestedFile=params.get('file');
@@ -20,7 +20,7 @@ function saveProgress(){
  if(!D||!Q||!A||!sourceKey)return;
  const snapshot={version:2,fingerprint:dataFingerprint,phase:currentPhase,cur,S,
     Q:Q.map(q=>({id:q.id,order:q.o.map(o=>o.index)})),
-    A:A.map(s=>[...s]),CK,review,warned,lastWrong,t0,
+    A:A.map(s=>[...s]),CK,TRY,review,warned,lastWrong,t0,
     deadline:S.time? t0+S.time*60000:null,finishInfo};
  safeStore('set',saveKey(),JSON.stringify(snapshot));
 }
@@ -34,7 +34,7 @@ function restoreProgress(){
   let opts=q.options.map((t,index)=>({t,c:answers.includes(index),index}));
   return {id:record.id,q:q.q,img:q.img,ex:q.explain,o:record.order.map(index=>opts[index]),multi:answers.length>1};
  });
- A=s.A.map(a=>new Set(a));CK=s.CK;cur=Math.min(Math.max(s.cur,0),Q.length-1);
+ A=s.A.map(a=>new Set(a));CK=s.CK;TRY=Array.isArray(s.TRY)&&s.TRY.length===Q.length?s.TRY:Q.map(()=>false);cur=Math.min(Math.max(s.cur,0),Q.length-1);
  review=s.review;warned=s.warned;lastWrong=s.lastWrong||[];t0=s.t0;finishInfo=s.finishInfo;
  $('#submit').hidden=review;$('#back').hidden=!review;
  clearInterval(tick);$('#timer').textContent='';$('#timer').classList.remove('low');
@@ -85,7 +85,7 @@ function start(ids){
     if(S.so&&!q.fixed)shuffle(o);
     return{id,q:q.q,img:q.img,ex:q.explain,o,multi:ans.length>1};
   });
-  A=Q.map(()=>new Set());CK=Q.map(()=>false);cur=0;review=false;warned=false;finishInfo=null;currentPhase='quiz';
+  A=Q.map(()=>new Set());CK=Q.map(()=>false);TRY=Q.map(()=>false);cur=0;review=false;warned=false;finishInfo=null;currentPhase='quiz';
   t0=Date.now();clearInterval(tick);
   $('#timer').textContent='';$('#timer').classList.remove('low');
   if(S.time){left=S.time*60;paintTime();tick=setInterval(()=>{left=Math.max(0,Math.ceil((t0+S.time*60000-Date.now())/1000));paintTime();if(left<=0)finish()},1000)}
@@ -114,9 +114,11 @@ function render(){
   h+='<div class="opts">'+q.o.map((o,i)=>{
     const sel=A[cur].has(i);let c='opt'+(sel?' sel':'');
     if(done){c='opt';if(o.c)c+=' ok';else if(sel)c+=' bad'}
+    else if(S.mode==='instant'&&TRY[cur]&&sel){c='opt'+(o.c?' ok':' bad')}
     return '<button class="'+c+'" data-i="'+i+'"'+(done?' disabled':'')+'><b>'+String.fromCharCode(65+i)+'</b><span>'+esc(o.t)+'</span></button>';
   }).join('')+'</div>';
   if(done&&q.ex)h+='<div class="ex">'+esc(q.ex)+'</div>';
+  if(!done&&S.mode==='instant'&&TRY[cur])h+='<p class="err">Chưa chính xác, hãy thử lại.</p>';
   if(!done&&q.multi&&S.mode==='instant')h+='<div style="margin-top:14px"><button id="chk" class="btn">Kiểm tra</button></div>';
   $('#card').innerHTML=h;
   $('#prev').disabled=cur===0;$('#next').disabled=cur===Q.length-1;
@@ -124,6 +126,7 @@ function render(){
     let c='nb';
     if(review)c+=right(i)?' right':' wrong';
     else if(S.mode==='instant'&&CK[i])c+=right(i)?' right':' wrong';
+    else if(S.mode==='instant'&&TRY[i])c+=' wrong';
     else if(A[i].size)c+=' done';
     if(stars.has(Q[i].id))c+=' starred';
     if(i===cur)c+=' cur';
@@ -133,17 +136,34 @@ function render(){
 
 $('#card').addEventListener('click',e=>{
   if(e.target.closest('#star-toggle')){toggleStar(Q[cur].id);return}
-  if(e.target.closest('#chk')){if(A[cur].size){CK[cur]=true;render();saveProgress()}return}
+  if(e.target.closest('#chk')){
+    if(A[cur].size&&S.mode==='instant'){
+      if(right(cur)){
+        CK[cur]=true;TRY[cur]=false;render();saveProgress();
+        if(S.an&&cur<Q.length-1){
+          const at=cur;
+          setTimeout(()=>{if(cur===at&&!review)go(at+1)},Q[cur].ex?1800:600);
+        }
+      }else{TRY[cur]=true;render();saveProgress()}
+    }
+    return;
+  }
   const b=e.target.closest('.opt');if(!b||review||CK[cur])return;
   const i=+b.dataset.i,q=Q[cur];
+  TRY[cur]=false;
   if(q.multi){
     A[cur].has(i)?A[cur].delete(i):A[cur].add(i);
-    if(S.mode==='instant'&&A[cur].size===q.o.filter(o=>o.c).length)CK[cur]=true;
+  }else{
+    A[cur]=new Set([i]);
+    if(S.mode==='instant'){
+      if(right(cur))CK[cur]=true;
+      else TRY[cur]=true;
+    }
   }
-  else{A[cur]=new Set([i]);if(S.mode==='instant')CK[cur]=true}
   render();saveProgress();
-  if(S.an&&S.mode==='instant'&&CK[cur]&&right(cur)&&cur<Q.length-1){
-    const at=cur;setTimeout(()=>{if(cur===at&&!review)go(at+1)},q.ex?1800:600);
+  if(S.an&&S.mode==='instant'&&CK[cur]&&!q.multi&&cur<Q.length-1){
+    const at=cur;
+    setTimeout(()=>{if(cur===at&&!review)go(at+1)},q.ex?1800:600);
   }
 });
 function go(n){if(n<0||n>=Q.length)return;cur=n;render();saveProgress();if(window.scrollY>0)window.scrollTo({top:0})}
