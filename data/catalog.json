@@ -1,0 +1,15 @@
+{
+  "subjects": [
+    {
+      "id": "nwc204",
+      "name": "NWC204",
+      "exams": [
+        {
+          "term": "SP26",
+          "file": "data/nwc204/SP26.json",
+          "count": 100
+        }
+      ]
+    }
+  ]
+}
