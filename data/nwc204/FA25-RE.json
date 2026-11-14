@@ -1,0 +1,310 @@
+{
+  "title": "Đề Thi 50 Câu Mạng Máy Tính (Full 50 Câu)",
+  "description": "Bộ câu hỏi trắc nghiệm đã được rà soát và xác minh đầy đủ.",
+  "timeLimitMinutes": 60,
+  "mode": "instant",
+  "shuffleQuestions": false,
+  "shuffleOptions": false,
+  "questions": [
+    {
+      "q": "Which factor determines TCP window size?",
+      "options": ["the amount of data to be transmitted", "the number of services included in the TCP segment", "the amount of data the destination can process at one time", "the amount of data the source is capable of sending at one time"],
+      "answer": 2,
+      "explain": "Kích thước cửa sổ TCP (TCP window size) được quyết định bởi lượng dữ liệu mà thiết bị đích có thể xử lý tại một thời điểm."
+    },
+    {
+      "q": "Which three statements characterize UDP? (Choose three.)",
+      "options": ["UDP provides basic connectionless transport layer functions.", "UDP provides connection-oriented, fast transport of data at Layer 3.", "UDP relies on application layer protocols for error detection.", "UDP is a low overhead protocol that does not provide sequencing or flow control mechanisms.", "UDP relies on IP for error detection and recovery.", "UDP provides sophisticated flow control mechanisms."],
+      "answer": [0, 2, 3],
+      "explain": "Theo ngữ cảnh CCNA: UDP cung cấp chức năng transport layer cơ bản, không kết nối (A), dựa vào ứng dụng để phát hiện lỗi (C), và không có cơ chế đánh số thứ tự/flow control (D)."
+    },
+    {
+      "q": "What is a primary characteristic of the UDP protocol?",
+      "options": ["Connection-oriented communication", "Guaranteed delivery of data", "Minimal overhead with no error checking", "Flow control and congestion avoidance"],
+      "answer": 2,
+      "explain": "Đáp án C là gần đúng nhất trong ngữ cảnh câu hỏi (UDP có overhead tối thiểu và không có cơ chế phục hồi lỗi)."
+    },
+    {
+      "q": "To which TCP port group does the port 414 belong?",
+      "options": ["Registered", "well-known", "private or dynamic", "public"],
+      "answer": 1,
+      "explain": "Cổng 414 nằm trong dải Well-known ports (từ 0 đến 1023)."
+    },
+    {
+      "q": "Which physical WAN topology connects multiple remote sites to a central location?",
+      "options": ["Hub-and-Spoke", "Point-to-Point", "Mesh", "Ring"],
+      "answer": 0,
+      "explain": "Hub-and-Spoke kết nối nhiều chi nhánh (Spoke) về một trung tâm (Hub)."
+    },
+    {
+      "q": "The IEEE 802 LAN/MAN data link layer consists of which two sublayers? (Choose two.)",
+      "options": ["Network Control Protocol", "Logical Link Control", "Media Access Control", "Link Control Protocol"],
+      "answer": [1, 2],
+      "explain": "Lớp Data Link của IEEE 802 chia thành 2 sublayer: LLC (Logical Link Control) và MAC (Media Access Control)."
+    },
+    {
+      "q": "What are two services performed by the data link layer of the OSI model? (Choose two.)",
+      "options": ["It fragments data packets into the MTU size.", "It determines the path to forward packets.", "It accepts Layer 3 packets and encapsulates them into frames.", "It provides media access control and performs error detection.", "It monitors the Layer 2 communication by building a MAC address table."],
+      "answer": [2, 3],
+      "explain": "Lớp Data Link nhận packet từ Lớp 3 đóng gói thành frame (C) và cung cấp kiểm soát truy cập phương tiện, phát hiện lỗi (D)."
+    },
+    {
+      "q": "A web client is receiving a response for a web page from a web server. From the perspective of the client, what is the correct order of the protocol stack that is used to decode the received transmission?",
+      "options": ["Ethernet, IP, TCP, HTTP", "HTTP, TCP, IP, Ethernet", "Ethernet, TCP, IP, HTTP", "HTTP, Ethernet, IP, TCP"],
+      "answer": 0,
+      "explain": "Giải mã dữ liệu từ dưới lên: Ethernet -> IP -> TCP -> HTTP."
+    },
+    {
+      "q": "Which statement accurately describes a TCP/IP encapsulation process when a PC is sending data to the network?",
+      "options": ["Data is sent from the internet layer to the network access layer.", "Packets are sent from the network access layer to the transport layer.", "Segments are sent from the transport layer to the internet layer.", "Frames are sent from the network access layer to the internet layer."],
+      "answer": 2,
+      "explain": "Transport layer tạo segment và gửi xuống Internet layer để đóng gói thành packet."
+    },
+    {
+      "q": "What is the process of dividing a large data stream into smaller pieces prior to transmission?",
+      "options": ["Sequencing", "Duplexing", "Multiplexing", "segmentation"],
+      "answer": 3,
+      "explain": "Quá trình chia nhỏ dữ liệu là segmentation."
+    },
+    {
+      "q": "For the TCP/IP protocol suite, what is the correct order of events when a Telnet message is being prepared to be sent over the network?\n1. The IP header is added.\n2. The TCP header is added.\n3. The Ethernet header is added.\n4. The Telnet-formatted data is provided to the next layer.",
+      "options": ["1C-2B-3D-4A", "1C-2D-3B-4A", "1A-2B-3C-4D", "1B-2C-3D-4A"],
+      "answer": 0,
+      "explain": "Thứ tự đóng gói: Telnet tạo data -> TCP thêm header -> IP thêm header -> Ethernet thêm header."
+    },
+    {
+      "q": "What is necessary to plan and use when implementing a network?",
+      "options": ["device names", "IP addressing scheme", "MAC addressing scheme", "printer location"],
+      "answer": 1,
+      "explain": "Sơ đồ địa chỉ IP (IP addressing scheme) là yếu tố bắt buộc phải quy hoạch trước khi triển khai mạng."
+    },
+    {
+      "q": "Which method allows a device to obtain an IPv6 address dynamically without the need for a DHCP server?",
+      "options": ["Stateful DHCPv6", "Stateless Address Autoconfiguration (SLAAC)", "Manual Configuration", "NAT64"],
+      "answer": 1,
+      "explain": "SLAAC cho phép thiết bị tự cấu hình IPv6 mà không cần DHCP."
+    },
+    {
+      "q": "Three methods allow IPv6 and IPv4 to co-exist. Match each method with its description. (Not all options are used.)\nA. The IPv4 packets and IPv6 packets coexist in the same network.\nB. The IPv6 packet is transported inside an IPv4 packet.\nC. IPv6 packets are converted into IPv4 packets, and vice versa.\n1. DHCP\n2. translation\n3. tunneling\n4. dual-stack",
+      "options": ["A4-B3-C2", "A3-B2-C2", "A2-B3-C1", "A1-B3-C4"],
+      "answer": 0,
+      "explain": "A (coexist) -> 4 (dual-stack). B (transported inside) -> 3 (tunneling). C (converted) -> 2 (translation)."
+    },
+    {
+      "q": "What is the recommended prefix length for most IPv6 subnets?",
+      "options": ["/32", "/48", "/64", "/128"],
+      "answer": 2,
+      "explain": "Tiền tố /64 là tiêu chuẩn khuyến nghị cho hầu hết các subnet IPv6."
+    },
+    {
+      "q": "Which IPv6 address type is used for communication within a single network segment and cannot be routed?",
+      "options": ["Global Unicast Address (GUA)", "Link-Local Address (LLA)", "Unique Local Address (ULA)", "Multicast Address"],
+      "answer": 1,
+      "explain": "Link-Local (fe80::/10) chỉ dùng trong cùng một link, không thể định tuyến."
+    },
+    {
+      "q": "What type of address is automatically assigned to an interface when IPv6 is enabled on that interface?",
+      "options": ["Loopback", "Global unicast", "Link-local", "Unique local"],
+      "answer": 2,
+      "explain": "Khi bật IPv6, thiết bị luôn tự động tạo một địa chỉ Link-Local (bắt đầu bằng fe80::)."
+    },
+    {
+      "q": "Which destination address is used in an ARP request frame?",
+      "options": ["01-00-5E-00-AA-23", "0.0.0.0", "FFFF.FFFF.FFFF", "255.255.255.255", "127.0.0.1"],
+      "answer": 2,
+      "explain": "ARP request được gửi dưới dạng MAC broadcast (FFFF.FFFF.FFFF)."
+    },
+    {
+      "q": "What property of ARP causes cached IP-to-MAC mappings to remain in memory longer?",
+      "options": ["Entries in an ARP table are time-stamped and are purged after the timeout expires.", "A static IP-to-MAC address entry can be entered manually into an ARP table.", "The type field 0x806 appears in the header of the Ethernet frame.", "The port-to-MAC address table on a switch has the same entries as the ARP table on the switch."],
+      "answer": 1,
+      "explain": "Địa chỉ MAC tĩnh (static entry) được nhập thủ công sẽ không bao giờ bị xóa (timeout) khỏi bảng ARP."
+    },
+    {
+      "q": "Which destination address is used in an ARP request frame?",
+      "options": ["0.0.0.0", "255.255.255.255", "FFFF.FFFF.FFFF", "AAAA.AAAA.AAAA", "the physical address of the destination host"],
+      "answer": 2,
+      "explain": "MAC đích trong ARP request là broadcast: FFFF.FFFF.FFFF."
+    },
+    {
+      "q": "What is the aim of an ARP spoofing attack?",
+      "options": ["to flood the network with ARP reply broadcasts", "to fill switch MAC address tables with bogus addresses", "to associate IP addresses to the wrong MAC address", "to overwhelm network hosts with ARP requests"],
+      "answer": 2,
+      "explain": "ARP Spoofing gửi các gói tin ARP giả mạo để liên kết địa chỉ IP của mục tiêu với MAC của kẻ tấn công."
+    },
+    {
+      "q": "Match the requirements of a reliable network with the supporting network architecture. (Not all options are used.)\nA. fault tolerance\nB. scalability\nC. security\n1. Protect the network from unauthorized access.\n2. Provide redundant links and devices.\n3. Match the type of communication with a specific priority.\n4. Expand the network without degrading the service for existing users.\n5. Ensure that streaming data is provided over high speed links.",
+      "options": ["A2-B4-C1", "A2-B1-C4", "A1-B5-C3", "A3-B2-C4"],
+      "answer": 0,
+      "explain": "A (fault tolerance) -> 2 (redundant). B (scalability) -> 4 (expand without degrading). C (security) -> 1 (unauthorized access)."
+    },
+    {
+      "q": "Which type of network topology lets you see the actual location of intermediary devices and cable installation?",
+      "options": ["Physical topology", "Logical topology"],
+      "answer": 0,
+      "explain": "Physical topology hiển thị vị trí thiết bị và đường đi của cáp thực tế."
+    },
+    {
+      "q": "What two criteria are used to help select a network medium from various network media? (Choose two.)",
+      "options": ["the types of data that need to be prioritized", "the cost of the end devices utilized in the network", "the distance the selected medium can successfully carry a signal", "the number of intermediate devices installed in the network", "the environment where the selected medium is to be installed"],
+      "answer": [2, 4],
+      "explain": "Khoảng cách truyền tín hiệu (C) và môi trường lắp đặt (E) là 2 tiêu chí chính khi chọn môi trường truyền dẫn."
+    },
+    {
+      "q": "What happens when a switch receives a frame and the calculated CRC value is different than the value that is in the FCS field?",
+      "options": ["The switch places the new CRC value in the FCS field and forwards the frame.", "The switch notifies the source of the bad frame.", "The switch drops the frame.", "The switch floods the frame to all ports except the port through which the frame arrived to notify the hosts of the error."],
+      "answer": 2,
+      "explain": "Khi CRC không khớp, switch sẽ hủy (drop) frame lỗi đó."
+    },
+    {
+      "q": "What is the special value assigned to the first 24 bits of a multicast MAC address transporting an IPv4 packet?",
+      "options": ["01-00-5E", "FF-00-5E", "01-5E-00", "FF-FF-FF"],
+      "answer": 0,
+      "explain": "MAC multicast IPv4 bắt đầu bằng 24-bit prefix: 01-00-5E."
+    },
+    {
+      "q": "Refer to the exhibit. What is the destination MAC address of the Ethernet frame as it leaves the web server if the final destination is PC1?",
+      "options": ["00-60-2F-3A-07-AA", "00-60-2F-3A-07-BB", "00-60-2F-3A-07-CC", "00-60-2F-3A-07-DD"],
+      "answer": 2,
+      "explain": "Gói tin rời khỏi Web Server sẽ gửi đến Default Gateway của nó (Router 2, cổng Fa0/0). Địa chỉ MAC của cổng này là 00-60-2F-3A-07-CC."
+    },
+    {
+      "q": "What is the auto-MDIX feature on a switch?",
+      "options": ["the automatic configuration of an interface for 10/100/1000 Mb/s operation", "the automatic configuration of an interface for a straight-through or a crossover Ethernet cable connection", "the automatic configuration of full-duplex operation over a single Ethernet copper or optical cable", "the ability to turn a switch interface on or off accordingly if an active connection is detected"],
+      "answer": 1,
+      "explain": "Auto-MDIX tự động phát hiện và điều chỉnh cổng để tương thích với cả cáp thẳng (straight-through) và cáp chéo (crossover)."
+    },
+    {
+      "q": "What happens if an IPv6 device detects a duplicate address during startup?",
+      "options": ["It sends a Neighbor Advertisement (NA) to notify the sender", "It automatically requests a new IP from DHCPv6", "It assigns a private address instead", "It ignores the conflict and continues using the address"],
+      "answer": 0,
+      "explain": "Khi phát hiện trùng lặp, thiết bị sẽ đánh dấu địa chỉ là trùng lặp và không sử dụng, đồng thời gửi gói Neighbor Advertisement (NA) để thông báo."
+    },
+    {
+      "q": "What does the \"Time Exceeded\" ICMP message indicate?",
+      "options": ["The destination host is down", "The packet's TTL has reached zero", "The source address is unreachable", "The network is congested"],
+      "answer": 1,
+      "explain": "ICMP Time Exceeded được gửi khi TTL của gói tin giảm về 0."
+    },
+    {
+      "q": "A user who is unable to connect to the file server contacts the help desk. The helpdesk technician asks the user to ping the IP address of the default gateway that is configured on the workstation. What is the purpose for this ping command?",
+      "options": ["to obtain a dynamic IP address from the server", "to request that gateway forward the connection request to the file server", "to test that the host has the capability to reach hosts on other networks", "to resolve the domain name of the file server to its IP address"],
+      "answer": 2,
+      "explain": "Ping gateway để kiểm tra xem host có thể liên lạc được với gateway (cổng ra mạng khác) hay không. Nếu ping được gateway, host có khả năng kết nối đến các mạng khác."
+    },
+    {
+      "q": "Which of these is the name for the capacity of a medium to carry data?",
+      "options": ["Bandwidth", "Throughput", "Goodput"],
+      "answer": 0,
+      "explain": "Bandwidth là dung lượng tối đa của môi trường truyền dẫn."
+    },
+    {
+      "q": "What is a primary role of the Physical layer in transmitting data on the network?",
+      "options": ["create the signals that represent the bits in each frame on to the media", "provide physical addressing to the devices", "determine the path packets take through the network", "control data access to the media"],
+      "answer": 0,
+      "explain": "Lớp Physical tạo ra các tín hiệu (điện, quang, sóng) đại diện cho các bit để truyền lên môi trường."
+    },
+    {
+      "q": "What is a primary role of the Physical layer in transmitting data on the network?",
+      "options": ["create the signals that represent the bits in each frame on to the media", "provide physical addressing to the devices", "determine the path packets take through the network", "control data access to the media"],
+      "answer": 0,
+      "explain": "Lớp Physical tạo ra các tín hiệu đại diện cho các bit."
+    },
+    {
+      "q": "How can an administrator verify the current IP configuration of all router interfaces?",
+      "options": ["show ip interface brief", "display interfaces", "check interfaces", "list interfaces"],
+      "answer": 0,
+      "explain": "Lệnh 'show ip interface brief' hiển thị trạng thái và IP của tất cả các cổng."
+    },
+    {
+      "q": "A technician is configuring a router to allow for all forms of management access. As part of each different type of access, the technician is trying to type the command login. Which configuration mode should be entered to do this task?",
+      "options": ["user executive mode", "global configuration mode", "any line configuration mode", "privileged EXEC mode"],
+      "answer": 2,
+      "explain": "Lệnh 'login' được cấu hình trong Line Configuration Mode (ví dụ: line console 0, line vty 0 4)."
+    },
+    {
+      "q": "What is the default gateway used for in a network?",
+      "options": ["To route traffic to local devices", "To assign IP addresses dynamically", "To route traffic to devices on another network", "To provide DNS services"],
+      "answer": 2,
+      "explain": "Default gateway định tuyến lưu lượng từ mạng cục bộ ra các mạng bên ngoài."
+    },
+    {
+      "q": "Which two functions are primary functions of a router? (Choose two.)",
+      "options": ["packet forwarding", "Microsegmentation", "domain name resolution", "path selection", "flow control"],
+      "answer": [0, 3],
+      "explain": "Router có 2 chức năng chính: chuyển tiếp gói tin (packet forwarding) và chọn đường đi (path selection)."
+    },
+    {
+      "q": "How many host addresses are available on the 192.168.10.128/26 network?",
+      "options": ["30", "32", "60", "62", "64"],
+      "answer": 3,
+      "explain": "Mạng /26 có 64 địa chỉ. Trừ 2 (network và broadcast) còn 62 địa chỉ host."
+    },
+    {
+      "q": "What is the broadcast address for the IP subnet 192.168.10.0/24?",
+      "options": ["192.168.10.0", "192.168.10.255", "192.168.10.1", "192.168.11.0"],
+      "answer": 1,
+      "explain": "Địa chỉ broadcast của mạng /24 là địa chỉ cuối cùng trong dải (192.168.10.255)."
+    },
+    {
+      "q": "A message is sent to all hosts on a remote network. Which type of message is it?",
+      "options": ["limited broadcast", "multicast", "directed broadcast", "unicast"],
+      "answer": 2,
+      "explain": "Gửi đến tất cả host trên một mạng từ xa gọi là Directed broadcast."
+    },
+    {
+      "q": "How many host addresses are available on the network 172.16.128.0 with a subnet mask of 255.255.252.0?",
+      "options": ["510", "512", "1022", "1024", "2046", "2048"],
+      "answer": 2,
+      "explain": "Subnet mask 255.255.252.0 tương đương /22, có 10 bit host (2^10 = 1024). Trừ 2 còn 1022 host khả dụng."
+    },
+    {
+      "q": "What command will prevent all unencrypted passwords from displaying in plain text in a configuration file?",
+      "options": ["(config)# enable password secret", "(config)# enable secret Secret_Password", "(config-line)# password secret", "(config)# service password-encryption", "(config)# enable secret Encrypted_Password"],
+      "answer": 3,
+      "explain": "Lệnh 'service password-encryption' mã hóa tất cả mật khẩu chưa mã hóa trong file cấu hình."
+    },
+    {
+      "q": "Passwords can be used to restrict access to all or parts of the Cisco IOS. Select the modes and interfaces that can be protected with passwords. (Choose three.)",
+      "options": ["VTY interface", "console interface", "Ethernet interface", "boot IOS mode", "privileged EXEC mode", "router configuration mode"],
+      "answer": [0, 1, 4],
+      "explain": "Có thể đặt mật khẩu bảo vệ cổng VTY, Console và chế độ Privileged EXEC."
+    },
+    {
+      "q": "Which interface allows remote management of a Layer 2 switch?",
+      "options": ["the AUX interface", "the console port interface", "the switch virtual interface", "the first Ethernet port interface"],
+      "answer": 2,
+      "explain": "Switch ảo (SVI - Switch Virtual Interface) cho phép quản lý từ xa qua mạng IP."
+    },
+    {
+      "q": "Which access method would be most appropriate if you were in the equipment room with a new switch that needs to be configured?",
+      "options": ["Console", "Telnet/SSH", "Aux"],
+      "answer": 0,
+      "explain": "Đối với switch mới chưa có cấu hình mạng, phải dùng cáp Console."
+    },
+    {
+      "q": "What are the two most commonly referenced fields in an IPv4 packet header that indicate where the packet is coming from and where it is going? (Choose two.)",
+      "options": ["Destination IP address", "Protocol", "Time to live", "Differentiated Service (DS)", "Source IP address"],
+      "answer": [0, 4],
+      "explain": "Source IP (nguồn) và Destination IP (đích) là 2 trường chỉ định nơi đi và nơi đến."
+    },
+    {
+      "q": "Within a production network, what is the purpose of configuring a switch with a default gateway address?",
+      "options": ["Hosts that are connected to the switch can use the switch default gateway address to forward packets to a remote destination.", "A switch must have a default gateway to be accessible by Telnet and SSH.", "The default gateway address is used to forward packets originating from the switch to remote networks.", "It provides a next-hop address for all traffic that flows through the switch."],
+      "answer": 2,
+      "explain": "Cấu hình default gateway trên switch để switch có thể tự gửi các gói tin (như gói tin quản lý, syslog) ra các mạng từ xa."
+    },
+    {
+      "q": "Which statement describes a feature of the IP protocol?",
+      "options": ["IP encapsulation is modified based on network media.", "IP relies on Layer 2 protocols for transmission error control.", "MAC addresses are used during the IP packet encapsulation.", "IP relies on upper layer services to handle situations of missing or out-of-order packets."],
+      "answer": 3,
+      "explain": "IP là giao thức không tin cậy (unreliable), nó phó mặc việc xử lý mất gói tin/sai thứ tự cho các lớp trên (như TCP)."
+    },
+    {
+      "q": "What is the effect of using the Router# copy running-config startup-config command on a router?",
+      "options": ["The contents of ROM will change.", "The contents of RAM will change.", "The contents of NVRAM will change.", "The contents of flash will change."],
+      "answer": 2,
+      "explain": "Lệnh này sao chép cấu hình đang chạy (RAM) vào file cấu hình khởi động lưu trong NVRAM."
+    }
+  ]
+}
