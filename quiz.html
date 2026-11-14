@@ -87,14 +87,27 @@ body:has(#quiz:not([hidden])) #theme-toggle{
 }
 body:has(#quiz:not([hidden])) .wrap{padding-bottom:100px}
 @media(max-width:540px){
-  #open-settings{font-size:.82rem;padding:8px 10px}
   body:has(#quiz:not([hidden])) #theme-toggle{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:.85rem;padding:8px 12px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <nav class="site-nav"><a href="./index.html">← Thư viện đề</a><div class="nav-actions"><button id="open-settings" class="btn" type="button" hidden>⚙ Cài đặt / Làm lượt mới</button><button type="button" id="theme-toggle" class="btn" aria-label="Đổi sáng tối">◐ Giao diện</button></div></nav>
+  <nav class="site-nav quiz-nav" aria-label="Điều hướng bài trắc nghiệm">
+    <a class="nav-back" href="./index.html" aria-label="Quay về thư viện đề" title="Về thư viện"><span aria-hidden="true">←</span><span class="nav-back-label">Thư viện</span></a>
+    <span class="quiz-nav-title" id="nav-quiz-title">Bài trắc nghiệm</span>
+    <div class="nav-actions">
+      <button id="open-settings" class="nav-icon-btn" type="button" hidden title="Cài đặt / Làm lượt mới" aria-label="Cài đặt / Làm lượt mới">⚙</button>
+      <button type="button" id="theme-toggle" class="nav-icon-btn" aria-label="Đổi sáng tối" title="Đổi sáng tối">◐</button>
+    </div>
+  </nav>
+  <script>
+  (() => {
+    const path = new URLSearchParams(location.search).get('file') || '';
+    const m = /^data\/([a-z0-9_-]+)\/([A-Za-z0-9_-]+)\.json$/.exec(path);
+    if (m) document.getElementById('nav-quiz-title').textContent = m[1].toUpperCase() + ' · ' + m[2].toUpperCase();
+  })();
+  </script>
   <div id="load-error" class="card" hidden></div>
 
 <section id="start" class="card">
