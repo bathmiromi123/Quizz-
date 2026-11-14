@@ -120,26 +120,3 @@ Workflow GitHub Actions tái tạo `data/catalog.json` từ các file đề tron
 ## 5. Làm chung với bạn
 
 Chủ repository vào **Settings → Collaborators → Add people**, mời tài khoản GitHub của bạn. Bạn cần chấp nhận lời mời trước khi có quyền upload. Nên phân chia môn/đề để tránh cùng sửa một file và kiểm tra các thay đổi trước khi commit.
-
-## 6. Checklist trước khi công bố
-
-- [ ] Đủ câu so với tài liệu gốc; câu thiếu đã được ghi nhận và xử lý.
-- [ ] AI thứ hai đã cross-check **toàn bộ** đáp án.
-- [ ] Câu một đáp án và nhiều đáp án đều đúng cấu trúc.
-- [ ] **Mọi câu có `explain` tiếng Việt**.
-- [ ] JSON hợp lệ; `answer` nằm trong phạm vi `options`.
-- [ ] Các câu cần hình đều có file ảnh đúng đường dẫn.
-- [ ] Tên file không có khoảng trắng và tuân thủ mã được website hỗ trợ.
-- [ ] GitHub Actions chạy xanh; đề hiển thị và làm thử được trên web.
-
-## 7. Lưu tiến độ và chạy thử
-
-- Website dùng `localStorage` để lưu tiến độ trên **cùng trình duyệt và tên miền**; F5 có thể khôi phục bài đang làm. Không tự đồng bộ giữa hai máy.
-- Xóa dữ liệu website có thể làm mất tiến độ.
-- Nếu muốn chạy thử trên máy tính, mở terminal tại thư mục dự án:
-
-```bash
-python -m http.server 8000
-```
-
-Mở `http://localhost:8000`. Không nên mở trực tiếp bằng `file://` vì trình duyệt có thể chặn việc tải JSON.
