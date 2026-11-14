@@ -79,28 +79,55 @@ textarea{width:100%;min-height:150px;margin:10px 0;padding:10px;font:13px/1.5 ui
 .stats{display:flex;gap:22px;flex-wrap:wrap;margin:10px 0 18px}
 .stats div{min-width:90px}.stats strong{display:block;font-size:1.3rem}
 [hidden]{display:none!important}
-.nav-actions{display:flex;align-items:center;gap:10px}
-/* Trong khi làm bài, nút giao diện nằm gọn dưới góc phải. */
-body:has(#quiz:not([hidden])) #theme-toggle{
-  position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom,0px));
-  z-index:12;box-shadow:0 3px 14px rgba(0,0,0,.16);
-}
-body:has(#quiz:not([hidden])) .wrap{padding-bottom:100px}
+/* Thanh gọn: tên đề + tiến độ + thời gian trên cùng một hàng */
+.quiz-top-shell{position:sticky;top:0;z-index:20;background:var(--bg);padding:6px 0 9px;margin-bottom:12px}
+.quiz-top-shell .quiz-nav{margin-bottom:5px}
+.quiz-progress-track{height:5px;margin-top:5px}
+.quiz-menu{position:relative;justify-self:end}
+.quiz-menu summary{list-style:none;display:grid;place-items:center;width:38px;height:38px;
+  border:1px solid var(--line);border-radius:10px;background:var(--card);cursor:pointer;font-size:1.15rem}
+.quiz-menu summary::-webkit-details-marker{display:none}
+.quiz-menu summary:focus-visible{outline:2px solid var(--acc)}
+.quiz-menu-panel{position:absolute;top:calc(100% + 8px);right:0;z-index:25;min-width:215px;
+  border:1px solid var(--line);border-radius:12px;background:var(--card);
+  padding:8px;box-shadow:0 12px 30px rgba(0,0,0,.2);display:grid;gap:5px}
+.quiz-menu-panel button{display:block;width:100%;text-align:left;font:inherit;font-size:.88rem;
+  color:var(--ink);background:transparent;border:0;border-radius:8px;padding:10px;cursor:pointer}
+.quiz-menu-panel button:hover{background:var(--accbg)}
+.quiz-nav-meta{display:flex;justify-content:center;align-items:center;gap:7px;flex-wrap:wrap;
+  font-size:.73rem;color:var(--mute);line-height:1.35}
+.quiz-nav-meta #timer{white-space:nowrap;color:var(--ink);font-size:.74rem}
+.quiz-nav-meta #timer:not(:empty)::before{content:'◷ ';color:var(--mute)}
+.quiz-nav-meta #timer.low{color:var(--bad)}
+body:has(#quiz[hidden]) .quiz-nav-meta,body:has(#quiz[hidden]) .quiz-progress-track{display:none}
 @media(max-width:540px){
-  body:has(#quiz:not([hidden])) #theme-toggle{right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));font-size:.85rem;padding:8px 12px}
+  .quiz-top-shell{padding:4px 0 7px;margin-bottom:8px}
+  .quiz-nav-meta{font-size:.68rem;gap:5px}
+  .quiz-nav-meta #timer{font-size:.68rem}
+  .quiz-menu summary{width:36px;height:36px}
+  .wrap{padding-top:8px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <nav class="site-nav quiz-nav" aria-label="Điều hướng bài trắc nghiệm">
-    <a class="nav-back" href="./index.html" aria-label="Quay về thư viện đề" title="Về thư viện"><span aria-hidden="true">←</span><span class="nav-back-label">Thư viện</span></a>
-    <span class="quiz-nav-title" id="nav-quiz-title">Bài trắc nghiệm</span>
-    <div class="nav-actions">
-      <button id="open-settings" class="nav-icon-btn" type="button" hidden title="Cài đặt / Làm lượt mới" aria-label="Cài đặt / Làm lượt mới">⚙</button>
-      <button type="button" id="theme-toggle" class="nav-icon-btn" aria-label="Đổi sáng tối" title="Đổi sáng tối">◐</button>
-    </div>
-  </nav>
+  <div class="quiz-top-shell">
+    <nav class="quiz-nav" aria-label="Điều hướng bài trắc nghiệm">
+      <a class="nav-back" href="./index.html" aria-label="Quay về thư viện đề" title="Về thư viện"><span aria-hidden="true">←</span><span class="nav-back-label">Thư viện</span></a>
+      <div class="quiz-nav-center">
+        <div class="quiz-nav-title" id="nav-quiz-title">Bài trắc nghiệm</div>
+        <div class="quiz-nav-meta" aria-live="off"><span id="prog"></span><span id="live"></span><span id="timer"></span></div>
+      </div>
+      <details class="quiz-menu" id="quiz-menu">
+        <summary title="Cài đặt" aria-label="Mở menu cài đặt">⚙</summary>
+        <div class="quiz-menu-panel">
+          <button id="open-settings" type="button" hidden>⚙ Cài đặt / Làm lượt mới</button>
+          <button type="button" id="theme-toggle">◐ Đổi sáng / tối</button>
+        </div>
+      </details>
+    </nav>
+    <div class="track quiz-progress-track"><div id="bar"></div></div>
+  </div>
   <script>
   (() => {
     const path = new URLSearchParams(location.search).get('file') || '';
@@ -127,10 +154,6 @@ body:has(#quiz:not([hidden])) .wrap{padding-bottom:100px}
 </section>
 
 <section id="quiz" hidden>
-  <div class="top">
-    <div class="row"><span id="prog" class="mute"></span><span id="live" class="mute"></span><span id="timer"></span></div>
-    <div class="track"><div id="bar"></div></div>
-  </div>
   <div id="card" class="card"></div>
   <div class="act">
     <button id="prev" class="btn">Câu trước</button>

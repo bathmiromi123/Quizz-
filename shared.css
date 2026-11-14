@@ -38,3 +38,7 @@ a.btn{display:inline-flex;text-decoration:none;align-items:center}
   .quiz-nav .quiz-nav-title{font-size:.84rem}
   .quiz-nav .nav-icon-btn{width:40px;height:40px;min-width:40px}
 }
+
+/* Center the title and current quiz status. */
+.quiz-nav .quiz-nav-center{min-width:0;display:grid;justify-items:center;gap:2px}
+.quiz-nav .quiz-nav-title{width:100%}
