@@ -10,6 +10,11 @@
           "count": 100
         },
         {
+          "term": "SU26-FE",
+          "file": "data/nwc204/SU26-FE.json",
+          "count": 50
+        },
+        {
           "term": "SU25-RE",
           "file": "data/nwc204/SU25-RE.json",
           "count": 50
