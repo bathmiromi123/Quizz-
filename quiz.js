@@ -13,7 +13,7 @@ const starsKey=()=>`quizlib:stars:${sourceKey}`;
 let stars=new Set();
 function loadStars(){try{const arr=JSON.parse(safeStore('get',starsKey())||'[]');stars=new Set(Array.isArray(arr)?arr.filter(x=>Number.isInteger(x)&&x>=0):[])}catch{stars=new Set()}}
 function saveStars(){safeStore('set',starsKey(),JSON.stringify([...stars]))}
-function toggleStar(id){stars.has(id)?stars.delete(id):stars.add(id);saveStars();render()}
+function toggleStar(id){stars.has(id)?stars.delete(id):stars.add(id);saveStars();render();updateStarsButton()}
 function safeStore(action, key, val){try {if(action==='set') localStorage.setItem(key,val);else if(action==='remove')localStorage.removeItem(key);else return localStorage.getItem(key)} catch(e){return null}}
 function signature(d){return JSON.stringify(d).length+':'+d.questions.length+':'+(d.title||'')}
 function saveProgress(){
@@ -72,6 +72,13 @@ function loadData(d){
   $('#o-so').checked=!!D.shuffleOptions;
   $('#o-an').checked=D.autoNext!==undefined?!!D.autoNext:D.questions.length>30;
   currentPhase='start';show('start');
+}
+function updateStarsButton(){
+ const btn=$('#r-stars');
+ if(!btn||!D)return;
+ const count=[...stars].filter(id=>id<D.questions.length).length;
+ btn.hidden=count===0;
+ btn.textContent='★ Làm lại '+count+' câu gắn sao';
 }
 function show(id){['start','quiz','result'].forEach(x=>$('#'+x).hidden=x!==id);$('#open-settings').hidden=id!=='quiz';window.scrollTo(0,0)}
 
@@ -201,19 +208,19 @@ function finish(){
     '<div><strong>'+skip+'</strong><span class="mute">bỏ trống</span></div>'+
     '<div><strong>'+Math.floor(used/60)+':'+String(used%60).padStart(2,'0')+'</strong><span class="mute">thời gian</span></div>';
   $('#r-wrong').hidden=!lastWrong.length;
-  show('result');saveProgress();
+  updateStarsButton();show('result');saveProgress();
 }
 function showResult(){
  const {ok,n,skip,used}=finishInfo;
  $('#r-score').textContent=(ok/n*10).toFixed(2).replace(/\.?0+$/,'')+' / 10';
  $('#r-stats').innerHTML='<div><strong>'+ok+'/'+n+'</strong><span class="mute">câu đúng</span></div>'+'<div><strong>'+(n-ok-skip)+'</strong><span class="mute">câu sai</span></div>'+'<div><strong>'+skip+'</strong><span class="mute">bỏ trống</span></div>'+'<div><strong>'+Math.floor(used/60)+':'+String(used%60).padStart(2,'0')+'</strong><span class="mute">thời gian</span></div>';
- $('#r-wrong').hidden=!lastWrong.length;show('result');
+ $('#r-wrong').hidden=!lastWrong.length;updateStarsButton();show('result');
 }
 $('#r-review').onclick=()=>{review=true;cur=0;$('#submit').hidden=true;$('#back').hidden=false;$('#timer').textContent='';show('quiz');render();saveProgress()};
 $('#back').onclick=()=>show('result');
 $('#r-again').onclick=()=>start();
 $('#r-wrong').onclick=()=>start(lastWrong);
-$('#r-stars').onclick=()=>{const ids=Q.filter(q=>stars.has(q.id)).map(q=>q.id);if(ids.length)start(ids)};
+$('#r-stars').onclick=()=>{const ids=[...stars].filter(id=>Number.isInteger(id)&&id>=0&&id<D.questions.length).sort((a,b)=>a-b);if(ids.length)start(ids)};
 $('#go').onclick=()=>{const saved=getSaved();if(saved&&!confirm('Bắt đầu bài mới sẽ thay thế tiến độ đã lưu. Anh có chắc muốn làm lại từ đầu?'))return;start()};
 $('#resume').onclick=()=>restoreProgress();
 $('#open-settings').onclick=()=>{refreshResume();show('start')};
