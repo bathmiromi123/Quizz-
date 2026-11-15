@@ -1,0 +1,423 @@
+{
+  "title": "NWC204 - SU26 - FE (Mã đề 584909)",
+  "description": "Trọn bộ 50 câu hỏi trắc nghiệm mạng máy tính.",
+  "timeLimitMinutes": 60,
+  "mode": "instant",
+  "shuffleQuestions": false,
+  "shuffleOptions": false,
+  "questions": [
+    {
+      "q": "What is the purpose of the TCP three-way handshake?",
+      "options": [
+        "To establish connection state and sequence tracking",
+        "To check the integrity of data sent",
+        "To open multiple sockets between client and server",
+        "To notify the server of a new port number"
+      ],
+      "answer": 0,
+      "explain": "Bắt tay 3 bước (SYN, SYN-ACK, ACK) của TCP dùng để đồng bộ số thứ tự (sequence numbers) và thiết lập trạng thái kết nối tin cậy giữa client và server trước khi truyền dữ liệu."
+    },
+    {
+      "q": "Which Windows command would display the protocols in use, the local address and port numbers, the foreign address and port numbers, and the connection state?",
+      "options": ["ipconfig /all", "ping", "netstat", "traceroute"],
+      "answer": 2,
+      "explain": "Lệnh netstat hiển thị các kết nối mạng đang hoạt động (Proto, Local Address, Foreign Address, State)."
+    },
+    {
+      "q": "What is the purpose of port numbers in TCP and UDP communication?",
+      "options": [
+        "To identify specific applications running on a device",
+        "To define the size of a packet",
+        "To assign MAC addresses",
+        "To establish a physical connection"
+      ],
+      "answer": 0,
+      "explain": "Số hiệu cổng (Port numbers) giúp tầng Transport phân biệt và định danh chính xác ứng dụng/dịch vụ cụ thể đang chạy trên thiết bị."
+    },
+    {
+      "q": "Assume a host with IP address 10.1.1.10 wants to request web services from a server at 10.1.1.254. Which of the following would display the correct socket pair?",
+      "options": [
+        "1099:10.1.1.10, 80:10.1.1.254",
+        "10.1.1.10:80, 10.1.1.254:1099",
+        "10.1.1.10:1099, 10.1.1.254:80",
+        "80:10.1.1.10, 1099:10.1.1.254"
+      ],
+      "answer": 2,
+      "explain": "Cặp socket có định dạng IP:Port. Client (10.1.1.10) dùng cổng nguồn động (1099), còn Web Server (10.1.1.254) lắng nghe ở cổng đích HTTP chuẩn là 80."
+    },
+    {
+      "q": "What does a router do when it receives a Layer 2 frame over the network medium?",
+      "options": [
+        "determines the best path",
+        "de-encapsulates the frame",
+        "re-encapsulates the packet into a new frame",
+        "forwards the new frame appropriate to the medium of that segment of the physical network"
+      ],
+      "answer": 1,
+      "explain": "Hành động đầu tiên ngay khi Router nhận một frame Layer 2 từ đường truyền là gỡ bỏ header/trailer của Layer 2 (de-encapsulate) để đọc địa chỉ IP đích trong gói tin Layer 3 bên trong."
+    },
+    {
+      "q": "Which statement is correct about network protocols?",
+      "options": [
+        "Network protocols define the type of hardware that is used and how it is mounted in racks.",
+        "They define how messages are exchanged between the source and the destination.",
+        "They all function in the network access layer of TCP/IP.",
+        "They are only required for exchange of messages between devices on remote networks."
+      ],
+      "answer": 1,
+      "explain": "Các giao thức mạng (network protocols) quy định bộ quy tắc về định dạng, thời gian, trình tự và cách thức trao đổi thông điệp giữa nguồn và đích."
+    },
+    {
+      "q": "What is the primary function of the Transport layer in the OSI and TCP/IP models?",
+      "options": [
+        "To provide reliable data transport between applications",
+        "To define physical media connections",
+        "To translate data for human readability",
+        "To assign IP addresses to devices"
+      ],
+      "answer": 0,
+      "explain": "Tầng Transport chịu trách nhiệm phân mảnh, đánh số thứ tự, kiểm soát luồng và đảm bảo truyền tải dữ liệu giữa các tiến trình ứng dụng đầu-cuối."
+    },
+    {
+      "q": "Which layer of the OSI model is responsible for describing the methods for exchanging data frames over a common media?",
+      "options": ["Network", "Transport", "Data Link", "Physical"],
+      "answer": 2,
+      "explain": "Tầng Data Link (tầng 2) chịu trách nhiệm đóng gói gói tin thành Frame và điều khiển truy cập môi trường truyền (MAC) để trao đổi frame trên đường truyền chung."
+    },
+    {
+      "q": "Which of the following is not a key element of communication?",
+      "options": ["Network speed", "A source (sender)", "A destination (receiver)", "A transmission medium (channel)"],
+      "answer": 0,
+      "explain": "3 thành phần cơ bản của mọi quá trình truyền thông là: Nguồn gửi (Source/Sender), Đích nhận (Destination/Receiver) và Kênh truyền (Transmission medium/Channel)."
+    },
+    {
+      "q": "What kind of threat is described when a threat actor impersonates another person to obtain credit information about that person?",
+      "options": ["data loss or manipulation", "disruption of service", "identify theft", "information theft"],
+      "answer": 2,
+      "explain": "Hành vi mạo danh người khác để lấy thông tin tín dụng/tài chính cá nhân là trộm cắp danh tính (Identity theft)."
+    },
+    {
+      "q": "What process does a device use to verify that its IPv6 address is unique on the network?",
+      "options": ["DHCPv6", "SLAAC", "Neighbor Discovery Protocol (NDP)", "Duplicate Address Detection (DAD)"],
+      "answer": 3,
+      "explain": "DAD (Duplicate Address Detection) gửi gói Neighbor Solicitation cho chính địa chỉ IPv6 dự kiến gán để kiểm tra xem có thiết bị nào khác trên mạng đang dùng địa chỉ đó chưa."
+    },
+    {
+      "q": "What is the length of an IPv6 address?",
+      "options": ["32 bits", "64 bits", "128 bits", "256 bits"],
+      "answer": 2,
+      "explain": "Địa chỉ IPv6 có chiều dài 128 bit (biểu diễn dưới dạng 8 nhóm số thập lục phân, mỗi nhóm 16 bit)."
+    },
+    {
+      "q": "Match the IPv6 address with the IPv6 address type. (Not all options are used.)\nA. link-local\nB. solicited node multicast\nC. global unicast\nD. all node multicast\nE. loopback\nF. unique local\n1. 2001:DB8::BAF:3F57:FE94\n2. FF02::1\n3. ::1\n4. FF02::1:FFAE:F85F",
+      "options": ["C1-D2-E3-B4", "C2-D1-E3-A4", "C1-F2-E4-B3", "C4-D2-E3-B1"],
+      "answer": 0,
+      "explain": "1) 2001:DB8::... là Global Unicast (C1); 2) FF02::1 là All-node multicast (D2); 3) ::1 là Loopback (E3); 4) FF02::1:FFxx:xxxx là Solicited-node multicast (B4)."
+    },
+    {
+      "q": "Which of the following techniques use native IPv6 connectivity?",
+      "options": ["Dual stack", "Tunelling", "Translation", "All of the above"],
+      "answer": 0,
+      "explain": "Dual-stack cho phép thiết bị chạy đồng thời cả IPv4 và IPv6 thuần túy (native) trên cùng một giao diện mạng."
+    },
+    {
+      "q": "What type of IPv6 address begins with fe80?",
+      "options": ["GUA", "LLA", "Multicast address", "None. An IPv6 address must begin with 2001."],
+      "answer": 1,
+      "explain": "Dải FE80::/10 là địa chỉ Link-Local Address (LLA), dùng để giao tiếp nội bộ trong cùng một phân đoạn mạng."
+    },
+    {
+      "q": "Which destination address is used in an ARP request frame?",
+      "options": ["0.0.0.0", "255.255.255.255", "FFFF.FFFF.FFFF", "AAAA.AAAA.AAAA", "the physical address of the destination host"],
+      "answer": 2,
+      "explain": "Vì chưa biết địa chỉ MAC đích nên gói ARP Request được gửi quảng bá (broadcast) ở tầng 2 tới địa chỉ MAC FF-FF-FF-FF-FF-FF (FFFF.FFFF.FFFF)."
+    },
+    {
+      "q": "Under which two circumstances will a switch flood a frame out of every port except the port that the frame was received on? (Choose two.)",
+      "options": [
+        "The frame has the broadcast address as the destination address.",
+        "The destination address is unknown to the switch.",
+        "The source address in the frame header is the broadcast address.",
+        "The source address in the frame is a multicast address.",
+        "The destination address in the frame is a known unicast address."
+      ],
+      "answer": [0, 1],
+      "explain": "Switch sẽ đẩy frame ra tất cả các cổng (trừ cổng nhận) khi frame đó là Broadcast hoặc địa chỉ MAC đích chưa có trong bảng MAC (Unknown Unicast)."
+    },
+    {
+      "q": "What is the aim of an ARP spoofing attack?",
+      "options": [
+        "to flood the network with ARP reply broadcasts",
+        "to fill switch MAC address tables with bogus addresses",
+        "to associate IP addresses to the wrong MAC address",
+        "to overwhelm network hosts with ARP requests"
+      ],
+      "answer": 2,
+      "explain": "Tấn công giả mạo ARP (ARP spoofing) gửi các bản tin ARP Reply giả để gán địa chỉ IP hợp lệ (như Default Gateway) với địa chỉ MAC của kẻ tấn công."
+    },
+    {
+      "q": "What does ARP resolve?",
+      "options": ["MAC address to IP", "IP address to hostname", "IP address to MAC address", "Hostname to MAC address"],
+      "answer": 2,
+      "explain": "Giao thức ARP (Address Resolution Protocol) dùng để phân giải từ địa chỉ IPv4 đã biết sang địa chỉ vật lý (MAC address) tương ứng."
+    },
+    {
+      "q": "What two criteria are used to help select a network medium from various network media? (Choose two.)",
+      "options": [
+        "the types of data that need to be prioritized",
+        "the cost of the end devices utilized in the network",
+        "the distance the selected medium can successfully carry a signal",
+        "the number of intermediate devices installed in the network",
+        "the environment where the selected medium is to be installed"
+      ],
+      "answer": [2, 4],
+      "explain": "Hai tiêu chí quan trọng để chọn loại cáp/môi trường truyền là khoảng cách truyền dẫn tín hiệu thành công và môi trường lắp đặt (nhiễu điện từ, ngoài trời/trong nhà...)."
+    },
+    {
+      "q": "Which type of network design allows devices to act as both clients and servers?",
+      "options": ["Client-server network", "LAN", "WAN", "Peer-to-peer network"],
+      "answer": 3,
+      "explain": "Trong mạng ngang hàng (Peer-to-Peer - P2P), mỗi thiết bị vừa có thể đóng vai trò là máy khách (client) yêu cầu dịch vụ, vừa là máy chủ (server) chia sẻ tài nguyên."
+    },
+    {
+      "q": "Which statement describes the use of powerline networking technology?",
+      "options": [
+        "New \"smart\" electrical cabling is used to extend an existing home LAN.",
+        "A home LAN is installed without the use of physical cabling.",
+        "A device connects to an existing home LAN using an adapter and an existing electrical outlet.",
+        "Wireless access points use powerline adapters to distribute data through the home LAN."
+      ],
+      "answer": 2,
+      "explain": "Công nghệ Powerline sử dụng bộ chuyển đổi (adapter) cắm trực tiếp vào ổ cắm điện có sẵn trong nhà để truyền tín hiệu mạng qua đường dây điện."
+    },
+    {
+      "q": "What happens if an Ethernet frame is less than 64 bytes?",
+      "options": ["It is fragmented", "It is considered valid", "It is dropped", "It is routed"],
+      "answer": 2,
+      "explain": "Kích thước tối thiểu của một Ethernet frame hợp lệ là 64 bytes. Các frame nhỏ hơn 64 bytes bị coi là runt frame và bị loại bỏ (dropped)."
+    },
+    {
+      "q": "What happens when a switch receives a frame and the calculated CRC value is different than the value that is in the FCS field?",
+      "options": [
+        "The switch places the new CRC value in the FCS field and forwards the frame.",
+        "The switch notifies the source of the bad frame.",
+        "The switch drops the frame.",
+        "The switch floods the frame to all ports except the port through which the frame arrived to notify the hosts of the error."
+      ],
+      "answer": 2,
+      "explain": "Nếu giá trị CRC tính toán lại khác với trường FCS trong frame, frame đó đã bị lỗi trong quá trình truyền và Switch sẽ hủy bỏ (drop) frame đó."
+    },
+    {
+      "q": "A Layer 2 switch is used to switch incoming frames from a 1000BASE-T port to a port connected to a 100Base-T network. Which method of memory buffering would work best for this task?",
+      "options": ["port-based buffering", "level 1 cache buffering", "shared memory buffering", "fixed configuration buffering"],
+      "answer": 2,
+      "explain": "Shared memory buffering lưu trữ tất cả các frame vào một vùng nhớ đệm chung để các cổng có tốc độ khác nhau (như 1000Mbps sang 100Mbps) trao đổi dữ liệu hiệu quả nhất."
+    },
+    {
+      "q": "Which frame forwarding method receives the entire frame and performs a CRC check to detect errors before forwarding the frame?",
+      "options": ["cut-through switching", "store-and-forward switching", "fragment-free switching", "fast-forward switching"],
+      "answer": 1,
+      "explain": "Store-and-forward nhận toàn bộ frame vào bộ đệm, kiểm tra mã lỗi CRC ở trường FCS; nếu không lỗi mới tra bảng MAC để chuyển tiếp."
+    },
+    {
+      "q": "Which tool uses the ICMP \"Time Exceeded\" message to trace the path between two hosts?",
+      "options": ["ping", "netstat", "traceroute", "ipconfig"],
+      "answer": 2,
+      "explain": "traceroute (tracert) tăng dần giá trị TTL (1, 2, 3...) để từng router trên đường đi trả về thông báo ICMP Time Exceeded, từ đó vạch ra tuyến đường đi qua từng chặng."
+    },
+    {
+      "q": "A user pings 127.0.0.1 and receives a response. What does this confirm?",
+      "options": [
+        "The IP protocol stack is operational",
+        "The DNS service is operational",
+        "The NIC is functioning correctly",
+        "The router is reachable"
+      ],
+      "answer": 0,
+      "explain": "Ping địa chỉ loopback 127.0.0.1 kiểm tra nội bộ ngăn xếp giao thức TCP/IP (IP protocol stack) trên chính máy tính đó có hoạt động bình thường hay không."
+    },
+    {
+      "q": "What is the purpose of ICMP messages?",
+      "options": [
+        "to inform routers about network topology changes",
+        "to ensure the delivery of an IP packet",
+        "to provide feedback of IP packet transmissions",
+        "to monitor the process of a domain name to IP address resolution"
+      ],
+      "answer": 2,
+      "explain": "Giao thức ICMP dùng để cung cấp phản hồi về các vấn đề liên quan đến quá trình xử lý và truyền gói tin IP."
+    },
+    {
+      "q": "Which encoding technique is used to convert digital data into digital signals?",
+      "options": ["Manchester encoding", "Modulation", "Signal interference", "Frequency hopping"],
+      "answer": 0,
+      "explain": "Mã hóa Manchester (Manchester encoding) là kỹ thuật mã hóa đường truyền (line coding) biểu diễn dữ liệu số (bit 0 và 1) thành các mức chuyển đổi điện áp tín hiệu số."
+    },
+    {
+      "q": "What is the main role of the physical layer?",
+      "options": ["Error checking", "Transporting bits across the medium", "Routing packets", "Formatting messages"],
+      "answer": 1,
+      "explain": "Tầng vật lý (Physical layer) có vai trò truyền tải các luồng bit thô (0 và 1) dưới dạng tín hiệu điện, quang hoặc sóng vô tuyến qua môi trường truyền."
+    },
+    {
+      "q": "Refer to the graphic. What type of cabling is shown?\n[Image: Close-up of two metal bayonet cylindrical connectors (ST connectors) attached to a grey cable with a white ceramic ferrule.]",
+      "options": ["STP", "UTP", "coax", "fiber"],
+      "answer": 3,
+      "explain": "Hình ảnh hiển thị đầu nối ST (Straight-Tip) chuyên dụng của cáp quang (Fiber-optic cabling)."
+    },
+    {
+      "q": "How can an administrator verify the current IP configuration of all router interfaces?",
+      "options": ["show ip interface brief", "display interfaces", "check interfaces", "list interfaces"],
+      "answer": 0,
+      "explain": "Lệnh show ip interface brief trên Cisco IOS liệt kê tóm tắt tất cả các cổng giao tiếp, địa chỉ IP được gán và trạng thái (Status/Protocol) của chúng."
+    },
+    {
+      "q": "Match the command with the device mode at which the command is entered. (Not all options are used.)\nA. login\nB. service password-encryption\nC. ip address 192.168.4.4 255.255.255.0\nD. copy running-config startup-config\nE. enable\n1. R1(config)#\n2. R1>\n3. R1(config-router)#\n4. R1#\n5. R1(config-line)#\n6. R1(config-if)#",
+      "options": ["A5-B1-C6-D4-E2", "A1-B5-C6-D4-E2", "A5-B1-C4-D6-E2", "A5-B1-C6-D2-E4"],
+      "answer": 0,
+      "explain": "login nhập ở Line mode R1(config-line)# (A5); service password-encryption ở Global Config R1(config)# (B1); ip address ở Interface mode R1(config-if)# (C6); copy running-config startup-config ở Privileged EXEC R1# (D4); enable ở User EXEC R1> (E2)."
+    },
+    {
+      "q": "Which command displays a summary of all interfaces on the router including their IP addresses and status?",
+      "options": ["show interfaces", "show ip route", "show ip interface brief", "show running-config"],
+      "answer": 2,
+      "explain": "Lệnh show ip interface brief hiển thị bảng tóm tắt trạng thái vật lý (Status), giao thức (Protocol) và địa chỉ IP của toàn bộ interface trên router."
+    },
+    {
+      "q": "A technician is configuring a router to allow for all forms of management access. As part of each different type of access, the technician is trying to type the command login. Which configuration mode should be entered to do this task?",
+      "options": ["user executive mode", "global configuration mode", "any line configuration mode", "privileged EXEC mode"],
+      "answer": 2,
+      "explain": "Lệnh login dùng để bật kiểm tra mật khẩu khi đăng nhập qua cổng Console hoặc VTY, do đó phải được nhập bên trong chế độ cấu hình đường truyền (line configuration mode)."
+    },
+    {
+      "q": "An administrator wants to create four subnetworks from the network address 192.168.1.0/24. What is the network address and subnet mask of the second useable subnet?",
+      "options": [
+        "subnetwork 192.168.1.64 subnet mask 255.255.255.192",
+        "subnetwork 192.168.1.32 subnet mask 255.255.255.240",
+        "subnetwork 192.168.1.64 subnet mask 255.255.255.240",
+        "subnetwork 192.168.1.128 subnet mask 255.255.255.192",
+        "subnetwork 192.168.1.8 subnet mask 255.255.255.224"
+      ],
+      "answer": 0,
+      "explain": "Chia 192.168.1.0/24 thành 4 mạng con cần mượn 2 bit -> prefix /26 (subnet mask 255.255.255.192), bước nhảy 64. Các mạng con lần lượt là: .0 (thứ 1), .64 (thứ 2), .128 (thứ 3), .192 (thứ 4)."
+    },
+    {
+      "q": "What is the broadcast address for the IP subnet 192.168.10.0/24?",
+      "options": ["192.168.10.0", "192.168.10.255", "192.168.10.1", "192.168.11.0"],
+      "answer": 1,
+      "explain": "Với mạng /24 (255.255.255.0), 8 bit cuối dành cho phần host. Khi toàn bộ 8 bit host bằng 1 sẽ cho địa chỉ broadcast là 192.168.10.255."
+    },
+    {
+      "q": "Refer to the exhibit. Considering the addresses already used and having to remain within the 10.16.10.0/24 network range, which subnet address could be assigned to the network containing 25 hosts?\n[Diagram: Router R1 connects to Switch 1 (10.16.10.0/26 - used), Switch 2 (10.16.10.192/28 - used), and Switch 3 (25 hosts - needs assignment)]",
+      "options": [
+        "10.16.10.160/26",
+        "10.16.10.128/28",
+        "10.16.10.64/27",
+        "10.16.10.224/26",
+        "10.16.10.240/27",
+        "10.16.10.240/28"
+      ],
+      "answer": 2,
+      "explain": "Cần 25 hosts -> cần ít nhất 5 bit host (2^5 - 2 = 30 host) -> prefix /27 (bước nhảy 32). Dải 10.16.10.0 - .63 đã bị nhánh 1 chiếm, nên dải /27 trống tiếp theo hợp lệ là 10.16.10.64/27 (.64 đến .95)."
+    },
+    {
+      "q": "How many host addresses are available on the 192.168.10.128/26 network?",
+      "options": ["30", "32", "60", "62", "64"],
+      "answer": 3,
+      "explain": "Prefix /26 để lại 32 - 26 = 6 bit cho phần host. Số địa chỉ host khả dụng là 2^6 - 2 = 64 - 2 = 62."
+    },
+    {
+      "q": "A network administrator enters the service password-encryption command into the configuration mode of a router. What does this command accomplish?",
+      "options": [
+        "This command encrypts passwords as they are transmitted across serial WAN links.",
+        "This command prevents someone from viewing the running configuration passwords.",
+        "This command enables a strong encryption algorithm for the enable secret password command.",
+        "This command automatically encrypts passwords in configuration files that are currently stored in NVRAM.",
+        "This command provides an exclusive encrypted password for external service personnel who are required to do router maintenance."
+      ],
+      "answer": 1,
+      "explain": "Lệnh service password-encryption mã hóa tất cả các mật khẩu dạng văn bản thuần (clear-text) trong file cấu hình chạy (running-config), ngăn người khác đọc trộm khi xem cấu hình."
+    },
+    {
+      "q": "What is the purpose of the no shutdown command?",
+      "options": ["To reset the switch", "To enable an interface", "To configure IP addresses", "To shut down an interface"],
+      "answer": 1,
+      "explain": "Mặc định các cổng trên Router bị tắt về mặt quản trị (administratively down). Lệnh no shutdown dùng để kích hoạt (bật) giao diện mạng đó lên."
+    },
+    {
+      "q": "Which interface allows remote management of a Layer 2 switch?",
+      "options": ["the AUX interface", "the console port interface", "the switch virtual interface", "the first Ethernet port interface"],
+      "answer": 2,
+      "explain": "Switch Layer 2 sử dụng giao diện ảo SVI (Switch Virtual Interface - mặc định là interface VLAN 1) để gán địa chỉ IP phục vụ quản trị từ xa qua SSH/Telnet."
+    },
+    {
+      "q": "A network administrator enters the service password-encryption command into the configuration mode of a router. What does this command accomplish?",
+      "options": [
+        "This command encrypts passwords as they are transmitted across serial WAN links.",
+        "This command prevents someone from viewing the running configuration passwords.",
+        "This command enables a strong encryption algorithm for the enable secret password command.",
+        "This command automatically encrypts passwords in configuration files that are currently stored in NVRAM.",
+        "This command provides an exclusive encrypted password for external service personnel who are required to do router maintenance."
+      ],
+      "answer": 1,
+      "explain": "(Câu trùng lặp trong đề gốc với Câu 41) Lệnh service password-encryption mã hóa các mật khẩu dạng rõ trong running-config để ngăn người khác nhìn thấy trực tiếp."
+    },
+    {
+      "q": "Which two characteristics describe the IP protocol at Layer 3? (Choose two.)",
+      "options": [
+        "Connectionless and best-effort",
+        "Independent of the underlying media",
+        "Guarantees delivery of packets",
+        "Relies on TCP for segmentation"
+      ],
+      "answer": [0, 1],
+      "explain": "Giao thức IP ở tầng 3 có 3 đặc điểm cốt lõi: Phi kết nối (Connectionless), Nỗ lực tối đa không đảm bảo (Best-effort) và Độc lập với môi trường truyền vật lý (Media independent)."
+    },
+    {
+      "q": "What are two services provided by the OSI network layer? (Choose two.)",
+      "options": [
+        "performing error detection",
+        "routing packets toward the destination",
+        "encapsulating PDUs from the transport layer",
+        "placement of frames on the media",
+        "collision detection"
+      ],
+      "answer": [1, 2],
+      "explain": "Tầng Network (Layer 3) đóng gói các Segment (PDU từ tầng Transport) thành Packet (thêm IP header) và định tuyến (routing) gói tin tới mạng đích."
+    },
+    {
+      "q": "What is the effect of using the Router# copy running-config startup-config command on a router?",
+      "options": [
+        "The contents of ROM will change.",
+        "The contents of RAM will change.",
+        "The contents of NVRAM will change.",
+        "The contents of flash will change."
+      ],
+      "answer": 2,
+      "explain": "File startup-config được lưu trữ trong bộ nhớ NVRAM (bộ nhớ không mất dữ liệu khi tắt nguồn), nên lệnh này sẽ ghi đè nội dung mới vào NVRAM."
+    },
+    {
+      "q": "Within a production network, what is the purpose of configuring a switch with a default gateway address?",
+      "options": [
+        "Hosts that are connected to the switch can use the switch default gateway address to forward packets to a remote destination.",
+        "A switch must have a default gateway to be accessible by Telnet and SSH.",
+        "The default gateway address is used to forward packets originating from the switch to remote networks.",
+        "It provides a next-hop address for all traffic that flows through the switch."
+      ],
+      "answer": 2,
+      "explain": "Default gateway trên Switch Layer 2 chỉ dùng để chuyển tiếp các gói tin quản trị xuất phát từ chính Switch đó đi sang các mạng khác (remote networks)."
+    },
+    {
+      "q": "What does the OSI model help with in networking?",
+      "options": ["Encryption", "Address resolution", "Troubleshooting and standardization", "Server hosting"],
+      "answer": 2,
+      "explain": "Mô hình OSI chuẩn hóa giao tiếp mạng theo từng tầng, giúp các hãng tương thích với nhau và hỗ trợ khoanh vùng xử lý sự cố (troubleshooting) dễ dàng."
+    },
+    {
+      "q": "Which two models are used to describe network protocols and operations? (Select two answers)",
+      "options": ["TCP/IP", "OSI", "ISO", "HTTP"],
+      "answer": [0, 1],
+      "explain": "Hai mô hình tham chiếu chuẩn được dùng phổ biến nhất để mô tả hoạt động và giao thức mạng là mô hình TCP/IP và mô hình OSI."
+    }
+  ]
+}
