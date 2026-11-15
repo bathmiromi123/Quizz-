@@ -213,6 +213,7 @@ $('#r-review').onclick=()=>{review=true;cur=0;$('#submit').hidden=true;$('#back'
 $('#back').onclick=()=>show('result');
 $('#r-again').onclick=()=>start();
 $('#r-wrong').onclick=()=>start(lastWrong);
+$('#r-stars').onclick=()=>{const ids=Q.filter(q=>stars.has(q.id)).map(q=>q.id);if(ids.length)start(ids)};
 $('#go').onclick=()=>{const saved=getSaved();if(saved&&!confirm('Bắt đầu bài mới sẽ thay thế tiến độ đã lưu. Anh có chắc muốn làm lại từ đầu?'))return;start()};
 $('#resume').onclick=()=>restoreProgress();
 $('#open-settings').onclick=()=>{refreshResume();show('start')};
