@@ -1,745 +1,1467 @@
-[
-  {
-    "number": 1,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A PC is downloading a large file from a server. The TCP window is 1000 bytes. The server is sending the file using 100-byte segments. How many segments will the server send before it requires an acknowledgment from the PC?",
-    "options": [
-      {"key": "A", "text": "1 segment"},
-      {"key": "B", "text": "10 segments"},
-      {"key": "C", "text": "100 segments"},
-      {"key": "D", "text": "1000 segments"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — 10 segments",
-    "explanation": "Kích thước cửa sổ TCP (window size) là 1000 bytes. Mỗi segment có kích thước 100 bytes. Do đó, server có thể gửi 1000/100 = 10 segments trước khi cần nhận ACK từ PC."
-  },
-  {
-    "number": 2,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A client packet is received by a server. The packet has a destination port number of 22. What service is the client requesting?",
-    "options": [
-      {"key": "A", "text": "SSH"},
-      {"key": "B", "text": "DHCP"},
-      {"key": "C", "text": "DNS"},
-      {"key": "D", "text": "TFTP"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — SSH",
-    "explanation": "Cổng 22 là cổng mặc định của giao thức SSH (Secure Shell). DHCP dùng cổng 67/68, DNS dùng cổng 53, TFTP dùng cổng 69."
-  },
-  {
-    "number": 3,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which two fields are the same in a TCP and UDP header? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "Control bits"},
-      {"key": "B", "text": "Destination port number"},
-      {"key": "C", "text": "Sequence number"},
-      {"key": "D", "text": "Source port number"},
-      {"key": "E", "text": "Well-known port number"}
-    ],
-    "answer": ["B", "D"],
-    "answerRaw": "B, D — Destination port number, Source port number",
-    "explanation": "Cả TCP và UDP đều có trường Source Port và Destination Port (16 bit mỗi trường) để định danh ứng dụng. Control bits và Sequence number chỉ có trong TCP."
-  },
-  {
-    "number": 4,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "How are port numbers used in the TCP/IP encapsulation process?",
-    "options": [
-      {"key": "A", "text": "Source port numbers and destination port numbers are not necessary when UDP is the transport layer protocol being used for the communication."},
-      {"key": "B", "text": "Source port and destination port numbers are randomly generated."},
-      {"key": "C", "text": "If multiple conversations occur that are using the same service, the source port number is used to track the separate conversations."},
-      {"key": "D", "text": "Destination port numbers are assigned automatically and cannot be changed."}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — If multiple conversations occur that are using the same service, the source port number is used to track the separate conversations.",
-    "explanation": "Source port kết hợp với IP nguồn tạo thành một socket duy nhất, giúp thiết bị phân biệt được các phiên kết nối khác nhau (ví dụ: nhiều tab web cùng truy cập cổng 80)."
-  },
-  {
-    "number": 5,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which topology displays networking device layer IP addresses?",
-    "options": [
-      {"key": "A", "text": "Aerial topology"},
-      {"key": "B", "text": "IP address topology"},
-      {"key": "C", "text": "Logical topology"},
-      {"key": "D", "text": "Physical topology"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — Logical topology",
-    "explanation": "Logical topology hiển thị địa chỉ IP và cấu trúc logic của mạng. Physical topology hiển thị vị trí thực tế của thiết bị và dây cáp."
-  },
-  {
-    "number": 6,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which statement describes a characteristic of the frame header fields of the data link layer?",
-    "options": [
-      {"key": "A", "text": "They all include the flow control and logical connection fields."},
-      {"key": "B", "text": "Ethernet frame header fields contain Layer 3 source and destination addresses."},
-      {"key": "C", "text": "They vary depending on protocols."},
-      {"key": "D", "text": "They include information on user applications."}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — They vary depending on protocols.",
-    "explanation": "Cấu trúc frame header thay đổi tùy thuộc vào giao thức ở lớp Data Link (ví dụ: Ethernet, PPP, HDLC có header khác nhau)."
-  },
-  {
-    "number": 7,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which statement describes the half-duplex mode of data transmission?",
-    "options": [
-      {"key": "A", "text": "Data that is transmitted over the network can only flow in one direction."},
-      {"key": "B", "text": "Data that is transmitted over the network flows in both directions at the same time."},
-      {"key": "C", "text": "Data that is transmitted over the network flows in one direction to many different destinations simultaneously."},
-      {"key": "D", "text": "Data that is transmitted over the network flows in one direction at a time."}
-    ],
-    "answer": ["D"],
-    "answerRaw": "D — Data that is transmitted over the network flows in one direction at a time.",
-    "explanation": "Half-duplex (bán song công) cho phép dữ liệu truyền theo cả 2 hướng, nhưng tại một thời điểm chỉ có một hướng được truyền."
-  },
-  {
-    "number": 8,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A web client is receiving a response for a web page from a web server. From the perspective of the client, what is the correct order of the protocol stack that is used to decode the received transmission?",
-    "options": [
-      {"key": "A", "text": "Ethernet, IP, TCP, HTTP"},
-      {"key": "B", "text": "HTTP, TCP, IP, Ethernet"},
-      {"key": "C", "text": "Ethernet, TCP, IP, HTTP"},
-      {"key": "D", "text": "HTTP, Ethernet, IP, TCP"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — Ethernet, IP, TCP, HTTP",
-    "explanation": "Khi client nhận dữ liệu, quá trình giải mã (decapsulation) đi từ dưới lên: nhận tín hiệu Ethernet -> xử lý IP -> xử lý TCP -> chuyển lên HTTP."
-  },
-  {
-    "number": 9,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the process of dividing a large data stream into smaller pieces prior to transmission?",
-    "options": [
-      {"key": "A", "text": "Sequencing"},
-      {"key": "B", "text": "Duplexing"},
-      {"key": "C", "text": "Multiplexing"},
-      {"key": "D", "text": "segmentation"}
-    ],
-    "answer": ["D"],
-    "answerRaw": "D — segmentation",
-    "explanation": "Quá trình chia nhỏ dữ liệu thành các đơn vị nhỏ hơn để truyền đi được gọi là segmentation (phân đoạn)."
-  },
-  {
-    "number": 10,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the auto-MDIX feature on a switch?",
-    "options": [
-      {"key": "A", "text": "the automatic configuration of an interface for 10/100/1000 Mb/s operation"},
-      {"key": "B", "text": "the automatic configuration of an interface for a straight-through or a crossover Ethernet cable connection"},
-      {"key": "C", "text": "the automatic configuration of full-duplex operation over a single Ethernet copper or optical cable"},
-      {"key": "D", "text": "the ability to turn a switch interface on or off accordingly if an active connection is detected"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — the automatic configuration of an interface for a straight-through or a crossover Ethernet cable connection",
-    "explanation": "Auto-MDIX tự động phát hiện loại cáp (thẳng hay chéo) và tự động cấu hình các cặp chân TX/RX để kết nối hoạt động bình thường."
-  },
-  {
-    "number": 11,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which statement accurately describes a TCP/IP encapsulation process when a PC is sending data to the network?",
-    "options": [
-      {"key": "A", "text": "Data is sent from the internet layer to the network access layer."},
-      {"key": "B", "text": "Packets are sent from the network access layer to the transport layer."},
-      {"key": "C", "text": "Segments are sent from the transport layer to the internet layer."},
-      {"key": "D", "text": "Frames are sent from the network access layer to the internet layer."}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — Segments are sent from the transport layer to the internet layer.",
-    "explanation": "Quá trình đóng gói (encapsulation) đi từ trên xuống: Transport layer tạo ra Segment và gửi xuống Internet layer (Network layer)."
-  },
-  {
-    "number": 12,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which protocol is used by an FTP client to establish a control connection with the FTP server?",
-    "options": [
-      {"key": "A", "text": "TCP port 20"},
-      {"key": "B", "text": "TCP port 21"},
-      {"key": "C", "text": "UDP port 53"},
-      {"key": "D", "text": "TCP port 25"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — TCP port 21",
-    "explanation": "FTP sử dụng TCP port 21 để thiết lập kết nối điều khiển (control connection) và TCP port 20 cho kết nối dữ liệu (data connection)."
-  },
-  {
-    "number": 13,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What process does a device use to verify that its IPv6 address is unique on the network?",
-    "options": [
-      {"key": "A", "text": "DHCPv6"},
-      {"key": "B", "text": "SLAAC"},
-      {"key": "C", "text": "Neighbor Discovery Protocol (NDP)"},
-      {"key": "D", "text": "Duplicate Address Detection (DAD)"}
-    ],
-    "answer": ["D"],
-    "answerRaw": "D — Duplicate Address Detection (DAD)",
-    "explanation": "DAD (Duplicate Address Detection) gửi gói Neighbor Solicitation để kiểm tra xem địa chỉ IPv6 dự kiến gán có bị trùng với thiết bị nào khác trên mạng hay không."
-  },
-  {
-    "number": 14,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What type of address is automatically assigned to an interface when IPv6 is enabled on that interface?",
-    "options": [
-      {"key": "A", "text": "Loopback"},
-      {"key": "B", "text": "Global unicast"},
-      {"key": "C", "text": "Link-local"},
-      {"key": "D", "text": "Unique local"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — Link-local",
-    "explanation": "Khi bật IPv6 trên một interface, thiết bị sẽ tự động tạo một địa chỉ Link-local (bắt đầu bằng fe80::) mà không cần DHCP."
-  },
-  {
-    "number": 15,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which of the following techniques use native IPv6 connectivity?",
-    "options": [
-      {"key": "A", "text": "Dual stack"},
-      {"key": "B", "text": "Tunelling"},
-      {"key": "C", "text": "Translation"},
-      {"key": "D", "text": "All of the above"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — Dual stack",
-    "explanation": "Dual-stack (chạy song song cả IPv4 và IPv6) cho phép thiết bị có kết nối IPv6 thuần túy (native). Tunneling và Translation chỉ là các giải pháp chuyển đổi tạm thời."
-  },
-  {
-    "number": 16,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which address type is not supported in IPv6?",
-    "options": [
-      {"key": "A", "text": "Multicast"},
-      {"key": "B", "text": "Private"},
-      {"key": "C", "text": "Unicast"},
-      {"key": "D", "text": "Broadcast"}
-    ],
-    "answer": ["D"],
-    "answerRaw": "D — Broadcast",
-    "explanation": "IPv6 không hỗ trợ địa chỉ Broadcast. Chức năng của Broadcast được thay thế bằng Multicast trong IPv6."
-  },
-  {
-    "number": 17,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the aim of an ARP spoofing attack?",
-    "options": [
-      {"key": "A", "text": "to flood the network with ARP reply broadcasts"},
-      {"key": "B", "text": "to fill switch MAC address tables with bogus addresses"},
-      {"key": "C", "text": "to associate IP addresses to the wrong MAC address"},
-      {"key": "D", "text": "to overwhelm network hosts with ARP requests"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — to associate IP addresses to the wrong MAC address",
-    "explanation": "Kẻ tấn công gửi gói tin ARP giả mạo để liên kết địa chỉ IP của nạn nhân với địa chỉ MAC của kẻ tấn công, giúp chúng chặn và đánh cắp dữ liệu (Man-in-the-Middle)."
-  },
-  {
-    "number": 18,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which two types of IPv6 messages are used in place of ARP for address resolution? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "Anycast"},
-      {"key": "B", "text": "Broadcast"},
-      {"key": "C", "text": "echo reply"},
-      {"key": "D", "text": "echo request"},
-      {"key": "E", "text": "neighbor solicitation"},
-      {"key": "F", "text": "neighbor advertisement"}
-    ],
-    "answer": ["E", "F"],
-    "answerRaw": "E, F — neighbor solicitation, neighbor advertisement",
-    "explanation": "IPv6 sử dụng tin nhắn NS (Neighbor Solicitation) để yêu cầu địa chỉ MAC và NA (Neighbor Advertisement) để trả lời."
-  },
-  {
-    "number": 19,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which two types of IPv6 messages are used in place of ARP for address resolution? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "anycast"},
-      {"key": "B", "text": "broadcast"},
-      {"key": "C", "text": "echo reply"},
-      {"key": "D", "text": "echo request"},
-      {"key": "E", "text": "neighbor solicitation"},
-      {"key": "F", "text": "neighbor advertisement"}
-    ],
-    "answer": ["E", "F"],
-    "answerRaw": "E, F — neighbor solicitation, neighbor advertisement",
-    "explanation": "Câu 19 trùng lặp nội dung với Câu 18. Đáp án vẫn là NS và NA."
-  },
-  {
-    "number": 20,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Where are IPv4 address to Layer 2 Ethernet address mappings maintained on a host computer?",
-    "options": [
-      {"key": "A", "text": "neighbor table"},
-      {"key": "B", "text": "ARP cache"},
-      {"key": "C", "text": "routing table"},
-      {"key": "D", "text": "MAC address table"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — ARP cache",
-    "explanation": "Máy tính lưu trữ tạm thời các ánh xạ IP-to-MAC trong bộ nhớ đệm ARP (ARP cache)."
-  },
-  {
-    "number": 21,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What type of network traffic requires QoS?",
-    "options": [
-      {"key": "A", "text": "email"},
-      {"key": "B", "text": "on-line purchasing"},
-      {"key": "C", "text": "video conferencing"},
-      {"key": "D", "text": "wiki"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — video conferencing",
-    "explanation": "Video conferencing (hội nghị truyền hình) là lưu lượng thời gian thực, rất nhạy cảm với độ trễ và mất mát dữ liệu, nên cần QoS để ưu tiên."
-  },
-  {
-    "number": 22,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which type of network topology lets you see the actual location of intermediary devices and cable installation?",
-    "options": [
-      {"key": "A", "text": "Physical topology"},
-      {"key": "B", "text": "Logical topology"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — Physical topology",
-    "explanation": "Physical topology hiển thị vị trí lắp đặt thực tế của các thiết bị và hệ thống dây cáp."
-  },
-  {
-    "number": 23,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which two devices are intermediary devices? (Choose two)",
-    "options": [
-      {"key": "A", "text": "Hosts"},
-      {"key": "B", "text": "Routers"},
-      {"key": "C", "text": "Servers"},
-      {"key": "D", "text": "Switches"}
-    ],
-    "answer": ["B", "D"],
-    "answerRaw": "B, D — Routers, Switches",
-    "explanation": "Router và Switch là thiết bị trung gian (intermediary devices) có chức năng định tuyến và chuyển mạch. Host và Server là thiết bị đầu cuối (end devices)."
-  },
-  {
-    "number": 24,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which part of an Ethernet frame detects errors in the frame?",
-    "options": [
-      {"key": "A", "text": "Preamble"},
-      {"key": "B", "text": "Start of Frame Delimiter"},
-      {"key": "C", "text": "Frame Check Sequence"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — Frame Check Sequence",
-    "explanation": "Trường FCS (Frame Check Sequence) ở cuối Ethernet frame chứa mã CRC dùng để phát hiện lỗi."
-  },
-  {
-    "number": 26,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the special value assigned to the first 24 bits of a multicast MAC address transporting an IPv4 packet?",
-    "options": [
-      {"key": "A", "text": "01-00-5E"},
-      {"key": "B", "text": "FF-00-5E"},
-      {"key": "C", "text": "01-5E-00"},
-      {"key": "D", "text": "FF-FF-FF"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — 01-00-5E",
-    "explanation": "Địa chỉ MAC Multicast cho IPv4 luôn bắt đầu bằng 24 bit: 01-00-5E."
-  },
-  {
-    "number": 27,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which network device has the primary function to send data to a specific destination based on the information found in the MAC address table?",
-    "options": [
-      {"key": "A", "text": "Hub"},
-      {"key": "B", "text": "Router"},
-      {"key": "C", "text": "Switch"},
-      {"key": "D", "text": "Modem"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — Switch",
-    "explanation": "Switch (thiết bị chuyển mạch lớp 2) sử dụng bảng địa chỉ MAC để chuyển tiếp frame đến đúng cổng đích."
-  },
-  {
-    "number": 28,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A technician uses the ping 127.0.0.1 command. What is the technician testing?",
-    "options": [
-      {"key": "A", "text": "the TCP/IP stack on a network host"},
-      {"key": "B", "text": "connectivity between two adjacent Cisco devices"},
-      {"key": "C", "text": "connectivity between a PC and the default gateway"},
-      {"key": "D", "text": "connectivity between two PCs on the same network"},
-      {"key": "E", "text": "physical connectivity of a particular PC and the network"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — the TCP/IP stack on a network host",
-    "explanation": "Địa chỉ 127.0.0.1 là loopback, dùng để kiểm tra xem phần mềm TCP/IP trên chính máy tính đó có hoạt động bình thường không."
-  },
-  {
-    "number": 29,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What does the \"Time Exceeded\" ICMP message indicate?",
-    "options": [
-      {"key": "A", "text": "The destination host is down"},
-      {"key": "B", "text": "The packet's TTL has reached zero"},
-      {"key": "C", "text": "The source address is unreachable"},
-      {"key": "D", "text": "The network is congested"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — The packet's TTL has reached zero",
-    "explanation": "ICMP Time Exceeded được gửi khi giá trị TTL (Time to Live) của gói tin giảm về 0."
-  },
-  {
-    "number": 30,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A user executes a traceroute over IPv6. At what point would a router in the path to the destination device drop the packet?",
-    "options": [
-      {"key": "A", "text": "when the value of the Hop Limit field reaches 255"},
-      {"key": "B", "text": "when the value of the Hop Limit field reaches zero"},
-      {"key": "C", "text": "when the router receives an ICMP time exceeded message"},
-      {"key": "D", "text": "when the target host responds with an ICMP echo reply message"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — when the value of the Hop Limit field reaches zero",
-    "explanation": "Tương tự TTL trong IPv4, trường Hop Limit trong IPv6 khi giảm về 0 sẽ khiến router hủy gói tin và gửi thông báo Time Exceeded."
-  },
-  {
-    "number": 31,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which two statements describe the characteristics of fiber-optic cabling? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "Fiber-optic cabling does not conduct electricity."},
-      {"key": "B", "text": "Fiber-optic cabling has high signal loss."},
-      {"key": "C", "text": "Fiber-optic cabling is primarily used as backbone cabling."},
-      {"key": "D", "text": "Multimode fiber-optic cabling carries signals from multiple sending devices."},
-      {"key": "E", "text": "Fiber-optic cabling uses LEDs for single-mode cables and laser technology for multimode cables."}
-    ],
-    "answer": ["A", "C"],
-    "answerRaw": "A, C — Fiber-optic cabling does not conduct electricity., Fiber-optic cabling is primarily used as backbone cabling.",
-    "explanation": "Cáp quang không dẫn điện (an toàn) và thường được dùng làm đường trục (backbone) nhờ băng thông lớn và khoảng cách xa."
-  },
-  {
-    "number": 32,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A network administrator is measuring the transfer of bits across the company backbone for a mission critical financial application. The administrator notices that the network throughput appears lower than the bandwidth expected. Which three factors could influence the differences in throughput? (Choose three.)",
-    "options": [
-      {"key": "A", "text": "the amount of traffic that is currently crossing the network"},
-      {"key": "B", "text": "the sophistication of the encapsulation method applied to the data"},
-      {"key": "C", "text": "the type of traffic that is crossing the network"},
-      {"key": "D", "text": "the latency that is created by the number of network devices that the data is crossing"},
-      {"key": "E", "text": "the bandwidth of the WAN connection to the Internet"},
-      {"key": "F", "text": "the reliability of the gigabit Ethernet infrastructure of the backbone"}
-    ],
-    "answer": ["A", "C", "D"],
-    "answerRaw": "A, C, D — the amount of traffic..., the type of traffic..., the latency...",
-    "explanation": "Throughput phụ thuộc vào lượng lưu lượng hiện tại (A), loại lưu lượng (C), và độ trễ do nhiều thiết bị trung gian (D)."
-  },
-  {
-    "number": 33,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which of these is the name for the capacity of a medium to carry data?",
-    "options": [
-      {"key": "A", "text": "Bandwidth"},
-      {"key": "B", "text": "Throughput"},
-      {"key": "C", "text": "Goodput"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — Bandwidth",
-    "explanation": "Bandwidth (băng thông) là dung lượng tối đa mà một môi trường truyền dẫn có thể mang trong một khoảng thời gian."
-  },
-  {
-    "number": 34,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which two functions are primary functions of a router? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "packet forwarding"},
-      {"key": "B", "text": "microsegmentation"},
-      {"key": "C", "text": "domain name resolution"},
-      {"key": "D", "text": "path selection"},
-      {"key": "E", "text": "flow control"}
-    ],
-    "answer": ["A", "D"],
-    "answerRaw": "A, D — packet forwarding, path selection",
-    "explanation": "Router có 2 chức năng chính: chuyển tiếp gói tin (packet forwarding) và chọn đường đi (path selection)."
-  },
-  {
-    "number": 35,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What are two functions of NVRAM? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "to store the routing table"},
-      {"key": "B", "text": "to retain contents when power is removed"},
-      {"key": "C", "text": "to store the startup configuration file"},
-      {"key": "D", "text": "to contain the running configuration file"},
-      {"key": "E", "text": "to store the ARP table"}
-    ],
-    "answer": ["B", "C"],
-    "answerRaw": "B, C — to retain contents when power is removed, to store the startup configuration file",
-    "explanation": "NVRAM giữ nội dung khi mất điện (B) và lưu file cấu hình khởi động (startup-config) (C)."
-  },
-  {
-    "number": 36,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is stored in the NVRAM of a Cisco router?",
-    "options": [
-      {"key": "A", "text": "The Cisco IOS"},
-      {"key": "B", "text": "The running configuration"},
-      {"key": "C", "text": "The bootup instructions"},
-      {"key": "D", "text": "The startup configuration"}
-    ],
-    "answer": ["D"],
-    "answerRaw": "D — The startup configuration",
-    "explanation": "NVRAM lưu trữ file cấu hình khởi động (startup configuration)."
-  },
-  {
-    "number": 37,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "A new network administrator has been asked to enter a banner message on a Cisco device. What is the fastest way a network administrator could test whether the banner is properly configured?",
-    "options": [
-      {"key": "A", "text": "Reboot the device."},
-      {"key": "B", "text": "Enter CTRL-Z at the privileged mode prompt."},
-      {"key": "C", "text": "Exit global configuration mode."},
-      {"key": "D", "text": "Power cycle the device."},
-      {"key": "E", "text": "Exit privileged EXEC mode and press Enter."}
-    ],
-    "answer": ["E"],
-    "answerRaw": "E — Exit privileged EXEC mode and press Enter.",
-    "explanation": "Cách nhanh nhất để kiểm tra banner là thoát khỏi chế độ EXEC đặc quyền và nhấn Enter, banner sẽ hiển thị ngay lập tức."
-  },
-  {
-    "number": 38,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the loopback address used for in IPv4 networking?",
-    "options": [
-      {"key": "A", "text": "To route packets to a different network"},
-      {"key": "B", "text": "To test if the TCP/IP stack is functioning correctly"},
-      {"key": "C", "text": "To identify the default gateway"},
-      {"key": "D", "text": "To assign a dynamic IP address"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — To test if the TCP/IP stack is functioning correctly",
-    "explanation": "Địa chỉ loopback (127.0.0.1) dùng để kiểm tra xem ngăn xếp giao thức TCP/IP (TCP/IP stack) trên máy tính đó có hoạt động bình thường không."
-  },
-  {
-    "number": 39,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the prefix length notation for the subnet mask 255.255.255.224?",
-    "options": [
-      {"key": "A", "text": "/28"},
-      {"key": "B", "text": "/27"},
-      {"key": "C", "text": "/26"},
-      {"key": "D", "text": "/25"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — /27",
-    "explanation": "Subnet mask 255.255.255.224 có 27 bit mạng (24 bit đầu + 3 bit ở octet thứ 4: 11100000 = 224)."
-  },
-  {
-    "number": 40,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the main purpose of a subnet mask in IPv4 addressing?",
-    "options": [
-      {"key": "A", "text": "To identify the gateway of the network"},
-      {"key": "B", "text": "To determine the network and host portions of an IP address"},
-      {"key": "C", "text": "To provide security by masking IP addresses"},
-      {"key": "D", "text": "To route packets between networks"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — To determine the network and host portions of an IP address",
-    "explanation": "Subnet mask được dùng để xác định đâu là phần mạng (network portion) và đâu là phần máy chủ (host portion) trong một địa chỉ IPv4."
-  },
-  {
-    "number": 41,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "An administrator wants to create four subnetworks from the network address 192.168.1.0/24. What is the network address and subnet mask of the second useable subnet?",
-    "options": [
-      {"key": "A", "text": "subnetwork 192.168.1.64 subnet mask 255.255.255.192"},
-      {"key": "B", "text": "subnetwork 192.168.1.32 subnet mask 255.255.255.240"},
-      {"key": "C", "text": "subnetwork 192.168.1.64 subnet mask 255.255.255.240"},
-      {"key": "D", "text": "subnetwork 192.168.1.128 subnet mask 255.255.255.192"},
-      {"key": "E", "text": "subnetwork 192.168.1.8 subnet mask 255.255.255.224"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — subnetwork 192.168.1.64 subnet mask 255.255.255.192",
-    "explanation": "Chia mạng /24 thành 4 mạng con cần mượn 2 bit (2^2 = 4), tức là dùng prefix /26 (mask 255.255.255.192). Bước nhảy là 64. Mạng con thứ 1: .0, thứ 2: .64, thứ 3: .128, thứ 4: .192."
-  },
-  {
-    "number": 42,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Which access method would be the most appropriate in-band access to the IOS over a network connection?",
-    "options": [
-      {"key": "A", "text": "Console"},
-      {"key": "B", "text": "Telnet/SSH"},
-      {"key": "C", "text": "Aux"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — Telnet/SSH",
-    "explanation": "In-band access qua mạng IP sử dụng Telnet hoặc SSH. Console và Aux là các phương pháp out-of-band."
-  },
-  {
-    "number": 43,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "An administrator is configuring a switch console port with a password. In what order will the administrator travel through the IOS modes of operation in order to reach the mode in which the configuration commands will be entered? (Not all options are used.)\nA. first mode\nB. second mode\nC. third mode\nD. final mode\n1. interface configuration mode\n2. privileged EXEC mode\n3. line configuration mode\n4. global configuration mode\n5. user EXEC mode",
-    "options": [
-      {"key": "A", "text": "A5-B2-C4-D3"},
-      {"key": "B", "text": "A1-B2-C3-D4"},
-      {"key": "C", "text": "A2-B1-C4-D3"},
-      {"key": "D", "text": "A5-B1-C2-D3"}
-    ],
-    "answer": ["A"],
-    "answerRaw": "A — A5-B2-C4-D3",
-    "explanation": "Để cấu hình cổng console: Từ User EXEC (5) -> Privileged EXEC (2) -> Global Config (4) -> Line Config (3). Tương ứng A5-B2-C4-D3."
-  },
-  {
-    "number": 44,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Why would a Layer 2 switch need an IP address?",
-    "options": [
-      {"key": "A", "text": "to enable the switch to send broadcast frames to attached PCs"},
-      {"key": "B", "text": "to enable the switch to function as a default gateway"},
-      {"key": "C", "text": "to enable the switch to be managed remotely"},
-      {"key": "D", "text": "to enable the switch to receive frames from attached PCs"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — to enable the switch to be managed remotely",
-    "explanation": "Switch L2 cần địa chỉ IP (gán cho SVI) để có thể được quản lý từ xa qua Telnet, SSH, SNMP..."
-  },
-  {
-    "number": 45,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "How is the privileged EXEC mode access secured on a switch?",
-    "options": [
-      {"key": "A", "text": "enable class"},
-      {"key": "B", "text": "secret class"},
-      {"key": "C", "text": "enable secret cisco@12345"},
-      {"key": "D", "text": "service password-encryption"}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — enable secret cisco@12345",
-    "explanation": "Lệnh `enable secret <password>` đặt mật khẩu được mã hóa mạnh (MD5) để bảo vệ chế độ Privileged EXEC."
-  },
-  {
-    "number": 46,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What are the two most commonly referenced fields in an IPv4 packet header that indicate where the packet is coming from and where it is going? (Choose two.)",
-    "options": [
-      {"key": "A", "text": "Destination IP address"},
-      {"key": "B", "text": "Protocol"},
-      {"key": "C", "text": "Time to live"},
-      {"key": "D", "text": "Differentiated Service (DS)"},
-      {"key": "E", "text": "Source IP address"}
-    ],
-    "answer": ["A", "E"],
-    "answerRaw": "A, E — Destination IP address, Source IP address",
-    "explanation": "Source IP (nguồn) và Destination IP (đích) là hai trường quan trọng nhất xác định nơi gửi và nơi nhận gói tin."
-  },
-  {
-    "number": 47,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What destination MAC address would be included in a frame sent from a source device to a destination device on a remote local network?",
-    "options": [
-      {"key": "A", "text": "A broadcast MAC address of FF-FF-FF-FF-FF-FF."},
-      {"key": "B", "text": "The MAC address of the destination device."},
-      {"key": "C", "text": "The MAC address of the local router interface."}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — The MAC address of the local router interface.",
-    "explanation": "Khi gửi đến một thiết bị ở mạng khác, gói tin phải đi qua Default Gateway. Do đó, MAC đích của frame sẽ là MAC của cổng router gần nhất."
-  },
-  {
-    "number": 48,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "When transporting data from real-time applications, such as streaming audio and video, which field in the IPv6 header can be used to inform the routers and switches to maintain the same path for the packets in the same conversation?",
-    "options": [
-      {"key": "A", "text": "Next Header"},
-      {"key": "B", "text": "Flow Label"},
-      {"key": "C", "text": "Traffic Class"},
-      {"key": "D", "text": "Differentiated Services"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — Flow Label",
-    "explanation": "Trường Flow Label (20 bit) trong IPv6 header được dùng để nhận diện các luồng dữ liệu (flow) nhằm duy trì cùng một đường đi cho các gói tin thời gian thực."
-  },
-  {
-    "number": 49,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "Within a production network, what is the purpose of configuring a switch with a default gateway address?",
-    "options": [
-      {"key": "A", "text": "Hosts that are connected to the switch can use the switch default gateway address to forward packets to a remote destination."},
-      {"key": "B", "text": "A switch must have a default gateway to be accessible by Telnet and SSH."},
-      {"key": "C", "text": "The default gateway address is used to forward packets originating from the switch to remote networks."},
-      {"key": "D", "text": "It provides a next-hop address for all traffic that flows through the switch."}
-    ],
-    "answer": ["C"],
-    "answerRaw": "C — The default gateway address is used to forward packets originating from the switch to remote networks.",
-    "explanation": "Switch L2 cần default gateway để tự chuyển tiếp các gói tin quản lý (do chính switch tạo ra) đi đến các mạng từ xa."
-  },
-  {
-    "number": 50,
-    "total": 50,
-    "examName": "SP25_De_1",
-    "raw": "What is the primary purpose of the ICMP protocol?",
-    "options": [
-      {"key": "A", "text": "To route packets across different networks"},
-      {"key": "B", "text": "To provide feedback about issues related to IP packet processing"},
-      {"key": "C", "text": "To encrypt data before transmission"},
-      {"key": "D", "text": "To assign IP addresses to devices"}
-    ],
-    "answer": ["B"],
-    "answerRaw": "B — To provide feedback about issues related to IP packet processing",
-    "explanation": "ICMP cung cấp thông tin phản hồi về các lỗi hoặc vấn đề xảy ra trong quá trình xử lý và truyền gói tin IP."
-  }
-]
+{
+  "questions": [
+    {
+      "number": 1,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A PC is downloading a large file from a server. The TCP window is 1000 bytes. The server is sending the file using 100-byte segments. How many segments will the server send before it requires an acknowledgment from the PC?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 segment"
+        },
+        {
+          "key": "B",
+          "text": "10 segments"
+        },
+        {
+          "key": "C",
+          "text": "100 segments"
+        },
+        {
+          "key": "D",
+          "text": "1000 segments"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — 10 segments",
+      "explanation": "Kích thước cửa sổ TCP (window size) là 1000 bytes. Mỗi segment có kích thước 100 bytes. Do đó, server có thể gửi 1000/100 = 10 segments trước khi cần nhận ACK từ PC."
+    },
+    {
+      "number": 2,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A client packet is received by a server. The packet has a destination port number of 22. What service is the client requesting?",
+      "options": [
+        {
+          "key": "A",
+          "text": "SSH"
+        },
+        {
+          "key": "B",
+          "text": "DHCP"
+        },
+        {
+          "key": "C",
+          "text": "DNS"
+        },
+        {
+          "key": "D",
+          "text": "TFTP"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — SSH",
+      "explanation": "Cổng 22 là cổng mặc định của giao thức SSH (Secure Shell). DHCP dùng cổng 67/68, DNS dùng cổng 53, TFTP dùng cổng 69."
+    },
+    {
+      "number": 3,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which two fields are the same in a TCP and UDP header? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Control bits"
+        },
+        {
+          "key": "B",
+          "text": "Destination port number"
+        },
+        {
+          "key": "C",
+          "text": "Sequence number"
+        },
+        {
+          "key": "D",
+          "text": "Source port number"
+        },
+        {
+          "key": "E",
+          "text": "Well-known port number"
+        }
+      ],
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answerRaw": "B, D — Destination port number, Source port number",
+      "explanation": "Cả TCP và UDP đều có trường Source Port và Destination Port (16 bit mỗi trường) để định danh ứng dụng. Control bits và Sequence number chỉ có trong TCP."
+    },
+    {
+      "number": 4,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "How are port numbers used in the TCP/IP encapsulation process?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Source port numbers and destination port numbers are not necessary when UDP is the transport layer protocol being used for the communication."
+        },
+        {
+          "key": "B",
+          "text": "Source port and destination port numbers are randomly generated."
+        },
+        {
+          "key": "C",
+          "text": "If multiple conversations occur that are using the same service, the source port number is used to track the separate conversations."
+        },
+        {
+          "key": "D",
+          "text": "Destination port numbers are assigned automatically and cannot be changed."
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — If multiple conversations occur that are using the same service, the source port number is used to track the separate conversations.",
+      "explanation": "Source port kết hợp với IP nguồn tạo thành một socket duy nhất, giúp thiết bị phân biệt được các phiên kết nối khác nhau (ví dụ: nhiều tab web cùng truy cập cổng 80)."
+    },
+    {
+      "number": 5,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which topology displays networking device layer IP addresses?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Aerial topology"
+        },
+        {
+          "key": "B",
+          "text": "IP address topology"
+        },
+        {
+          "key": "C",
+          "text": "Logical topology"
+        },
+        {
+          "key": "D",
+          "text": "Physical topology"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — Logical topology",
+      "explanation": "Logical topology hiển thị địa chỉ IP và cấu trúc logic của mạng. Physical topology hiển thị vị trí thực tế của thiết bị và dây cáp."
+    },
+    {
+      "number": 6,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which statement describes a characteristic of the frame header fields of the data link layer?",
+      "options": [
+        {
+          "key": "A",
+          "text": "They all include the flow control and logical connection fields."
+        },
+        {
+          "key": "B",
+          "text": "Ethernet frame header fields contain Layer 3 source and destination addresses."
+        },
+        {
+          "key": "C",
+          "text": "They vary depending on protocols."
+        },
+        {
+          "key": "D",
+          "text": "They include information on user applications."
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — They vary depending on protocols.",
+      "explanation": "Cấu trúc frame header thay đổi tùy thuộc vào giao thức ở lớp Data Link (ví dụ: Ethernet, PPP, HDLC có header khác nhau)."
+    },
+    {
+      "number": 7,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which statement describes the half-duplex mode of data transmission?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Data that is transmitted over the network can only flow in one direction."
+        },
+        {
+          "key": "B",
+          "text": "Data that is transmitted over the network flows in both directions at the same time."
+        },
+        {
+          "key": "C",
+          "text": "Data that is transmitted over the network flows in one direction to many different destinations simultaneously."
+        },
+        {
+          "key": "D",
+          "text": "Data that is transmitted over the network flows in one direction at a time."
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "answerRaw": "D — Data that is transmitted over the network flows in one direction at a time.",
+      "explanation": "Half-duplex (bán song công) cho phép dữ liệu truyền theo cả 2 hướng, nhưng tại một thời điểm chỉ có một hướng được truyền."
+    },
+    {
+      "number": 8,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A web client is receiving a response for a web page from a web server. From the perspective of the client, what is the correct order of the protocol stack that is used to decode the received transmission?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Ethernet, IP, TCP, HTTP"
+        },
+        {
+          "key": "B",
+          "text": "HTTP, TCP, IP, Ethernet"
+        },
+        {
+          "key": "C",
+          "text": "Ethernet, TCP, IP, HTTP"
+        },
+        {
+          "key": "D",
+          "text": "HTTP, Ethernet, IP, TCP"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — Ethernet, IP, TCP, HTTP",
+      "explanation": "Khi client nhận dữ liệu, quá trình giải mã (decapsulation) đi từ dưới lên: nhận tín hiệu Ethernet -> xử lý IP -> xử lý TCP -> chuyển lên HTTP."
+    },
+    {
+      "number": 9,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the process of dividing a large data stream into smaller pieces prior to transmission?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Sequencing"
+        },
+        {
+          "key": "B",
+          "text": "Duplexing"
+        },
+        {
+          "key": "C",
+          "text": "Multiplexing"
+        },
+        {
+          "key": "D",
+          "text": "segmentation"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "answerRaw": "D — segmentation",
+      "explanation": "Quá trình chia nhỏ dữ liệu thành các đơn vị nhỏ hơn để truyền đi được gọi là segmentation (phân đoạn)."
+    },
+    {
+      "number": 10,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the auto-MDIX feature on a switch?",
+      "options": [
+        {
+          "key": "A",
+          "text": "the automatic configuration of an interface for 10/100/1000 Mb/s operation"
+        },
+        {
+          "key": "B",
+          "text": "the automatic configuration of an interface for a straight-through or a crossover Ethernet cable connection"
+        },
+        {
+          "key": "C",
+          "text": "the automatic configuration of full-duplex operation over a single Ethernet copper or optical cable"
+        },
+        {
+          "key": "D",
+          "text": "the ability to turn a switch interface on or off accordingly if an active connection is detected"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — the automatic configuration of an interface for a straight-through or a crossover Ethernet cable connection",
+      "explanation": "Auto-MDIX tự động phát hiện loại cáp (thẳng hay chéo) và tự động cấu hình các cặp chân TX/RX để kết nối hoạt động bình thường."
+    },
+    {
+      "number": 11,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which statement accurately describes a TCP/IP encapsulation process when a PC is sending data to the network?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Data is sent from the internet layer to the network access layer."
+        },
+        {
+          "key": "B",
+          "text": "Packets are sent from the network access layer to the transport layer."
+        },
+        {
+          "key": "C",
+          "text": "Segments are sent from the transport layer to the internet layer."
+        },
+        {
+          "key": "D",
+          "text": "Frames are sent from the network access layer to the internet layer."
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — Segments are sent from the transport layer to the internet layer.",
+      "explanation": "Quá trình đóng gói (encapsulation) đi từ trên xuống: Transport layer tạo ra Segment và gửi xuống Internet layer (Network layer)."
+    },
+    {
+      "number": 12,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which protocol is used by an FTP client to establish a control connection with the FTP server?",
+      "options": [
+        {
+          "key": "A",
+          "text": "TCP port 20"
+        },
+        {
+          "key": "B",
+          "text": "TCP port 21"
+        },
+        {
+          "key": "C",
+          "text": "UDP port 53"
+        },
+        {
+          "key": "D",
+          "text": "TCP port 25"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — TCP port 21",
+      "explanation": "FTP sử dụng TCP port 21 để thiết lập kết nối điều khiển (control connection) và TCP port 20 cho kết nối dữ liệu (data connection)."
+    },
+    {
+      "number": 13,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What process does a device use to verify that its IPv6 address is unique on the network?",
+      "options": [
+        {
+          "key": "A",
+          "text": "DHCPv6"
+        },
+        {
+          "key": "B",
+          "text": "SLAAC"
+        },
+        {
+          "key": "C",
+          "text": "Neighbor Discovery Protocol (NDP)"
+        },
+        {
+          "key": "D",
+          "text": "Duplicate Address Detection (DAD)"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "answerRaw": "D — Duplicate Address Detection (DAD)",
+      "explanation": "DAD (Duplicate Address Detection) gửi gói Neighbor Solicitation để kiểm tra xem địa chỉ IPv6 dự kiến gán có bị trùng với thiết bị nào khác trên mạng hay không."
+    },
+    {
+      "number": 14,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What type of address is automatically assigned to an interface when IPv6 is enabled on that interface?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Loopback"
+        },
+        {
+          "key": "B",
+          "text": "Global unicast"
+        },
+        {
+          "key": "C",
+          "text": "Link-local"
+        },
+        {
+          "key": "D",
+          "text": "Unique local"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — Link-local",
+      "explanation": "Khi bật IPv6 trên một interface, thiết bị sẽ tự động tạo một địa chỉ Link-local (bắt đầu bằng fe80::) mà không cần DHCP."
+    },
+    {
+      "number": 15,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which of the following techniques use native IPv6 connectivity?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Dual stack"
+        },
+        {
+          "key": "B",
+          "text": "Tunelling"
+        },
+        {
+          "key": "C",
+          "text": "Translation"
+        },
+        {
+          "key": "D",
+          "text": "All of the above"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — Dual stack",
+      "explanation": "Dual-stack (chạy song song cả IPv4 và IPv6) cho phép thiết bị có kết nối IPv6 thuần túy (native). Tunneling và Translation chỉ là các giải pháp chuyển đổi tạm thời."
+    },
+    {
+      "number": 16,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which address type is not supported in IPv6?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Multicast"
+        },
+        {
+          "key": "B",
+          "text": "Private"
+        },
+        {
+          "key": "C",
+          "text": "Unicast"
+        },
+        {
+          "key": "D",
+          "text": "Broadcast"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "answerRaw": "D — Broadcast",
+      "explanation": "IPv6 không hỗ trợ địa chỉ Broadcast. Chức năng của Broadcast được thay thế bằng Multicast trong IPv6."
+    },
+    {
+      "number": 17,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the aim of an ARP spoofing attack?",
+      "options": [
+        {
+          "key": "A",
+          "text": "to flood the network with ARP reply broadcasts"
+        },
+        {
+          "key": "B",
+          "text": "to fill switch MAC address tables with bogus addresses"
+        },
+        {
+          "key": "C",
+          "text": "to associate IP addresses to the wrong MAC address"
+        },
+        {
+          "key": "D",
+          "text": "to overwhelm network hosts with ARP requests"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — to associate IP addresses to the wrong MAC address",
+      "explanation": "Kẻ tấn công gửi gói tin ARP giả mạo để liên kết địa chỉ IP của nạn nhân với địa chỉ MAC của kẻ tấn công, giúp chúng chặn và đánh cắp dữ liệu (Man-in-the-Middle)."
+    },
+    {
+      "number": 18,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which two types of IPv6 messages are used in place of ARP for address resolution? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Anycast"
+        },
+        {
+          "key": "B",
+          "text": "Broadcast"
+        },
+        {
+          "key": "C",
+          "text": "echo reply"
+        },
+        {
+          "key": "D",
+          "text": "echo request"
+        },
+        {
+          "key": "E",
+          "text": "neighbor solicitation"
+        },
+        {
+          "key": "F",
+          "text": "neighbor advertisement"
+        }
+      ],
+      "answer": [
+        "E",
+        "F"
+      ],
+      "answerRaw": "E, F — neighbor solicitation, neighbor advertisement",
+      "explanation": "IPv6 sử dụng tin nhắn NS (Neighbor Solicitation) để yêu cầu địa chỉ MAC và NA (Neighbor Advertisement) để trả lời."
+    },
+    {
+      "number": 19,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which two types of IPv6 messages are used in place of ARP for address resolution? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "anycast"
+        },
+        {
+          "key": "B",
+          "text": "broadcast"
+        },
+        {
+          "key": "C",
+          "text": "echo reply"
+        },
+        {
+          "key": "D",
+          "text": "echo request"
+        },
+        {
+          "key": "E",
+          "text": "neighbor solicitation"
+        },
+        {
+          "key": "F",
+          "text": "neighbor advertisement"
+        }
+      ],
+      "answer": [
+        "E",
+        "F"
+      ],
+      "answerRaw": "E, F — neighbor solicitation, neighbor advertisement",
+      "explanation": "Câu 19 trùng lặp nội dung với Câu 18. Đáp án vẫn là NS và NA."
+    },
+    {
+      "number": 20,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Where are IPv4 address to Layer 2 Ethernet address mappings maintained on a host computer?",
+      "options": [
+        {
+          "key": "A",
+          "text": "neighbor table"
+        },
+        {
+          "key": "B",
+          "text": "ARP cache"
+        },
+        {
+          "key": "C",
+          "text": "routing table"
+        },
+        {
+          "key": "D",
+          "text": "MAC address table"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — ARP cache",
+      "explanation": "Máy tính lưu trữ tạm thời các ánh xạ IP-to-MAC trong bộ nhớ đệm ARP (ARP cache)."
+    },
+    {
+      "number": 21,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What type of network traffic requires QoS?",
+      "options": [
+        {
+          "key": "A",
+          "text": "email"
+        },
+        {
+          "key": "B",
+          "text": "on-line purchasing"
+        },
+        {
+          "key": "C",
+          "text": "video conferencing"
+        },
+        {
+          "key": "D",
+          "text": "wiki"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — video conferencing",
+      "explanation": "Video conferencing (hội nghị truyền hình) là lưu lượng thời gian thực, rất nhạy cảm với độ trễ và mất mát dữ liệu, nên cần QoS để ưu tiên."
+    },
+    {
+      "number": 22,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which type of network topology lets you see the actual location of intermediary devices and cable installation?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Physical topology"
+        },
+        {
+          "key": "B",
+          "text": "Logical topology"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — Physical topology",
+      "explanation": "Physical topology hiển thị vị trí lắp đặt thực tế của các thiết bị và hệ thống dây cáp."
+    },
+    {
+      "number": 23,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which two devices are intermediary devices? (Choose two)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hosts"
+        },
+        {
+          "key": "B",
+          "text": "Routers"
+        },
+        {
+          "key": "C",
+          "text": "Servers"
+        },
+        {
+          "key": "D",
+          "text": "Switches"
+        }
+      ],
+      "answer": [
+        "B",
+        "D"
+      ],
+      "answerRaw": "B, D — Routers, Switches",
+      "explanation": "Router và Switch là thiết bị trung gian (intermediary devices) có chức năng định tuyến và chuyển mạch. Host và Server là thiết bị đầu cuối (end devices)."
+    },
+    {
+      "number": 24,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which part of an Ethernet frame detects errors in the frame?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Preamble"
+        },
+        {
+          "key": "B",
+          "text": "Start of Frame Delimiter"
+        },
+        {
+          "key": "C",
+          "text": "Frame Check Sequence"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — Frame Check Sequence",
+      "explanation": "Trường FCS (Frame Check Sequence) ở cuối Ethernet frame chứa mã CRC dùng để phát hiện lỗi."
+    },
+    {
+      "number": 26,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the special value assigned to the first 24 bits of a multicast MAC address transporting an IPv4 packet?",
+      "options": [
+        {
+          "key": "A",
+          "text": "01-00-5E"
+        },
+        {
+          "key": "B",
+          "text": "FF-00-5E"
+        },
+        {
+          "key": "C",
+          "text": "01-5E-00"
+        },
+        {
+          "key": "D",
+          "text": "FF-FF-FF"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — 01-00-5E",
+      "explanation": "Địa chỉ MAC Multicast cho IPv4 luôn bắt đầu bằng 24 bit: 01-00-5E."
+    },
+    {
+      "number": 27,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which network device has the primary function to send data to a specific destination based on the information found in the MAC address table?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hub"
+        },
+        {
+          "key": "B",
+          "text": "Router"
+        },
+        {
+          "key": "C",
+          "text": "Switch"
+        },
+        {
+          "key": "D",
+          "text": "Modem"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — Switch",
+      "explanation": "Switch (thiết bị chuyển mạch lớp 2) sử dụng bảng địa chỉ MAC để chuyển tiếp frame đến đúng cổng đích."
+    },
+    {
+      "number": 28,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A technician uses the ping 127.0.0.1 command. What is the technician testing?",
+      "options": [
+        {
+          "key": "A",
+          "text": "the TCP/IP stack on a network host"
+        },
+        {
+          "key": "B",
+          "text": "connectivity between two adjacent Cisco devices"
+        },
+        {
+          "key": "C",
+          "text": "connectivity between a PC and the default gateway"
+        },
+        {
+          "key": "D",
+          "text": "connectivity between two PCs on the same network"
+        },
+        {
+          "key": "E",
+          "text": "physical connectivity of a particular PC and the network"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — the TCP/IP stack on a network host",
+      "explanation": "Địa chỉ 127.0.0.1 là loopback, dùng để kiểm tra xem phần mềm TCP/IP trên chính máy tính đó có hoạt động bình thường không."
+    },
+    {
+      "number": 29,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What does the \"Time Exceeded\" ICMP message indicate?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The destination host is down"
+        },
+        {
+          "key": "B",
+          "text": "The packet's TTL has reached zero"
+        },
+        {
+          "key": "C",
+          "text": "The source address is unreachable"
+        },
+        {
+          "key": "D",
+          "text": "The network is congested"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — The packet's TTL has reached zero",
+      "explanation": "ICMP Time Exceeded được gửi khi giá trị TTL (Time to Live) của gói tin giảm về 0."
+    },
+    {
+      "number": 30,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A user executes a traceroute over IPv6. At what point would a router in the path to the destination device drop the packet?",
+      "options": [
+        {
+          "key": "A",
+          "text": "when the value of the Hop Limit field reaches 255"
+        },
+        {
+          "key": "B",
+          "text": "when the value of the Hop Limit field reaches zero"
+        },
+        {
+          "key": "C",
+          "text": "when the router receives an ICMP time exceeded message"
+        },
+        {
+          "key": "D",
+          "text": "when the target host responds with an ICMP echo reply message"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — when the value of the Hop Limit field reaches zero",
+      "explanation": "Tương tự TTL trong IPv4, trường Hop Limit trong IPv6 khi giảm về 0 sẽ khiến router hủy gói tin và gửi thông báo Time Exceeded."
+    },
+    {
+      "number": 31,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which two statements describe the characteristics of fiber-optic cabling? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fiber-optic cabling does not conduct electricity."
+        },
+        {
+          "key": "B",
+          "text": "Fiber-optic cabling has high signal loss."
+        },
+        {
+          "key": "C",
+          "text": "Fiber-optic cabling is primarily used as backbone cabling."
+        },
+        {
+          "key": "D",
+          "text": "Multimode fiber-optic cabling carries signals from multiple sending devices."
+        },
+        {
+          "key": "E",
+          "text": "Fiber-optic cabling uses LEDs for single-mode cables and laser technology for multimode cables."
+        }
+      ],
+      "answer": [
+        "A",
+        "C"
+      ],
+      "answerRaw": "A, C — Fiber-optic cabling does not conduct electricity., Fiber-optic cabling is primarily used as backbone cabling.",
+      "explanation": "Cáp quang không dẫn điện (an toàn) và thường được dùng làm đường trục (backbone) nhờ băng thông lớn và khoảng cách xa."
+    },
+    {
+      "number": 32,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A network administrator is measuring the transfer of bits across the company backbone for a mission critical financial application. The administrator notices that the network throughput appears lower than the bandwidth expected. Which three factors could influence the differences in throughput? (Choose three.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "the amount of traffic that is currently crossing the network"
+        },
+        {
+          "key": "B",
+          "text": "the sophistication of the encapsulation method applied to the data"
+        },
+        {
+          "key": "C",
+          "text": "the type of traffic that is crossing the network"
+        },
+        {
+          "key": "D",
+          "text": "the latency that is created by the number of network devices that the data is crossing"
+        },
+        {
+          "key": "E",
+          "text": "the bandwidth of the WAN connection to the Internet"
+        },
+        {
+          "key": "F",
+          "text": "the reliability of the gigabit Ethernet infrastructure of the backbone"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "answerRaw": "A, C, D — the amount of traffic..., the type of traffic..., the latency...",
+      "explanation": "Throughput phụ thuộc vào lượng lưu lượng hiện tại (A), loại lưu lượng (C), và độ trễ do nhiều thiết bị trung gian (D)."
+    },
+    {
+      "number": 33,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which of these is the name for the capacity of a medium to carry data?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bandwidth"
+        },
+        {
+          "key": "B",
+          "text": "Throughput"
+        },
+        {
+          "key": "C",
+          "text": "Goodput"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — Bandwidth",
+      "explanation": "Bandwidth (băng thông) là dung lượng tối đa mà một môi trường truyền dẫn có thể mang trong một khoảng thời gian."
+    },
+    {
+      "number": 34,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which two functions are primary functions of a router? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "packet forwarding"
+        },
+        {
+          "key": "B",
+          "text": "microsegmentation"
+        },
+        {
+          "key": "C",
+          "text": "domain name resolution"
+        },
+        {
+          "key": "D",
+          "text": "path selection"
+        },
+        {
+          "key": "E",
+          "text": "flow control"
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "answerRaw": "A, D — packet forwarding, path selection",
+      "explanation": "Router có 2 chức năng chính: chuyển tiếp gói tin (packet forwarding) và chọn đường đi (path selection)."
+    },
+    {
+      "number": 35,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What are two functions of NVRAM? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "to store the routing table"
+        },
+        {
+          "key": "B",
+          "text": "to retain contents when power is removed"
+        },
+        {
+          "key": "C",
+          "text": "to store the startup configuration file"
+        },
+        {
+          "key": "D",
+          "text": "to contain the running configuration file"
+        },
+        {
+          "key": "E",
+          "text": "to store the ARP table"
+        }
+      ],
+      "answer": [
+        "B",
+        "C"
+      ],
+      "answerRaw": "B, C — to retain contents when power is removed, to store the startup configuration file",
+      "explanation": "NVRAM giữ nội dung khi mất điện (B) và lưu file cấu hình khởi động (startup-config) (C)."
+    },
+    {
+      "number": 36,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is stored in the NVRAM of a Cisco router?",
+      "options": [
+        {
+          "key": "A",
+          "text": "The Cisco IOS"
+        },
+        {
+          "key": "B",
+          "text": "The running configuration"
+        },
+        {
+          "key": "C",
+          "text": "The bootup instructions"
+        },
+        {
+          "key": "D",
+          "text": "The startup configuration"
+        }
+      ],
+      "answer": [
+        "D"
+      ],
+      "answerRaw": "D — The startup configuration",
+      "explanation": "NVRAM lưu trữ file cấu hình khởi động (startup configuration)."
+    },
+    {
+      "number": 37,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "A new network administrator has been asked to enter a banner message on a Cisco device. What is the fastest way a network administrator could test whether the banner is properly configured?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Reboot the device."
+        },
+        {
+          "key": "B",
+          "text": "Enter CTRL-Z at the privileged mode prompt."
+        },
+        {
+          "key": "C",
+          "text": "Exit global configuration mode."
+        },
+        {
+          "key": "D",
+          "text": "Power cycle the device."
+        },
+        {
+          "key": "E",
+          "text": "Exit privileged EXEC mode and press Enter."
+        }
+      ],
+      "answer": [
+        "E"
+      ],
+      "answerRaw": "E — Exit privileged EXEC mode and press Enter.",
+      "explanation": "Cách nhanh nhất để kiểm tra banner là thoát khỏi chế độ EXEC đặc quyền và nhấn Enter, banner sẽ hiển thị ngay lập tức."
+    },
+    {
+      "number": 38,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the loopback address used for in IPv4 networking?",
+      "options": [
+        {
+          "key": "A",
+          "text": "To route packets to a different network"
+        },
+        {
+          "key": "B",
+          "text": "To test if the TCP/IP stack is functioning correctly"
+        },
+        {
+          "key": "C",
+          "text": "To identify the default gateway"
+        },
+        {
+          "key": "D",
+          "text": "To assign a dynamic IP address"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — To test if the TCP/IP stack is functioning correctly",
+      "explanation": "Địa chỉ loopback (127.0.0.1) dùng để kiểm tra xem ngăn xếp giao thức TCP/IP (TCP/IP stack) trên máy tính đó có hoạt động bình thường không."
+    },
+    {
+      "number": 39,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the prefix length notation for the subnet mask 255.255.255.224?",
+      "options": [
+        {
+          "key": "A",
+          "text": "/28"
+        },
+        {
+          "key": "B",
+          "text": "/27"
+        },
+        {
+          "key": "C",
+          "text": "/26"
+        },
+        {
+          "key": "D",
+          "text": "/25"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — /27",
+      "explanation": "Subnet mask 255.255.255.224 có 27 bit mạng (24 bit đầu + 3 bit ở octet thứ 4: 11100000 = 224)."
+    },
+    {
+      "number": 40,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the main purpose of a subnet mask in IPv4 addressing?",
+      "options": [
+        {
+          "key": "A",
+          "text": "To identify the gateway of the network"
+        },
+        {
+          "key": "B",
+          "text": "To determine the network and host portions of an IP address"
+        },
+        {
+          "key": "C",
+          "text": "To provide security by masking IP addresses"
+        },
+        {
+          "key": "D",
+          "text": "To route packets between networks"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — To determine the network and host portions of an IP address",
+      "explanation": "Subnet mask được dùng để xác định đâu là phần mạng (network portion) và đâu là phần máy chủ (host portion) trong một địa chỉ IPv4."
+    },
+    {
+      "number": 41,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "An administrator wants to create four subnetworks from the network address 192.168.1.0/24. What is the network address and subnet mask of the second useable subnet?",
+      "options": [
+        {
+          "key": "A",
+          "text": "subnetwork 192.168.1.64 subnet mask 255.255.255.192"
+        },
+        {
+          "key": "B",
+          "text": "subnetwork 192.168.1.32 subnet mask 255.255.255.240"
+        },
+        {
+          "key": "C",
+          "text": "subnetwork 192.168.1.64 subnet mask 255.255.255.240"
+        },
+        {
+          "key": "D",
+          "text": "subnetwork 192.168.1.128 subnet mask 255.255.255.192"
+        },
+        {
+          "key": "E",
+          "text": "subnetwork 192.168.1.8 subnet mask 255.255.255.224"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — subnetwork 192.168.1.64 subnet mask 255.255.255.192",
+      "explanation": "Chia mạng /24 thành 4 mạng con cần mượn 2 bit (2^2 = 4), tức là dùng prefix /26 (mask 255.255.255.192). Bước nhảy là 64. Mạng con thứ 1: .0, thứ 2: .64, thứ 3: .128, thứ 4: .192."
+    },
+    {
+      "number": 42,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Which access method would be the most appropriate in-band access to the IOS over a network connection?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Console"
+        },
+        {
+          "key": "B",
+          "text": "Telnet/SSH"
+        },
+        {
+          "key": "C",
+          "text": "Aux"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — Telnet/SSH",
+      "explanation": "In-band access qua mạng IP sử dụng Telnet hoặc SSH. Console và Aux là các phương pháp out-of-band."
+    },
+    {
+      "number": 43,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "An administrator is configuring a switch console port with a password. In what order will the administrator travel through the IOS modes of operation in order to reach the mode in which the configuration commands will be entered? (Not all options are used.)\nA. first mode\nB. second mode\nC. third mode\nD. final mode\n1. interface configuration mode\n2. privileged EXEC mode\n3. line configuration mode\n4. global configuration mode\n5. user EXEC mode",
+      "options": [
+        {
+          "key": "A",
+          "text": "A5-B2-C4-D3"
+        },
+        {
+          "key": "B",
+          "text": "A1-B2-C3-D4"
+        },
+        {
+          "key": "C",
+          "text": "A2-B1-C4-D3"
+        },
+        {
+          "key": "D",
+          "text": "A5-B1-C2-D3"
+        }
+      ],
+      "answer": [
+        "A"
+      ],
+      "answerRaw": "A — A5-B2-C4-D3",
+      "explanation": "Để cấu hình cổng console: Từ User EXEC (5) -> Privileged EXEC (2) -> Global Config (4) -> Line Config (3). Tương ứng A5-B2-C4-D3."
+    },
+    {
+      "number": 44,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Why would a Layer 2 switch need an IP address?",
+      "options": [
+        {
+          "key": "A",
+          "text": "to enable the switch to send broadcast frames to attached PCs"
+        },
+        {
+          "key": "B",
+          "text": "to enable the switch to function as a default gateway"
+        },
+        {
+          "key": "C",
+          "text": "to enable the switch to be managed remotely"
+        },
+        {
+          "key": "D",
+          "text": "to enable the switch to receive frames from attached PCs"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — to enable the switch to be managed remotely",
+      "explanation": "Switch L2 cần địa chỉ IP (gán cho SVI) để có thể được quản lý từ xa qua Telnet, SSH, SNMP..."
+    },
+    {
+      "number": 45,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "How is the privileged EXEC mode access secured on a switch?",
+      "options": [
+        {
+          "key": "A",
+          "text": "enable class"
+        },
+        {
+          "key": "B",
+          "text": "secret class"
+        },
+        {
+          "key": "C",
+          "text": "enable secret cisco@12345"
+        },
+        {
+          "key": "D",
+          "text": "service password-encryption"
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — enable secret cisco@12345",
+      "explanation": "Lệnh `enable secret <password>` đặt mật khẩu được mã hóa mạnh (MD5) để bảo vệ chế độ Privileged EXEC."
+    },
+    {
+      "number": 46,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What are the two most commonly referenced fields in an IPv4 packet header that indicate where the packet is coming from and where it is going? (Choose two.)",
+      "options": [
+        {
+          "key": "A",
+          "text": "Destination IP address"
+        },
+        {
+          "key": "B",
+          "text": "Protocol"
+        },
+        {
+          "key": "C",
+          "text": "Time to live"
+        },
+        {
+          "key": "D",
+          "text": "Differentiated Service (DS)"
+        },
+        {
+          "key": "E",
+          "text": "Source IP address"
+        }
+      ],
+      "answer": [
+        "A",
+        "E"
+      ],
+      "answerRaw": "A, E — Destination IP address, Source IP address",
+      "explanation": "Source IP (nguồn) và Destination IP (đích) là hai trường quan trọng nhất xác định nơi gửi và nơi nhận gói tin."
+    },
+    {
+      "number": 47,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What destination MAC address would be included in a frame sent from a source device to a destination device on a remote local network?",
+      "options": [
+        {
+          "key": "A",
+          "text": "A broadcast MAC address of FF-FF-FF-FF-FF-FF."
+        },
+        {
+          "key": "B",
+          "text": "The MAC address of the destination device."
+        },
+        {
+          "key": "C",
+          "text": "The MAC address of the local router interface."
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — The MAC address of the local router interface.",
+      "explanation": "Khi gửi đến một thiết bị ở mạng khác, gói tin phải đi qua Default Gateway. Do đó, MAC đích của frame sẽ là MAC của cổng router gần nhất."
+    },
+    {
+      "number": 48,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "When transporting data from real-time applications, such as streaming audio and video, which field in the IPv6 header can be used to inform the routers and switches to maintain the same path for the packets in the same conversation?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Next Header"
+        },
+        {
+          "key": "B",
+          "text": "Flow Label"
+        },
+        {
+          "key": "C",
+          "text": "Traffic Class"
+        },
+        {
+          "key": "D",
+          "text": "Differentiated Services"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — Flow Label",
+      "explanation": "Trường Flow Label (20 bit) trong IPv6 header được dùng để nhận diện các luồng dữ liệu (flow) nhằm duy trì cùng một đường đi cho các gói tin thời gian thực."
+    },
+    {
+      "number": 49,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "Within a production network, what is the purpose of configuring a switch with a default gateway address?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hosts that are connected to the switch can use the switch default gateway address to forward packets to a remote destination."
+        },
+        {
+          "key": "B",
+          "text": "A switch must have a default gateway to be accessible by Telnet and SSH."
+        },
+        {
+          "key": "C",
+          "text": "The default gateway address is used to forward packets originating from the switch to remote networks."
+        },
+        {
+          "key": "D",
+          "text": "It provides a next-hop address for all traffic that flows through the switch."
+        }
+      ],
+      "answer": [
+        "C"
+      ],
+      "answerRaw": "C — The default gateway address is used to forward packets originating from the switch to remote networks.",
+      "explanation": "Switch L2 cần default gateway để tự chuyển tiếp các gói tin quản lý (do chính switch tạo ra) đi đến các mạng từ xa."
+    },
+    {
+      "number": 50,
+      "total": 50,
+      "examName": "SP25_De_1",
+      "raw": "What is the primary purpose of the ICMP protocol?",
+      "options": [
+        {
+          "key": "A",
+          "text": "To route packets across different networks"
+        },
+        {
+          "key": "B",
+          "text": "To provide feedback about issues related to IP packet processing"
+        },
+        {
+          "key": "C",
+          "text": "To encrypt data before transmission"
+        },
+        {
+          "key": "D",
+          "text": "To assign IP addresses to devices"
+        }
+      ],
+      "answer": [
+        "B"
+      ],
+      "answerRaw": "B — To provide feedback about issues related to IP packet processing",
+      "explanation": "ICMP cung cấp thông tin phản hồi về các lỗi hoặc vấn đề xảy ra trong quá trình xử lý và truyền gói tin IP."
+    }
+  ]
+}
