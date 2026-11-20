@@ -40,6 +40,17 @@
           "count": 49
         }
       ]
+    },
+    {
+      "id": "osg202",
+      "name": "OSG202",
+      "exams": [
+        {
+          "term": "SU26-RE",
+          "file": "data/osg202/SU26-RE.json",
+          "count": 50
+        }
+      ]
     }
   ]
 }
