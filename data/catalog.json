@@ -49,6 +49,11 @@
           "term": "SU26-RE",
           "file": "data/osg202/SU26-RE.json",
           "count": 50
+        },
+        {
+          "term": "SP26_FE",
+          "file": "data/osg202/SP26_FE.json",
+          "count": 50
         }
       ]
     }
