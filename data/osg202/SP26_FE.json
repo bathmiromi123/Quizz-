@@ -1,0 +1,568 @@
+{
+  "title": "OSG202 - SP26 - FE - Đề 1 (50 câu)",
+  "description": "50 câu từ OSG202_SP26_FE; đã sửa câu 16, 26, 40; ghi chú cảnh báo trực tiếp trên các câu có vấn đề. Các câu chưa chắc chắn giữ đáp án gốc và ghi rõ.",
+  "timeLimitMinutes": 0,
+  "mode": "instant",
+  "shuffleQuestions": false,
+  "shuffleOptions": false,
+  "autoNext": true,
+  "questions": [
+    {
+      "q": "When designing a paging system, which of the following factors is the most critical in minimizing translation overhead?",
+      "options": [
+        "Increasing the number of page table entries per process.",
+        "Using a Translation Lookaside Buffer (TLB) for faster lookups.",
+        "Storing page tables in slower secondary storage.",
+        "Assigning fixed-size page frames without considering process needs."
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "In UNIX systems, what is the primary purpose of system calls like fork() and exec()?",
+      "options": [
+        "To control peripheral devices.",
+        "To load device drivers into memory.",
+        "To create and execute new processes.",
+        "To switch between user and kernel mode."
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "In threads, web servers use this fact to improve performance by maintaining a collection of heavily used pages in main memory to eliminate the need to go to disk to get them. What is a collection called?",
+      "options": [
+        "Threads",
+        "Dispatcher",
+        "Buffer",
+        "Cache"
+      ],
+      "answer": "D",
+      "explain": ""
+    },
+    {
+      "q": "In C-SCAN scheduling, what happens when arm reaches end?",
+      "options": [
+        "Stops",
+        "Jumps back",
+        "Reverses",
+        "Skips requests",
+        "Ignores"
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "System with 5 processes, 3 resources. Available [3,3,2], Allocation [[0,1,0],[2,0,0],[3,0,2],[2,1,1],[0,0,2]], Max [[7,5,3],[3,2,2],[9,0,2],[2,2,2],[4,3,3]]. Is safe?",
+      "options": [
+        "Yes",
+        "No",
+        "Only if P1 first",
+        "Only if P3 first",
+        "Insufficient data"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ CÂU DỄ NHẦM: 'fixed-sized partitions' có thể chỉ phân vùng cố định (Contiguous Allocation, B), nhưng Paging (A) cũng dùng các khung trang cố định. Tạm giữ B.\n\nWhich memory management technique involves dividing memory into fixed-sized partitions to accommodate varying process sizes?",
+      "options": [
+        "Paging Management",
+        "Contiguous Allocation",
+        "Segmentation",
+        "Virtual Memory Management"
+      ],
+      "answer": "B",
+      "explain": "Giữ B theo cách hiểu fixed partitioning thuộc contiguous allocation; câu hỏi chưa đủ rõ."
+    },
+    {
+      "q": "Which statement is true about implementing Threads in Kernel?",
+      "options": [
+        "The kernel has a thread table",
+        "The threads run on top of a runtime system",
+        "Suitable for OS that does not support threads",
+        "Thread switching and scheduling are faster"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "If FIFO page replacement algorithm is used with four page frames, how many page faults will occur with the reference string 0172327103 if the four frames are initially empty?",
+      "options": [
+        "4 Pages",
+        "5 Pages",
+        "6 Pages",
+        "7 Pages"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ CÂU THIẾU ĐIỀU KIỆN: Circular wait là điều kiện cần; chỉ đủ để kết luận deadlock trong một số mô hình tài nguyên (ví dụ mỗi loại có một instance). Tạm giữ B theo ý đề.\n\nWhich condition is both necessary and sufficient for a system to experience deadlock?",
+      "options": [
+        "Mutual exclusion of resources",
+        "Circular wait among processes",
+        "Hold and wait for resources",
+        "No resource preemption"
+      ],
+      "answer": "B",
+      "explain": "Không nên học thuộc rằng circular wait luôn là điều kiện cần và đủ."
+    },
+    {
+      "q": "In paged memory systems, if the page size is increased, then the internal fragmentation generally __________",
+      "options": [
+        "becomes less",
+        "becomes more",
+        "remains constant",
+        "none of mentioned"
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "Which hardware unit inside the computer is managed by the OS?",
+      "options": [
+        "Scanner",
+        "USB",
+        "Memory",
+        "Browser"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "Why is defragmenting a Solid-State Drive (SSD) generally not recommended?",
+      "options": [
+        "SSDs store data without needing contiguous blocks",
+        "SSDs can fail when defragmented more than once",
+        "SSDs degrade faster with unnecessary write cycles",
+        "SSDs auto-defrag and ignore manual optimization"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "Which approach to deadlock prevention eliminates circular wait?",
+      "options": [
+        "Forcing all processes to request resources in a predefined order",
+        "Allowing processes to hold and wait for resources indefinitely",
+        "Preventing mutual exclusion for critical resources",
+        "Granting all resources to a process before execution begins"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "Which file allocation method uses pointers in each file block to the next block?",
+      "options": [
+        "Contiguous allocation",
+        "Indexed allocation",
+        "Linked allocation",
+        "Hash-based allocation"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "In the Round-robin scheduling, what happens to a process when it runs out of the of time allocated by the system?",
+      "options": [
+        "The process switches from running to a ready state.",
+        "The process switches from running to a blocked state.",
+        "The process switches from running to a suspended-ready state.",
+        "The process switches from running to a suspended state."
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ ĐÃ SỬA ĐÁP ÁN B → C: Best Fit lần lượt chọn các lỗ 14 MB, 3 MB, 9 MB, 10 MB.\n\nIn a memory system consisting of the following hole sizes: 10MB, 18MB, 9MB, and 14MB, suppose the Best Fit algorithm is used. Which holes are allocated in order for consecutive segment requests of 11MB, 2MB, 9MB, and 8MB?",
+      "options": [
+        "14MB, 3MB, 10MB, 9MB",
+        "18MB, 7MB, 10MB, 9MB",
+        "14MB, 3MB, 9MB, 10MB",
+        "18MB, 7MB, 9MB, 10MB"
+      ],
+      "answer": "C",
+      "explain": "11→14 (dư 3); 2→3 (dư 1); 9→9; 8→10. Đáp án C."
+    },
+    {
+      "q": "Indexed Allocation in file systems uses:",
+      "options": [
+        "A table of pointers for each file",
+        "Contiguous blocks of disk space",
+        "Linked lists to connect files",
+        "Hierarchical file structures"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "A computer has 8 GB of memory. The operating system occupies 2 GB, and each user program requires 3 GB. The average I/O wait time for each user program is 60%. What is the CPU utilization?",
+      "options": [
+        "64%",
+        "60%",
+        "66%",
+        "70%"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "After the page fault trap, which of the following is responsible for saving general-purpose registers and volatile state?",
+      "options": [
+        "Disk controller",
+        "Operating system scheduler",
+        "Assembly-language routine",
+        "Page replacement algorithm"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "Which programming model supports parallel execution but may involve blocking system calls during execution?",
+      "options": [
+        "Single-threaded process",
+        "Finite-state machine",
+        "Threads",
+        "None of the above"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ CÂU MƠ HỒ: Slide Chapter 1 nêu User mode và Kernel mode. Đề dự kiến A, nhưng 'System mode' đôi khi đồng nghĩa Kernel/Supervisor mode.\n\nWhat is NOT an operating system mode?",
+      "options": [
+        "System mode",
+        "User mode",
+        "Kernel mode",
+        "Supervisor mode"
+      ],
+      "answer": "A",
+      "explain": "Giữ A theo cách phân loại trong slide, không coi đây là thuật ngữ sai tuyệt đối."
+    },
+    {
+      "q": "Which I/O software layer is primarily responsible for handling device-specific details while maintaining a uniform interface for the upper layers?",
+      "options": [
+        "User-space I/O libraries",
+        "Device drivers",
+        "Interrupt handlers",
+        "Hardware controllers"
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "Which of the following is not a benefit of segmentation in memory management?",
+      "options": [
+        "Segments grow independently without collision",
+        "Programmers no longer manage memory overlays manually",
+        "Segments can be loaded into non-contiguous physical memory",
+        "Segment addresses automatically optimize CPU scheduling"
+      ],
+      "answer": "D",
+      "explain": ""
+    },
+    {
+      "q": "In DMA transfer cycle, what two modes can many buses operate in?",
+      "options": [
+        "Word-at-a-time mode and byte mode.",
+        "Word-at-a-time mode and block mode.",
+        "Word-at-a-time mode and bit mode.",
+        "Word-at-a-time mode and page mode."
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "Which component of the OS acts as an interface between user programs and hardware?",
+      "options": [
+        "Compiler",
+        "Assembler",
+        "Kernel",
+        "Loader",
+        "Linker"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ ĐÃ SỬA THÀNH CÂU CHỌN 3: A, C, D (Programmed I/O; Interrupt-driven I/O; DMA).\n\nChoose correct answers.\nWhat are the three basic different ways that IO operations in computer system can be performed?",
+      "options": [
+        "Programmed I/O",
+        "Memory-mapped I/O",
+        "Interrupt-driven I/O",
+        "I/O using DMA"
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explain": "Memory-mapped I/O là phương thức ánh xạ địa chỉ thiết bị, không thuộc bộ ba cơ bản được hỏi."
+    },
+    {
+      "q": "A VMM (Virtual Machine Monitor) creates the illusion of multiple (virtual) machines on the same physical hardware. What is VMM also known?",
+      "options": [
+        "Hypovisor",
+        "hypervisor",
+        "shell",
+        "console"
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "What are the two main functions of an operating system?",
+      "options": [
+        "Debugging and memory allocation",
+        "Resource management and memory allocation",
+        "Resource management and providing abstractions",
+        "Networking and power saving"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ CÂU CÓ HƠN MỘT KHẢ NĂNG: Priority Scheduling (D) gây starvation; SJF (B) cũng có thể gây starvation. Tạm giữ D theo đáp án dự kiến.\n\nWhich scheduling algorithm could potentially lead to starvation?",
+      "options": [
+        "FCFS",
+        "SJF",
+        "Round Robin",
+        "Priority Scheduling"
+      ],
+      "answer": "D",
+      "explain": "Cả SJF và Priority Scheduling đều có nguy cơ starvation; đề chưa phân biệt rõ."
+    },
+    {
+      "q": "Paravirtualization takes a different approach by modifying the source code of the guest operating system instead rather than performing sensitive instructions.\nIn this context, which of the following is true?",
+      "options": [
+        "the paravirtualized guest executes system calls",
+        "the paravirtualized guest executes virtual calls",
+        "the paravirtualized guest executes hyper calls",
+        "the paravirtualized guest executes Hyper commands"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "Which type of memory is typically very fast, expensive, and volatile in a memory hierarchy?",
+      "options": [
+        "Main memory",
+        "Virtual memory",
+        "Cache memory",
+        "Secondary memory"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "Which system call repositions the file pointer so that data can be read from or written to a specific location in the file?",
+      "options": [
+        "Seek",
+        "Append",
+        "Rename",
+        "Write"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "Which layer of the I/O software system is closest to the hardware?",
+      "options": [
+        "Interrupt handlers",
+        "Device drivers",
+        "Device-independent operating system software",
+        "User-level I/O software"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "What is the role of a file descriptor in Unix-based systems?",
+      "options": [
+        "To keep track of file sizes",
+        "To store the file contents",
+        "To keep track of open files and their I/O operations",
+        "To store the file's metadata"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "How does memory abstraction through address spaces benefit a computer system?",
+      "options": [
+        "It allows each process to access the entire physical memory directly.",
+        "It isolates processes from one another, preventing unauthorized access.",
+        "It eliminates the need for virtual memory.",
+        "It reduces CPU processing speed."
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ CÂU DIỄN ĐẠT CHƯA RÕ: Resource preemption (B) có thể gây trạng thái không nhất quán; tác động hiệu năng còn tùy cách triển khai.\n\nWhich deadlock recovery technique is least likely to impact system performance but may lead to potential inconsistencies?",
+      "options": [
+        "Killing one or more processes involved in the deadlock",
+        "Preempting resources from deadlocked processes",
+        "Increasing system resources dynamically",
+        "Restarting the entire system"
+      ],
+      "answer": "B",
+      "explain": "B là phương án hợp lý nhất, nhưng 'least likely to impact performance' không phải nhận định phổ quát."
+    },
+    {
+      "q": "Which of the following methods is used to track memory?",
+      "options": [
+        "Linked Lists",
+        "Best fit",
+        "Paging",
+        "Segmentation"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "What is a preemptable resource?",
+      "options": [
+        "The one that can be taken away from the process owning it with no ill effects",
+        "The one that can be taken away from the process owning it with ill effects",
+        "The one that can not be taken away from the process owning it with no ill effects",
+        "The one that can not be taken away from the process owning it with ill effects"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "A system has 10 units of a single resource. There are three processes: P1, P2, and P3. At a certain moment, their maximum needed and allocated units are:\nProcess   Maximum Needed   Allocated\nP1        6                3\nP2        5                4\nP3        7                3\nWhat is the state of the system?",
+      "options": [
+        "Unsafe.",
+        "Safe.",
+        "The system is in a deadlock.",
+        "The system experiences starvation."
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ ĐÃ SỬA ĐÁP ÁN D → B: Offset = 32 − 10 − 12 = 10 bit; page size = 2^10 = 1024 B = 1 KB.\n\nA computer with a 32-bit address uses a two-level page table. Virtual addresses are split into a 10-bit top-level page table field, an 12-bit second-level page table field, and an offset. What is the size of the pages?",
+      "options": [
+        "512B page",
+        "1-KB page",
+        "2-KB page",
+        "4-KB page"
+      ],
+      "answer": "B",
+      "explain": "Theo đúng số bit đề cho: B (1 KB), không phải D (4 KB)."
+    },
+    {
+      "q": "In the Classical IPC Problems, specifically in the deadlock-avoidance solution to the Dining Philosophers problem, when can a philosopher eat?",
+      "options": [
+        "Both neighbors are not eating",
+        "Both neighbors are thinking or hungry",
+        "The philosopher hasn't eaten yet",
+        "Mutex is unlocked"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "When a process is running in a contention zone, no other processes are running in the same zone. What is this condition called?",
+      "options": [
+        "Mutual exclusion.",
+        "Bounded-waiting.",
+        "Progress.",
+        "Critical exclusion."
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "What are the weaknesses of RAID 0?",
+      "options": [
+        "Requires the highest number of disks in RAID modes",
+        "There is no data recovery mechanism",
+        "The unit of data transmitted is at the BIT level",
+        "Does not improve read and write speeds"
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "Which layer in the Layered Operating System Model is responsible for managing memory and drum storage?",
+      "options": [
+        "Layer 0",
+        "Layer 1",
+        "Layer 3",
+        "Layer 2"
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "What does the term \"multiprogramming\" mean?",
+      "options": [
+        "Running multiple lines of the same program",
+        "Writing code in many languages",
+        "Running multiple programs at once",
+        "Debugging with multiple users"
+      ],
+      "answer": "C",
+      "explain": ""
+    },
+    {
+      "q": "In disk scheduling, which algorithm is considered the fairest but may lead to high seek times?",
+      "options": [
+        "FCFS",
+        "SSTF",
+        "SCAN",
+        "C-SCAN"
+      ],
+      "answer": "A",
+      "explain": ""
+    },
+    {
+      "q": "Which of the following is NOT one of the usual duties of Clock Software?",
+      "options": [
+        "Maintaining the time of day.",
+        "Helping processes in running longer than they are allowed to.",
+        "Accounting for CPU usage.",
+        "Handling the alarm system call made by user processes."
+      ],
+      "answer": "B",
+      "explain": ""
+    },
+    {
+      "q": "⚠️ CÂU MƠ HỒ: x86-64 chủ yếu dùng paging, nhưng vẫn giữ một số chức năng segmentation như FS/GS. Tạm giữ D theo ý đề; 'no impact' là diễn đạt quá tuyệt đối.\n\nEvaluate the impact of the absence of real segmentation support in the 64-bit version of the x86 architecture on modern operating systems, considering memory management efficiency and design choices.",
+      "options": [
+        "The absence of real segmentation results in more efficient memory utilization but limits the diversity of memory management techniques in modern systems.",
+        "Real segmentation support significantly improves memory management performance, especially in handling dynamic data structures.",
+        "The lack of real segmentation simplifies memory management but limits the flexibility to handle changing memory requirements in modern operating systems.",
+        "The absence of real segmentation has no impact on modern operating systems as they rely solely on paging techniques for memory management."
+      ],
+      "answer": "D",
+      "explain": "Không khẳng định segmentation hoàn toàn biến mất khỏi x86-64."
+    },
+    {
+      "q": "Which strategy prevents deadlock by requiring all resources at once?",
+      "options": [
+        "Resource ordering",
+        "Wait-die",
+        "Wound-wait",
+        "One-shot allocation"
+      ],
+      "answer": "D",
+      "explain": ""
+    },
+    {
+      "q": "In Windows 95, which is the maximum partition size, if the FAT type is FAT-16 and the block size is 4 KB?",
+      "options": [
+        "128MB",
+        "256MB",
+        "512MB",
+        "1024MB"
+      ],
+      "answer": "B",
+      "explain": ""
+    }
+  ]
+}
