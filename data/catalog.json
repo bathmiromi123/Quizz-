@@ -56,6 +56,27 @@
           "count": 50
         }
       ]
+    },
+    {
+      "id": "pro192",
+      "name": "PRO192",
+      "exams": [
+        {
+          "term": "SU26_DE2",
+          "file": "data/pro192/SU26_De2.json",
+          "count": 50
+        },
+        {
+          "term": "SP26_DE2",
+          "file": "data/pro192/SP26_De2.json",
+          "count": 50
+        },
+        {
+          "term": "SP26_DE1",
+          "file": "data/pro192/SP26_De1.json",
+          "count": 50
+        }
+      ]
     }
   ]
 }
