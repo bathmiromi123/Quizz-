@@ -2,35 +2,25 @@
 (function(){
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-// Format fenced Java code and clearly recognizable multi-line Java snippets safely.
+// Explicit Markdown formatting only: fenced code blocks and inline backticks.
+// No automatic guessing of Java code from ordinary text.
 function richText(value){
   const input=String(value??'').replace(/\r\n?/g,'\n');
-  const block=code=>'<pre class="java-code"><code>'+esc(code.replace(/^\n+|\n+$/g,''))+'</code></pre>';
-  const plain=s=>s?'<div class="rich-plain">'+esc(s)+'</div>':'';
-  // Detect the beginning of a Java snippet, then keep its following lines together.
-  // A statement like setX(2) or sum += ... must not break the code block.
-  const startsCode=s=>/^\s*(?:@\w+|(?:public|private|protected|static|final|abstract|default)\s+|(?:class|interface|enum|import|package)\s+|(?:int|long|double|float|boolean|char|byte|short|String|Integer|List|Set|Map|File|Scanner|var)\s+|(?:for|if|while|switch|try|catch|finally|do)\s*\(?|System\.|\{|\}|\/\/|\/\*|\*|[\w.$<>\[\], ?]+\s+[\w$]+\s*(?:=|\(|;))/.test(s);
-  const proseAfterCode=s=>/^\s*(?:What\b|Which\b|Choose\b|Assume\b|Given\b|If\s+test\.txt\b|The\s+following\b|How\b|Why\b|Note\s*:)/i.test(s);
-  const formatPlain=text=>{
-    const lines=text.split('\n');let out='',i=0;
-    while(i<lines.length){
-      if(!startsCode(lines[i])){
-        let j=i+1;while(j<lines.length&&!startsCode(lines[j]))j++;
-        out+=plain(lines.slice(i,j).join('\n'));i=j;continue;
-      }
-      let j=i+1;
-      while(j<lines.length){
-        if(proseAfterCode(lines[j]))break;
-        j++;
-      }
-      out+=block(lines.slice(i,j).join('\n'));i=j;
-    }
-    return out;
+  const inline=text=>{
+    const parts=text.split(/(`[^`\n]+`)/g);
+    return parts.map(p=>p.startsWith('`')&&p.endsWith('`')
+      ? '<code class="inline-code">'+esc(p.slice(1,-1))+'</code>'
+      : esc(p)).join('');
   };
-  const fence=/^\s*```(?:java|js|javascript|text)?\s*\n([\s\S]*?)\n\s*```\s*$/gim;
+  const block=code=>'<pre class="java-code"><code>'+esc(code.replace(/^\n+|\n+$/g,''))+'</code></pre>';
+  const fence=/^[ \t]*```(?:java|js|javascript|text)?[ \t]*\n([\s\S]*?)\n[ \t]*```[ \t]*$/gm;
   let out='',last=0,m;
-  while((m=fence.exec(input))!==null){out+=formatPlain(input.slice(last,m.index));out+=block(m[1]);last=fence.lastIndex}
-  return out+formatPlain(input.slice(last));
+  while((m=fence.exec(input))!==null){
+    if(m.index>last)out+='<div class="rich-plain">'+inline(input.slice(last,m.index).replace(/\n+$/,''))+'</div>';
+    out+=block(m[1]);last=fence.lastIndex;
+  }
+  if(last<input.length)out+='<div class="rich-plain">'+inline(input.slice(last).replace(/^\n+/,''))+'</div>';
+  return out;
 }
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const toIdx=v=>typeof v==='string'?v.trim().toUpperCase().charCodeAt(0)-65:Number(v);

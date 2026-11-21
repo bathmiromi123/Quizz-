@@ -131,6 +131,12 @@ body:has(#quiz[hidden]) .quiz-nav-meta,body:has(#quiz[hidden]) .quiz-progress-tr
   .question-heading .java-code code{white-space:pre;overflow-wrap:normal}
   .opt{min-width:0}
 }
+/* Markdown inline code: never turn short method names into a full code block */
+.inline-code{font:0.9em/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;
+  background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:1px 4px;
+  overflow-wrap:anywhere}
+.question-heading,.question-heading .qt,.opts,.opt,.opt span{min-width:0}
+.java-code{width:100%;max-width:100%;overflow-x:auto}
 </style>
 </head>
 <body>
