@@ -1,6 +1,6 @@
 {
   "title": "PRO192 SP26 – Đề 7",
-  "description": "50 câu PRO192, đã đối chiếu đáp án với AI khác. Câu có lỗi hoặc mơ hồ được ghi chú trong giải thích.",
+  "description": "50 câu PRO192. Đáp án đã cross-check độc lập. Câu 43 là đề lỗi (ghi chú trong explain).",
   "timeLimitMinutes": 0,
   "mode": "practice",
   "shuffleQuestions": true,
@@ -16,7 +16,7 @@
         "Netbeans"
       ],
       "answer": "A",
-      "explain": "⚠️ JRE là môi trường tối thiểu để chạy Java; JDK cũng chạy được vì có thành phần runtime. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "JRE chứa JVM + thư viện runtime — môi trường tối thiểu để chạy. JDK cũng chạy được (vì chứa JRE), nhưng câu hỏi 'must be installed' nhắm JRE."
     },
     {
       "q": "In binary numbers, how many digits does a byte hold?",
@@ -27,7 +27,7 @@
         "2"
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "1 byte = 8 bit. Nibble = 4 bit, word thường 16/32/64 bit tùy kiến trúc."
     },
     {
       "q": "Which of the following best describes object-oriented programming?",
@@ -38,7 +38,7 @@
         "Programming without algorithms"
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "OOP tổ chức chương trình quanh class/object: đóng gói dữ liệu + hành vi, hỗ trợ kế thừa, đa hình, trừu tượng."
     },
     {
       "q": "What is the role of the Java Development Kit (JDK) in Java programming? Choose multiple correct answers.",
@@ -52,7 +52,7 @@
         "A",
         "B"
       ],
-      "explain": "⚠️ Phương án B diễn đạt chưa chặt: JDK bao gồm công cụ phát triển và các thành phần runtime, không đơn giản là dùng cùng JRE/JVM. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "JDK là bộ công cụ phát triển đa nền tảng, bao gồm JRE và JVM. C mô tả IDE; D mô tả editor — không phải JDK."
     },
     {
       "q": "Which is a valid keyword in Java?",
@@ -63,7 +63,7 @@
         "Integer"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`interface` là keyword. `include` thuộc C/C++; `Float`, `Integer` là tên class wrapper, không phải keyword."
     },
     {
       "q": "A Java source code will be compiled to the file in which of the following extensions?",
@@ -74,7 +74,7 @@
         ".bat"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`javac` biên dịch `.java` → bytecode `.class` cho JVM."
     },
     {
       "q": "Which of the following is NOT a Java feature?",
@@ -85,7 +85,7 @@
         "Independent Platform."
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Java không có con trỏ tường minh (khác C/C++) — đây là điểm bảo mật. Các mục B/C/D là đặc điểm của Java."
     },
     {
       "q": "When naming a variable in Java with multiple words, which convention should you follow?",
@@ -96,7 +96,7 @@
         "Start each word with a lowercase letter"
       ],
       "answer": "C",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Java dùng camelCase: chữ đầu thường, chữ sau viết hoa đầu. Ví dụ `studentName`, `totalAmount`."
     },
     {
       "q": "What is the primary difference between using == and .equals() for object comparison in Java?",
@@ -107,7 +107,7 @@
         ".equals() is used only with wrapper classes."
       ],
       "answer": "C",
-      "explain": "⚠️ ĐỀ DIỄN ĐẠT SAI: == so sánh tham chiếu object; equals() so sánh theo triển khai của lớp, không mặc nhiên so tham chiếu. C là đáp án dự kiến nhưng không chính xác hoàn toàn. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`==` so sánh reference (cùng object không); `.equals()` so nội dung theo cách class triển khai (mặc định của Object cũng là reference, nhưng String/Integer... override)."
     },
     {
       "q": "Which statement about loop counting variables in a for loop is FALSE?",
@@ -118,7 +118,7 @@
         "They control when the loop stops executing."
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Biến đếm có thể tăng/giảm tùy ý (`i += 2`, `i--`). Các mục B/C/D mô tả đúng vai trò của biến đếm."
     },
     {
       "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int result;\n    System.out.println(result = true ? 100 : 5);\n  }\n}\n```",
@@ -129,7 +129,7 @@
         "Runtime error."
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Điều kiện `true` → ternary trả `100`, gán vào `result`, in `100`. Kiểu int khớp với giá trị nên không lỗi."
     },
     {
       "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}\n```",
@@ -140,7 +140,7 @@
         "[I@15db9742"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "for-each gán giá trị vào biến local `i`, không thay đổi mảng. `a[1]` giữ default 0."
     },
     {
       "q": "Which string method is used to split a string using a regular expression?",
@@ -151,7 +151,7 @@
         "parse()"
       ],
       "answer": "C",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`String.split(regex)` tách chuỗi theo regex. `StringTokenizer` là class khác, không có `tokenize()` trên String."
     },
     {
       "q": "Which of the following is one of the exception types in Java?",
@@ -162,7 +162,7 @@
         "LogicException"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`RuntimeException` là class chuẩn trong `java.lang`. CompileException/SyntaxException/LogicException không có trong JDK."
     },
     {
       "q": "What is the purpose of Java's wrapper classes?",
@@ -173,7 +173,7 @@
         "To enhance string performance."
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Wrapper (Integer, Double, Character...) bọc primitive thành object — cần cho Collection, generic, reflection."
     },
     {
       "q": "What are components of a class in Java OOP? Choose multiple correct answers.",
@@ -188,7 +188,7 @@
         "B",
         "C"
       ],
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Class gồm constructor, field (thuộc tính), method (hành vi). `main()` chỉ cần khi muốn chạy trực tiếp, không phải thành phần bắt buộc của class."
     },
     {
       "q": "In Java, if a class does not explicitly define a constructor, what type of constructor is automatically provided?",
@@ -201,7 +201,7 @@
         "Abstract constructor"
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Java tự sinh constructor mặc định không tham số (no-arg) nếu class không khai báo constructor nào."
     },
     {
       "q": "Which access modifier is commonly used for setter methods in Java?",
@@ -214,7 +214,7 @@
         "abstract"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Setter thường `public` để bên ngoài gọi cập nhật thuộc tính (bản thân field thường `private`)."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\npublic class Main {\n  public int a;\n  public long b;\n  public void test(long b) { System.out.println(\"long b\"); }\n  public void test(int a) { System.out.println(\"int a\"); }\n  public static void main(String[] args) {\n    Main e = new Main();\n    e.test(9*1000000000);\n  }\n}\n```",
@@ -225,7 +225,7 @@
         "Runtime error"
       ],
       "answer": "A",
-      "explain": "Hai toán hạng là int, phép nhân overflow int trước khi overload được chọn; gọi test(int) và in int a. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`9` và `1000000000` đều là int literal → phép nhân thực hiện trong int → overflow thành int. Overload chọn `test(int)` → in \"int a\"."
     },
     {
       "q": "Which of the following is the MOST RESTRICTIVE access level for a class member in Java?",
@@ -236,7 +236,7 @@
         "private"
       ],
       "answer": "D",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Thứ tự hạn chế tăng dần: private < default < protected < public. `private` chỉ truy cập trong cùng class."
     },
     {
       "q": "Which keyword is used to declare inheritance between two classes in Java?",
@@ -247,7 +247,7 @@
         "implement"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`class B extends A` khai báo kế thừa. `implements` dùng cho interface; `super` gọi constructor/method lớp cha."
     },
     {
       "q": "Which field access modifier allows direct access by a subclass?",
@@ -258,7 +258,7 @@
         "static"
       ],
       "answer": "C",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`protected` cho subclass truy cập (kể cả khác package, qua thừa kế). `static` không phải access modifier."
     },
     {
       "q": "What is the main advantage of using interfaces in Java regarding inheritance?",
@@ -269,10 +269,10 @@
         "Allow direct instantiation of interface objects without implementing classes."
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Java đơn kế thừa class nhưng đa kế thừa interface → đạt được 'multiple inheritance of type'."
     },
     {
-      "q": "Consider the code:\n\n```java\ninterface Animal {\n  void makeSound();\n  void move();\n}\ninterface Pet {\n  void play();\n}\nclass Dog implements Animal, Pet {\n  @Override public void makeSound() { System.out.println(\"Woof!\"); }\n  @Override public void play() { System.out.println(\"Playing fetch\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Dog dog = new Dog();\n    Animal animal = dog;\n    Pet pet = dog;\n    animal.makeSound();\n    pet.play();\n  }\n}\n```",
+      "q": "Consider the code:\n\n```java\ninterface Animal {\n  void makeSound();\n  void move();\n}\ninterface Pet {\n  void play();\n}\nclass Dog implements Animal, Pet {\n  public void makeSound() { System.out.println(\"Woof!\"); }\n  public void play() { System.out.println(\"Playing fetch\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Dog dog = new Dog();\n    Animal animal = dog;\n    Pet pet = dog;\n    animal.makeSound();\n    pet.play();\n  }\n}\n```",
       "options": [
         "Compilation error occurs",
         "Woof! Playing fetch",
@@ -280,7 +280,7 @@
         "Woof! Running Playing fetch"
       ],
       "answer": "A",
-      "explain": "Dog implements Animal nhưng thiếu move() nên không biên dịch. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`Dog` implements `Animal` nhưng thiếu `move()` → class không phải abstract và không implement đủ → compile error."
     },
     {
       "q": "Choose multiple correct answers.",
@@ -295,7 +295,7 @@
         "B",
         "D"
       ],
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "A/B mô tả đúng vai trò getter/setter. D đúng — thường `public`. C sai — `return` chỉ trả giá trị, không 'define' getter/setter."
     },
     {
       "q": "What is a way to group related classes in Java and it is called a namespace?",
@@ -306,7 +306,7 @@
         "folder"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`package` nhóm các class liên quan, hoạt động như namespace tránh xung đột tên."
     },
     {
       "q": "What is the output of the following Java program?\n\n```java\nclass A { public A() { System.out.print(\"A\"); } }\nclass B extends A { public B() { System.out.print(\"B\"); } }\nclass C extends B { public C() { System.out.println(\"C\"); } }\npublic class Test {\n  public static void main(String[] args) { C c = new C(); }\n}\n```",
@@ -317,7 +317,7 @@
         "A,C,B"
       ],
       "answer": "A",
-      "explain": "⚠️ Thực tế in ABC liền nhau, không có dấu phẩy; A chỉ đúng về thứ tự. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Constructor chạy từ gốc xuống: A → B → C. Output thực tế là `ABC` (không dấu phẩy) — A đúng về thứ tự."
     },
     {
       "q": "What is the output following the code snippet?\n\n```java\nclass DemoClass {\n  static void m() { System.out.println(\"A\"); }\n}\nclass DemoClassChild extends DemoClass {\n  static void m() { System.out.println(\"B\"); }\n}\npublic class Main {\n  public static void main(String[] args) { DemoClassChild.m(); }\n}\n```",
@@ -328,7 +328,7 @@
         "B A"
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Gọi `DemoClassChild.m()` trực tiếp → static method của class con → in `B`. Static không bị override (chỉ hiding)."
     },
     {
       "q": "Choose the incorrect statement about the class.",
@@ -339,7 +339,7 @@
         "None of the others"
       ],
       "answer": "A",
-      "explain": "⚠️ Câu chữ \"extended to\" có thể gây hiểu lầm; Java không cho một class extends nhiều class cha. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Java đơn kế thừa: class chỉ extends 1 class. Interface có thể extends nhiều interface; class implements nhiều interface."
     },
     {
       "q": "Consider an abstract class \"Shape\" with an abstract method \"calculateArea()\". If a concrete subclass \"Circle\" extends \"Shape\" and provides an implementation for \"calculateArea()\", what happens when an object of the \"Circle\" class is created and the \"calculateArea()\" method is called?",
@@ -352,7 +352,7 @@
         "The result depends on whether the \"calculateArea()\" method is declared as static."
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Đa hình động: object `Circle` → JVM gọi method override trong `Circle`. Abstract method không có thân để chạy."
     },
     {
       "q": "Choose multiple correct answers.",
@@ -366,10 +366,10 @@
         "A",
         "B"
       ],
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "A/B đúng về kế thừa và từ khóa extends. C sai (private không truy cập được). D sai (Java không đa kế thừa class)."
     },
     {
-      "q": "Which of the following statements best describes the correctness or incorrectness of the Moveable interface in the provided Java code?\n\n```java\npublic interface Moveable {\n  default static final double SPEED = 10.0;\n  default void run() {\n    // Logic in method run\n  }\n  void stop();\n}\n```",
+      "q": "Which of the following statements best describes the correctness or incorrectness of the Moveable interface in the provided Java code?\n\n```java\npublic interface Moveable {\n  default static final double SPEED = 10.0;\n  default void run() {\n  }\n  void stop();\n}\n```",
       "options": [
         "The default static final double SPEED declaration is incorrect.",
         "The default void run() method is invalid because interfaces cannot include method implementations.",
@@ -377,10 +377,10 @@
         "The void stop(); method is incorrect because it lacks the default keyword."
       ],
       "answer": "A",
-      "explain": "default static final không hợp lệ với field của interface; default void run() là hợp lệ. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Field trong interface đã mặc định `public static final`; thêm `default` vào field là sai cú pháp. Method `default void run()` hợp lệ từ Java 8. `void stop()` là abstract method hợp lệ."
     },
     {
-      "q": "Given the following code snippet:\nint[] arr = new int[100];\nWhich of the following statements is correct?",
+      "q": "Given the following code snippet:\n`int[] arr = new int[100];`\nWhich of the following statements is correct?",
       "options": [
         "The maximum number of elements of the arr is 100",
         "The maximum index of the arr is 100",
@@ -388,7 +388,7 @@
         "Each element in the arr will be 1 by default"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Mảng có 100 phần tử, index 0..99. `arr[100]` out-of-bounds; default int là 0."
     },
     {
       "q": "Choose the correct statement related to the encapsulation concept in Java.",
@@ -399,7 +399,7 @@
         "Class hiding"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Encapsulation = che giấu dữ liệu (data hiding) qua access modifier, chỉ lộ API công khai."
     },
     {
       "q": "In a banking application, you need to represent customer accounts using object arrays. Which OOP concept allows you to create a blueprint for the Account class?",
@@ -412,7 +412,7 @@
         "Interface"
       ],
       "answer": "B",
-      "explain": "⚠️ Câu hỏi dùng \"blueprint\" mơ hồ; B là đáp án kỳ vọng. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Abstraction tập trung vào 'bản thiết kế' (blueprint) — định nghĩa cấu trúc/hành vi chung mà không cần chi tiết triển khai."
     },
     {
       "q": "Which of the following statements is used to get the size of a one-dimensional array in Java? Assume: int[] arr = new int[100];",
@@ -423,7 +423,7 @@
         "arr.size()"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Mảng có field `length` (không ngoặc). Collection mới có `size()`."
     },
     {
       "q": "Which of the following classes is used for shuffling an ArrayList in Java?",
@@ -434,7 +434,7 @@
         "Array.Util"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`Collections.shuffle(List)` xáo trộn ngẫu nhiên. `Arrays` dùng cho mảng, không shuffle list."
     },
     {
       "q": "All abstract data structures: List, Set, Map are implemented in which of the following types?",
@@ -445,7 +445,7 @@
         "Derived class"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "List, Set, Map đều là interface trong `java.util`. Các class cụ thể (ArrayList, HashSet, HashMap...) implements chúng."
     },
     {
       "q": "Which of the following represents a valid declaration of a List collection of integers in Java?",
@@ -457,7 +457,7 @@
         "List<Integer> list = new List<Integer>();"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Generic phải dùng wrapper `Integer` (không phải `int`); interface không thể `new`. Chỉ A đúng cú pháp."
     },
     {
       "q": "Which of the following Set implementations maintains insertion order in Java?",
@@ -468,7 +468,7 @@
         "EnumSet"
       ],
       "answer": "C",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`LinkedHashSet` giữ thứ tự chèn. HashSet không đảm bảo; TreeSet sắp xếp theo natural/comparator."
     },
     {
       "q": "What must be implemented when storing custom objects in a TreeSet to ensure proper ordering?",
@@ -479,7 +479,7 @@
         "The toString() method must return values that can be compared lexicographically for automatic sorting."
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "TreeSet sắp xếp qua `Comparable.compareTo()` (hoặc truyền `Comparator`). Không có thì ném `ClassCastException`."
     },
     {
       "q": "What will the following Java code print?\n\n```java\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    TreeMap<Integer, String> map = new TreeMap<>();\n    map.put(3, \"C\");\n    map.put(1, \"A\");\n    map.put(2, \"B\");\n    map.put(5, \"E\");\n    map.headMap(3).forEach((k,v) -> System.out.print(v));\n  }\n}\n```",
@@ -490,7 +490,7 @@
         "E"
       ],
       "answer": "B",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "TreeMap sắp theo key. `headMap(3)` lấy key < 3 → {1=A, 2=B} → in `AB`."
     },
     {
       "q": "Choose correct answer about anonymous class?",
@@ -502,7 +502,7 @@
         "All of the others"
       ],
       "answer": "B",
-      "explain": "⚠️ ĐỀ LỖI: B, C và D đều mô tả đúng anonymous class. A nói chỉ được instantiate một lần là sai, nên E (All of the others) không đúng. Nếu buộc chọn một đáp án, B phù hợp nhất. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "⚠️ ĐỀ LỖI: A sai ('instantiated only once' — thực ra expression chỉ tạo 1 instance, nhưng bản thân anonymous class có thể tái sử dụng trong vòng lặp). B, C, D đều đúng mô tả. E không đúng vì A sai. B là lựa chọn an toàn nhất."
     },
     {
       "q": "How does the try-catch-finally statement work?",
@@ -513,7 +513,7 @@
         "The code inside the try block is executed, and if an exception occurs, it is caught and handled by the catch block. The code inside the finally block is executed only if an exception occurred and was not caught by the catch block."
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`try` chạy code; nếu exception → `catch` xử lý; `finally` LUÔN chạy dù có exception hay không (kể cả return)."
     },
     {
       "q": "Which of the following methods of File class is used to check a file is hidden?",
@@ -524,7 +524,7 @@
         "isRead()"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`File.isHidden()` trả true nếu file/thư mục bị ẩn theo convention hệ điều hành."
     },
     {
       "q": "Which of the following objects is a parameter of the constructor of the DataInputStream class?",
@@ -535,7 +535,7 @@
         "An object of the RandomAccessFile class"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`DataInputStream(InputStream in)` cần InputStream. `FileInputStream` là subclass của `InputStream` nên hợp lệ."
     },
     {
       "q": "Which of the following methods of File class is used to check a file already exists?",
@@ -546,7 +546,7 @@
         "fileExists()"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`File.exists()` trả true nếu file/thư mục tồn tại. Các method khác không có trong API."
     },
     {
       "q": "How do you check if a File object refers to a file (NOT a directory) in Java?",
@@ -557,7 +557,7 @@
         "notIsDirectory()"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "`File.isFile()` trả true nếu là file thường (không phải thư mục, không phải special file)."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\nString fName = \"output.txt\";\nbyte[] array = {65, 66, 67};\nbyte[] arr = new byte[3];\ntry {\n  RandomAccessFile f = new RandomAccessFile(fName, \"rw\");\n  f.write(array);\n  f.seek(0);\n  f.read(arr);\n  String str1 = new String(arr);\n  System.out.println(str1);\n} catch (Exception e) {\n  System.out.println(e);\n}\n```",
@@ -568,7 +568,7 @@
         "BCA"
       ],
       "answer": "A",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Bytes 65,66,67 = 'A','B','C'. Ghi tuần tự, seek về 0, đọc lại đúng thứ tự → \"ABC\"."
     },
     {
       "q": "What type of relationship does aggregation describe in object-oriented design?",
@@ -579,7 +579,7 @@
         "\"has a\" relationship, showing ownership or containment."
       ],
       "answer": "D",
-      "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
+      "explain": "Aggregation = \"has-a\" (chứa/sở hữu). Inheritance = \"is-a\"; dependency = \"uses\"."
     }
   ]
 }

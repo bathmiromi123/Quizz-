@@ -1,6 +1,6 @@
 {
   "title": "PRO192 SP26 – Đề 6",
-  "description": "50 câu PRO192, đã đối chiếu đáp án với AI khác. Câu có lỗi hoặc mơ hồ được ghi chú trong giải thích.",
+  "description": "50 câu PRO192. Đáp án đã cross-check độc lập. Câu 23 là đề lỗi (ghi chú trong explain).",
   "timeLimitMinutes": 0,
   "mode": "practice",
   "shuffleQuestions": true,
@@ -16,7 +16,7 @@
         "java -j program.java"
       ],
       "answer": "A",
-      "explain": "`javac program.java` để biên dịch."
+      "explain": "`javac` là trình biên dịch Java, cú pháp đúng là `javac <file>.java`. Các lựa chọn còn lại sai cú pháp (`java` dùng để chạy, các flag `-java`, `-c`, `-j` không tồn tại)."
     },
     {
       "q": "What is the purpose of a Java Virtual Machine (JVM)?",
@@ -27,7 +27,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "JVM interpret & execute bytecode."
+      "explain": "JVM đọc file `.class` (bytecode) và thực thi trên nền tảng cụ thể. Việc tạo `.class` là của `javac`, không phải JVM."
     },
     {
       "q": "Which of the following concepts does not belong to object-oriented programming features?",
@@ -38,7 +38,7 @@
         "Encapsulation"
       ],
       "answer": "A",
-      "explain": "Cross-platform không phải đặc trưng OOP."
+      "explain": "4 đặc trưng OOP kinh điển là Inheritance, Polymorphism, Encapsulation, Abstraction. Cross-platform là đặc điểm của nền tảng Java (nhờ JVM), không thuộc OOP."
     },
     {
       "q": "Which of the following is NOT a basic component of a computer?",
@@ -49,7 +49,7 @@
         "Refrigerator"
       ],
       "answer": "D",
-      "explain": "Tủ lạnh không phải thành phần máy tính."
+      "explain": "Máy tính gồm CPU, bộ nhớ, thiết bị I/O (monitor là output). Tủ lạnh là thiết bị gia dụng, không phải thành phần máy tính."
     },
     {
       "q": "In order to compile a program named Hello.java, what do you type at the command line?",
@@ -60,7 +60,7 @@
         "javac Hello.java"
       ],
       "answer": "D",
-      "explain": "`javac Hello.java`."
+      "explain": "Biên dịch cần `javac` + tên file có đuôi `.java`. `java Hello` dùng để chạy class đã biên dịch."
     },
     {
       "q": "Which of the following related to the comment in Java is false?",
@@ -71,7 +71,7 @@
         "//comment"
       ],
       "answer": "A",
-      "explain": "`/* comment` thiếu `*/`."
+      "explain": "Comment block phải có cặp `/* ... */`. Chỉ mở `/*` mà không đóng `*/` là sai cú pháp. `/** */` là Javadoc, `//` là comment một dòng — đều hợp lệ."
     },
     {
       "q": "Choose the correct statement about the \"instanceof\" operator.",
@@ -82,7 +82,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "instanceof kiểm tra kiểu."
+      "explain": "`instanceof` kiểm tra kiểu động của object (object có phải instance của class/interface X không). Không liên quan so sánh chuỗi hay kiểm tra tính hợp lệ biến."
     },
     {
       "q": "Choose multiple correct answers.",
@@ -97,7 +97,7 @@
         "C",
         "D"
       ],
-      "explain": "⚠️ Chỉ field và phần tử mảng int mặc định 0, không áp dụng biến cục bộ. A chỉ đúng nếu \"int variable\" là field/array element; local variable không có default."
+      "explain": "A đúng với field/array element int (mặc định 0); lưu ý local int không có default. C đúng — cả biến và hằng đều lưu giá trị. D đúng — biến thay đổi được. B sai — hằng (`final`) không đổi được."
     },
     {
       "q": "Which of the following is the entry point of the Java program?",
@@ -108,7 +108,7 @@
         "static method"
       ],
       "answer": "A",
-      "explain": "Entry point là `main`."
+      "explain": "JVM luôn tìm `public static void main(String[] args)` để bắt đầu chạy chương trình."
     },
     {
       "q": "In Java, what is the result of applying the prefix increment operator (++var)?",
@@ -119,7 +119,7 @@
         "Multiply the variable by 2"
       ],
       "answer": "C",
-      "explain": "Prefix `++var` tăng trước, dùng sau."
+      "explain": "Prefix `++var`: tăng trước, dùng giá trị mới. Postfix `var++`: dùng giá trị cũ, tăng sau."
     },
     {
       "q": "What will be the output of the following code?\n\n```java\npublic class Test10 {\n  public static void main(String[] args) {\n    Integer x = new Integer(5);\n    Integer y = new Integer(10);\n    System.out.println((String)(x+y));\n  }\n}\n```",
@@ -130,7 +130,7 @@
         "Compiler Error"
       ],
       "answer": "D",
-      "explain": "`(String)(x+y)` → int không cast được sang String → compiler error."
+      "explain": "`x+y` trả về `int`; Java không cho cast `int` sang `String` (chỉ có `String.valueOf()` hoặc nối chuỗi). Lỗi biên dịch."
     },
     {
       "q": "What is the key difference between memory allocation for local method data and objects in Java?",
@@ -141,7 +141,7 @@
         "Local method data requires manual memory management and explicit deallocation by the programmer, while objects are automatically managed through garbage collection mechanisms."
       ],
       "answer": "A",
-      "explain": "Local data trên stack, object trên heap."
+      "explain": "Local variables/parameters ở stack, giải phóng khi method return. Object ở heap, tồn tại đến khi GC thu dọn. Java không có manual deallocation."
     },
     {
       "q": "The nextLine() method belongs to which of the following classes?",
@@ -152,7 +152,7 @@
         "System"
       ],
       "answer": "A",
-      "explain": "`nextLine()` thuộc Scanner."
+      "explain": "`Scanner.nextLine()` đọc một dòng văn bản từ input."
     },
     {
       "q": "Given this main method:\n\n```java\npublic static void main(String[] args) {\n  int x = 500;\n  int y = 50;\n  try {\n    int z = x / y;\n    x = 0;\n    z /= x;\n    System.out.println(\"z = \" + z);\n  } catch (ArithmeticException ex) {\n    System.out.println(\"Calculation failed.\");\n  } catch (Exception ex) {\n    System.out.println(\"An error occurred.\");\n  } finally {\n    System.out.println(\"Finished.\");\n  }\n}\n```\n\nWhat will be printed on the screen after running the main method?",
@@ -163,7 +163,7 @@
         "An error occurred."
       ],
       "answer": "A",
-      "explain": "ArithmeticException → \"Calculation failed.\" + finally \"Finished.\""
+      "explain": "`z /= x` với `x = 0` ném `ArithmeticException` → in \"Calculation failed.\". `finally` luôn chạy → in \"Finished.\". Catch `Exception` không chạy vì `ArithmeticException` đã bắt ở catch trước."
     },
     {
       "q": "Which of the following statements about object instantiation is TRUE?",
@@ -174,7 +174,7 @@
         "Objects cannot be created from prewritten classes."
       ],
       "answer": "B",
-      "explain": "Object tạo bằng `new`."
+      "explain": "`new` cấp phát bộ nhớ heap và gọi constructor để tạo instance. Gọi method không tạo instance."
     },
     {
       "q": "Choose the correct statement related to the constructors.",
@@ -185,7 +185,7 @@
         "Constructor is a method that does not allow parameters"
       ],
       "answer": "A",
-      "explain": "Constructor là block code, gọi khi tạo instance."
+      "explain": "Constructor là block code chạy khi `new`. Có thể có tham số, không bắt buộc chỉ khởi tạo giá trị mặc định, không phải abstract."
     },
     {
       "q": "Which of the following statements related to the constructors is false?",
@@ -196,7 +196,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "Constructor không thể override → câu A là câu sai cần chọn."
+      "explain": "Constructor không được kế thừa nên không thể override. Có thể overload (nhiều constructor khác tham số), dùng `this()`/`super()` được."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\npublic class Person {\n  protected String id = \"New Id\";\n  public static void main(String[] args) {\n    Person p = new Person();\n    p.id = \"FPTU\";\n    System.out.println(p.id);\n  }\n}\n```",
@@ -207,7 +207,7 @@
         "Runtime error"
       ],
       "answer": "A",
-      "explain": "protected truy cập được trong cùng class → \"FPTU\"."
+      "explain": "`id` là protected — truy cập được từ chính class đó. Gán lại `\"FPTU\"` rồi in → \"FPTU\"."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\npublic class Main {\n  static void m1(Integer i) { System.out.println(1); }\n  static void m1(Double d) { System.out.println(2); }\n  static void m1(Object o) { System.out.println(3); }\n  public static void main(String[] args) {\n    m1(12.5);\n  }\n}\n```",
@@ -218,10 +218,10 @@
         "12.5"
       ],
       "answer": "A",
-      "explain": "`12.5` là double literal → autobox `Double` → `m1(Double)` → in `2`."
+      "explain": "`12.5` là `double` literal → autobox thành `Double` → khớp chính xác `m1(Double)` → in `2`. `Integer` không khớp; `Object` kém cụ thể hơn `Double`."
     },
     {
-      "q": "Consider the code:\n\n```java\npublic class Example {\n  static int count = 0;\n  public static int increment() {\n    return ++count;\n  }\n  public static void main(String[] args) {\n    int[] arr = {increment(), increment(), increment()};\n    for (int i = 0; i < arr.length; i++) {\n      if (arr[i] % 2 == 0) {\n        arr[i] = arr[i] * increment();\n      } else {\n        arr[i] = arr[i] + increment();\n      }\n    }\n    System.out.print(\"Result: \");\n    for (int value : arr) {\n      System.out.print(value + \" \");\n    }\n  }\n}\n```\n\nWhat is the output?",
+      "q": "Consider the code:\n\n```java\npublic class Example {\n  static int count = 0;\n  public static int increment() { return ++count; }\n  public static void main(String[] args) {\n    int[] arr = {increment(), increment(), increment()};\n    for (int i = 0; i < arr.length; i++) {\n      if (arr[i] % 2 == 0) arr[i] = arr[i] * increment();\n      else arr[i] = arr[i] + increment();\n    }\n    System.out.print(\"Result: \");\n    for (int value : arr) System.out.print(value + \" \");\n  }\n}\n```",
       "options": [
         "Result: 5 10 9",
         "Result: 1 2 3",
@@ -229,7 +229,7 @@
         "Result: 5 8 9"
       ],
       "answer": "A",
-      "explain": "arr={1,2,3} → 5, 10, 9."
+      "explain": "arr khởi tạo = {1,2,3} (count tăng 1,2,3). arr[0]=1 lẻ → 1 + 4 = 5. arr[1]=2 chẵn → 2 × 5 = 10. arr[2]=3 lẻ → 3 + 6 = 9. Output: 5 10 9."
     },
     {
       "q": "Which of the following is TRUE about abstract classes in Java?",
@@ -240,7 +240,7 @@
         "Abstract classes may contain both abstract and concrete methods."
       ],
       "answer": "D",
-      "explain": "Abstract class có thể có cả abstract + concrete method."
+      "explain": "Abstract class có thể có cả abstract method (không thân) và concrete method (có thân). Không thể `new` trực tiếp, method không tự động public."
     },
     {
       "q": "Which of the following is an example of encapsulation in Java?",
@@ -251,7 +251,7 @@
         "Creating a default (no modifier) field and accessing it from the same package"
       ],
       "answer": "A",
-      "explain": "private field + public getter/setter = encapsulation."
+      "explain": "Encapsulation = che giấu dữ liệu bên trong (private) + cung cấp API truy cập có kiểm soát (getter/setter public)."
     },
     {
       "q": "Which of the following statements is true about superclass and subclass relationships in Java?",
@@ -264,7 +264,7 @@
         "A subclass can have more than one superclass."
       ],
       "answer": "C",
-      "explain": "⚠️ ĐỀ LỖI: Không có lựa chọn hoàn toàn đúng. C chỉ gần ý đề, vì super() có thể được compiler chèn ngầm; không bắt buộc gọi tường minh. \"must always call superclass constructor explicitly\" là SAI — compiler tự chèn `super()` nếu superclass có no-arg. C là đáp án \"tốt nhất\" theo kiểu loại trừ, nhưng câu chữ không chính xác. Các đáp án A, B, D, E, F đều sai rõ."
+      "explain": "⚠️ ĐỀ LỖI: Không có đáp án hoàn toàn đúng. C nói subclass constructor phải gọi superclass constructor một cách tường minh là sai: nếu không viết, compiler thường tự chèn `super()` khi có constructor không tham số phù hợp. A, B, D, E, F cũng sai. Đáp án C chỉ là lựa chọn theo loại trừ, không phải quy tắc Java chính xác."
     },
     {
       "q": "What is the main purpose of using anonymous classes in Java?",
@@ -275,7 +275,7 @@
         "To improve the performance of static method calls."
       ],
       "answer": "A",
-      "explain": "Anonymous class: khai báo + khởi tạo cùng lúc, dùng 1 lần."
+      "explain": "Anonymous class vừa khai báo vừa khởi tạo ngay tại chỗ, dùng một lần (event handler, callback). Không dùng để kế thừa nhiều lớp hay tăng hiệu năng static."
     },
     {
       "q": "Which of the following statements about reference types in Java is TRUE?",
@@ -286,7 +286,7 @@
         "A reference variable stores the address of an object in memory."
       ],
       "answer": "D",
-      "explain": "Reference variable lưu địa chỉ object."
+      "explain": "Biến tham chiếu lưu địa chỉ (reference) tới object trên heap. Default là `null`; mảng là kiểu reference."
     },
     {
       "q": "What is the \"instanceof\" operator used for?",
@@ -297,7 +297,7 @@
         "To check if an object is null"
       ],
       "answer": "A",
-      "explain": "instanceof kiểm tra object là instance của class."
+      "explain": "`obj instanceof Type` trả `true` nếu object là instance của Type hoặc subtype."
     },
     {
       "q": "Which of the following statements about polymorphism is FALSE?",
@@ -308,7 +308,7 @@
         "Polymorphism works only with interfaces."
       ],
       "answer": "D",
-      "explain": "\"Polymorphism works only with interfaces\" là FALSE."
+      "explain": "D sai: polymorphism không chỉ hoạt động qua interface mà còn qua class inheritance. Với runtime polymorphism, method được override và lựa chọn theo object lúc chạy. Lưu ý Java còn có compile-time polymorphism qua method overloading."
     },
     {
       "q": "Choose the correct statement about overloading in Java.",
@@ -319,10 +319,10 @@
         "Overloading is based on having multiple methods with the same name but different return types."
       ],
       "answer": "A",
-      "explain": "Overloading: cùng tên, khác số/kiểu tham số."
+      "explain": "Overload: cùng tên, khác danh sách tham số (số lượng, kiểu, hoặc thứ tự). Return type không tính vào overload."
     },
     {
-      "q": "What is the output of the following Java program?\n\n```java\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  @Override\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String args[]) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}\n```",
+      "q": "What is the output of the following Java program?\n\n```java\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String args[]) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}\n```",
       "options": [
         "@MyClass",
         "Runtime error in the statement: objA.show();",
@@ -330,7 +330,7 @@
         "None of the others"
       ],
       "answer": "A",
-      "explain": "Một override thỏa cả 2 interface → in `@MyClass`."
+      "explain": "Một method `show()` thỏa cả 2 interface cùng signature. Gọi qua `IA` → dynamic dispatch → in `@MyClass`."
     },
     {
       "q": "Which of the following statements about abstract classes in Java is correct?",
@@ -343,7 +343,7 @@
         "Abstract classes can extend multiple other classes."
       ],
       "answer": "C",
-      "explain": "Abstract class có cả abstract + concrete method."
+      "explain": "Abstract class có cả abstract + concrete method; có constructor (dùng qua `super()`); không thể `final`; chỉ extends một class."
     },
     {
       "q": "What happens when the following code is executed?\n\n```java\nInteger wi = 234;\nint times9 = wi * 9;\n```",
@@ -354,7 +354,7 @@
         "Reference comparison is performed instead of value."
       ],
       "answer": "B",
-      "explain": "`wi * 9` → auto-unboxing Integer → int."
+      "explain": "Toán tử `*` cần primitive → JVM auto-unbox `wi` (Integer) về int. Đây là autounboxing ngầm định hợp lệ."
     },
     {
       "q": "What is the output of the following Java program?\n\n```java\nclass A {\n  int i = 100;\n  public void printValue() { System.out.print(\"A\"); }\n}\nclass B extends A {\n  int i = 120;\n  public void printValue() { System.out.print(\"B\"); }\n}\npublic class Main {\n  public static void main(String args[]) {\n    A a = new B();\n    a.printValue();\n    System.out.print(a.i);\n  }\n}\n```",
@@ -365,7 +365,7 @@
         "A120"
       ],
       "answer": "A",
-      "explain": "`a.printValue()` → \"B\" (override); `a.i` → field theo reference type A → 100 → `B100`."
+      "explain": "Method → dynamic dispatch theo object runtime → \"B\". Field → truy cập theo reference type `A` → `a.i = 100`. Kết quả: `B100`."
     },
     {
       "q": "What is the default value of boolean elements in an array if NOT initialized?",
@@ -376,7 +376,7 @@
         "true"
       ],
       "answer": "A",
-      "explain": "boolean array default `false`."
+      "explain": "Mảng `boolean[]` được Java khởi tạo mặc định `false` cho mọi phần tử."
     },
     {
       "q": "What is the most significant implication when multiple array elements reference the same object instance?",
@@ -387,7 +387,7 @@
         "The garbage collector cannot deallocate the object until all array elements are explicitly set to different references."
       ],
       "answer": "A",
-      "explain": "Nhiều phần tử cùng trỏ 1 object → sửa 1 ảnh hưởng tất cả."
+      "explain": "Java dùng reference: nhiều phần tử trỏ cùng object → sửa qua bất kỳ reference nào đều phản ánh cho tất cả."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\nint i = 0;\nint[] list = {1, 2, 3, 4, 5};\ndo {\n  list[i] += ++i;\n} while (i < 4);\nSystem.out.println(list[0] + list[list.length]);\n```",
@@ -398,7 +398,7 @@
         "6"
       ],
       "answer": "A",
-      "explain": "`list[list.length]` = `list[5]` → ArrayIndexOutOfBoundsException."
+      "explain": "`list[list.length]` = `list[5]` — index hợp lệ là 0..4 → ném `ArrayIndexOutOfBoundsException`."
     },
     {
       "q": "What happens when you try to assign an array to another array in Java?",
@@ -409,7 +409,7 @@
         "Java does not allow array assignment."
       ],
       "answer": "A",
-      "explain": "Gán mảng = copy reference, không copy dữ liệu."
+      "explain": "Gán mảng chỉ copy reference, không copy nội dung. Muốn copy thật phải dùng `System.arraycopy()` hoặc `Arrays.copyOf()`."
     },
     {
       "q": "Which OOP concept allows a class to inherit attributes and behaviors from another class?",
@@ -422,7 +422,7 @@
         "Method overloading"
       ],
       "answer": "C",
-      "explain": "Inheritance."
+      "explain": "Inheritance (kế thừa) cho phép subclass thừa hưởng field + method từ superclass."
     },
     {
       "q": "Which of the following interfaces is the root interface of the Java Collections Framework?",
@@ -433,7 +433,7 @@
         "Set"
       ],
       "answer": "A",
-      "explain": "Collection là root interface."
+      "explain": "`Collection` là root của List, Set, Queue. `Map` đứng riêng, không kế thừa Collection."
     },
     {
       "q": "Which of the following statements about ArrayList vs LinkedList is true?",
@@ -444,7 +444,7 @@
         "LinkedList cannot store duplicate elements."
       ],
       "answer": "C",
-      "explain": "ArrayList random access nhanh hơn LinkedList."
+      "explain": "ArrayList dùng mảng nội bộ → truy cập `get(i)` O(1); LinkedList phải duyệt O(n). Insert giữa LinkedList nhanh hơn. LinkedList tốn bộ nhớ hơn (con trỏ)."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\nSet<Integer> set1 = new HashSet<>();\nset1.add(1); set1.add(2); set1.add(3); set1.add(1);\nSet<Integer> set2 = new HashSet<>();\nset2.add(1); set2.add(4);\nset1.removeAll(set2);\nSystem.out.println(set1);\n```",
@@ -455,7 +455,7 @@
         "[4, 1]"
       ],
       "answer": "A",
-      "explain": "⚠️ HashSet không bảo đảm thứ tự duyệt, nên không thể chắc chắn thứ tự in. Nội dung đúng `{2,3}`; HashSet không đảm bảo thứ tự in ra — có thể in `[3, 2]`."
+      "explain": "HashSet loại duplicate: set1 = {1,2,3}. removeAll({1,4}) xóa 1 → {2,3}. Nội dung đúng là `[2, 3]`; HashSet không đảm bảo thứ tự in."
     },
     {
       "q": "What happens if you add a duplicate element to a TreeSet?",
@@ -466,10 +466,10 @@
         "A runtime exception is thrown."
       ],
       "answer": "C",
-      "explain": "TreeSet bỏ qua duplicate."
+      "explain": "TreeSet dùng `compareTo()` để xác định trùng; nếu trùng thì `add()` trả `false`, set không đổi."
     },
     {
-      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n  }\n  /* Getter and Setter */\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}\n```",
+      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n  }\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}\n```",
       "options": [
         "John Doe",
         "Rose Mary",
@@ -477,7 +477,7 @@
         "A runtime exception is thrown."
       ],
       "answer": "B",
-      "explain": "HashMap key \"A\" bị ghi đè → \"Rose Mary\"."
+      "explain": "HashMap ghi đè value khi key trùng. `put(\"A\", Rose Mary)` thay John Doe → `get(\"A\")` trả \"Rose Mary\"."
     },
     {
       "q": "What will be the output of the following Java code?\n\n```java\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    Map<String, Integer> map = new LinkedHashMap<>();\n    map.put(\"A\", 1);\n    map.put(\"B\", 2);\n    map.put(\"C\", 3);\n    map.remove(\"B\");\n    map.put(\"B\", 4);\n    System.out.println(map.keySet());\n  }\n}\n```",
@@ -488,7 +488,7 @@
         "[A, B]"
       ],
       "answer": "B",
-      "explain": "LinkedHashMap: remove B rồi put lại → B xuống cuối → [A, C, B]."
+      "explain": "LinkedHashMap giữ thứ tự chèn. Xóa B rồi put lại → B được chèn lại ở cuối → key order: A, C, B."
     },
     {
       "q": "Which of the following statements about the low-level stream and the high-level stream is true?",
@@ -499,7 +499,7 @@
         "The low-level stream's data unit is primitive, high-level stream's data unit is character."
       ],
       "answer": "A",
-      "explain": "⚠️ Mô tả chỉ đúng cho một số high-level streams, không phải tất cả. A đúng trong ngữ cảnh điển hình (DataInputStream/DataOutputStream); không đúng cho mọi high-level stream (BufferedReader xử lý char, ObjectInputStream xử lý object)."
+      "explain": "Low-level stream (InputStream/OutputStream) xử lý byte. High-level stream điển hình (DataInputStream/DataOutputStream) xử lý primitive. Lưu ý: không phải mọi high-level stream đều xử lý primitive (BufferedReader xử lý char). A là mô tả phù hợp nhất."
     },
     {
       "q": "What is the purpose of the FileOutputStream class in Java?",
@@ -510,7 +510,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "Đáp án đã sửa từ D sang A sau kiểm tra chéo: FileOutputStream trực tiếp ghi bytes, không trực tiếp ghi mọi kiểu dữ liệu. `FileOutputStream` ghi raw bytes (A). Không trực tiếp ghi primitive (đó là `DataOutputStream`) và không tạo object stream (đó là `ObjectOutputStream`). Đáp án đúng: A."
+      "explain": "FileOutputStream ghi byte thô trực tiếp xuống file. Ghi primitive là `DataOutputStream`; ghi object là `ObjectOutputStream`."
     },
     {
       "q": "Which of the following exceptions is thrown when an attempt is made to open a file that CANNOT be found by the FileInputStream class?",
@@ -521,7 +521,7 @@
         "NotFoundIOException"
       ],
       "answer": "A",
-      "explain": "FileInputStream ném `FileNotFoundException`."
+      "explain": "FileInputStream ném `FileNotFoundException` (subclass của `IOException`) khi file không tồn tại."
     },
     {
       "q": "Which of the following methods of the FileOutputStream class is used to write bytes to a target stream?",
@@ -532,7 +532,7 @@
         "println()"
       ],
       "answer": "A",
-      "explain": "`write()` ghi byte."
+      "explain": "`write(int)` / `write(byte[])` ghi byte. `print`/`println` thuộc PrintStream; `writeLine` không tồn tại trong FileOutputStream."
     },
     {
       "q": "Which of the following classes is the superclass of the PrintWriter and FileWriter classes?",
@@ -543,10 +543,10 @@
         "Object class"
       ],
       "answer": "A",
-      "explain": "`PrintWriter` và `FileWriter` đều extends `Writer`."
+      "explain": "Cả PrintWriter và FileWriter đều extends `Writer` — abstract class cho ghi ký tự."
     },
     {
-      "q": "What is the output of the following code snippet?\n\n```java\nFile f = new File(\"test.txt\");\ntry {\n  FileReader fr = new FileReader(f);\n  BufferedReader bf = new BufferedReader(fr);\n  int k = 2;\n  String line = \"\";\n  for (int i = 0; i < k; i++) {\n    line = bf.readLine();\n  }\n  System.out.println(line);\n} catch (IOException e) {\n  System.out.println(e);\n}\n```\n\nAssume that test.txt has the content as follows (mỗi dòng riêng biệt):\nHello\nXin chao\nHallo\nAnyong Haseyo",
+      "q": "What is the output of the following code snippet?\n\n```java\nFile f = new File(\"test.txt\");\ntry {\n  FileReader fr = new FileReader(f);\n  BufferedReader bf = new BufferedReader(fr);\n  int k = 2;\n  String line = \"\";\n  for (int i = 0; i < k; i++) line = bf.readLine();\n  System.out.println(line);\n} catch (IOException e) {\n  System.out.println(e);\n}\n```\n\nAssume test.txt (mỗi dòng riêng biệt):\nHello\nXin chao\nHallo\nAnyong Haseyo",
       "options": [
         "Xin chao",
         "Hello",
@@ -554,7 +554,7 @@
         "Anyong Haseyo"
       ],
       "answer": "A",
-      "explain": "⚠️ Chỉ đúng nếu nội dung file có các dòng tách riêng như mô tả. Đúng nếu file có mỗi từ 1 dòng: lần 1 \"Hello\", lần 2 \"Xin chao\" → in \"Xin chao\". Nếu file chỉ 1 dòng thì lần 2 trả `null` → in \"null\" (không có đáp án)."
+      "explain": "Vòng lặp đọc 2 lần: lần 1 \"Hello\", lần 2 \"Xin chao\". Biến `line` giữ giá trị cuối → in \"Xin chao\". (Nếu file chỉ 1 dòng thì lần 2 trả null.)"
     },
     {
       "q": "What type of relationship does aggregation describe in object-oriented design?",
@@ -565,7 +565,7 @@
         "\"has a\" relationship, showing ownership or containment."
       ],
       "answer": "D",
-      "explain": "Aggregation = \"has-a\"."
+      "explain": "Aggregation là quan hệ \"has-a\" (chứa đựng/sở hữu), khác inheritance (\"is-a\") và dependency (\"uses\")."
     }
   ]
 }

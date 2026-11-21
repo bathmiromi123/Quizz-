@@ -1,6 +1,6 @@
 {
   "title": "PRO192 SU26 – Đề 2",
-  "description": "50 câu PRO192, đã đối chiếu đáp án với AI khác. Câu có lỗi hoặc mơ hồ được ghi chú trong giải thích.",
+  "description": "50 câu PRO192. Đáp án đã cross-check độc lập.",
   "timeLimitMinutes": 0,
   "mode": "practice",
   "shuffleQuestions": true,
@@ -16,7 +16,7 @@
         "Refrigerator"
       ],
       "answer": "D",
-      "explain": "Refrigerator."
+      "explain": "Tủ lạnh là thiết bị gia dụng, không phải thành phần cấu tạo máy tính."
     },
     {
       "q": "Which is a valid keyword in Java?",
@@ -27,7 +27,7 @@
         "Integer"
       ],
       "answer": "A",
-      "explain": "`interface` là keyword."
+      "explain": "`interface` là keyword; `include` thuộc C/C++; `Float` và `Integer` là tên class wrapper."
     },
     {
       "q": "Which of the following statements about the Java language is true?",
@@ -38,7 +38,7 @@
         "The Java code only runs on the Windows platform."
       ],
       "answer": "A",
-      "explain": "Java case-sensitive."
+      "explain": "Java phân biệt chữ hoa/thường. Kết thúc câu lệnh dùng `;`, không phải `:`. Java chạy đa nền tảng nhờ JVM."
     },
     {
       "q": "In order to compile a program named Hello.java, what do you type at the command line?",
@@ -49,7 +49,7 @@
         "javac Hello.java"
       ],
       "answer": "D",
-      "explain": "`javac Hello.java`."
+      "explain": "`javac Hello.java` biên dịch ra `Hello.class`; `java Hello` dùng để chạy class đã biên dịch."
     },
     {
       "q": "What is the purpose of a Java Virtual Machine (JVM)?",
@@ -60,7 +60,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "JVM interpret bytecode."
+      "explain": "JVM thực thi bytecode `.class` trên từng nền tảng — cho phép 'write once, run anywhere'."
     },
     {
       "q": "Which of the following related to the comment in Java is false?",
@@ -71,7 +71,7 @@
         "//comment"
       ],
       "answer": "A",
-      "explain": "`/* comment` thiếu `*/`."
+      "explain": "`/* comment` thiếu `*/` → không hợp lệ. `//` là comment một dòng, `/** */` là Javadoc."
     },
     {
       "q": "A Java source code will be compiled to the file in which of the following extensions?",
@@ -82,7 +82,7 @@
         ".bat"
       ],
       "answer": "A",
-      "explain": "Compile ra `.class`."
+      "explain": "`javac` dịch `.java` → bytecode `.class` cho JVM."
     },
     {
       "q": "Choose multiple correct answers.",
@@ -97,7 +97,7 @@
         "C",
         "D"
       ],
-      "explain": "⚠️ Giá trị mặc định 0 chỉ áp dụng cho field hoặc phần tử mảng int; biến cục bộ phải được gán trước khi đọc. A chỉ đúng khi là field/array element; local int không có default."
+      "explain": "A đúng với field/array int (default 0). C đúng — cả hai lưu giá trị. D đúng — biến thay đổi được. B sai — `final` không đổi được."
     },
     {
       "q": "What keyword is used in Java to declare a constant value that cannot be changed?",
@@ -108,7 +108,7 @@
         "static"
       ],
       "answer": "C",
-      "explain": "`final`."
+      "explain": "`final` khai báo hằng. `const` là từ khóa dự trữ nhưng không dùng trong Java; `static` chỉ là class-level."
     },
     {
       "q": "What is the output of the following Java code?\n\n```java\npublic class StringTest {\n  public static void main(String[] args) {\n    String s1 = \"hello\";\n    String s2 = new String(\"hello\");\n    System.out.println(s1 == s2);\n  }\n}\n```",
@@ -119,7 +119,7 @@
         "null"
       ],
       "answer": "B",
-      "explain": "`s1 == s2` so reference → false."
+      "explain": "`s1` từ string pool, `s2` là object mới trên heap → hai reference khác nhau → `==` trả false. So sánh nội dung phải dùng `.equals()`."
     },
     {
       "q": "What will be the output of the following code?\n\n```java\npublic class Test10 {\n  public static void main(String[] args) {\n    Integer x = new Integer(5);\n    Integer y = new Integer(10);\n    System.out.println((String)(x+y));\n  }\n}\n```",
@@ -130,7 +130,7 @@
         "Compiler Error"
       ],
       "answer": "D",
-      "explain": "`(String)(x+y)` → compiler error."
+      "explain": "`x+y` trả về `int`; Java không cast `int` sang `String` được → compile error."
     },
     {
       "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}\n```",
@@ -141,7 +141,7 @@
         "[I@15db9742"
       ],
       "answer": "A",
-      "explain": "for-each không đổi mảng → `a[1]=0`."
+      "explain": "for-each chỉ gán vào biến local `i`; mảng không đổi → `a[1]` = 0 (default int)."
     },
     {
       "q": "Which of the following packages contains the Scanner class used to input data via keyboard?",
@@ -152,10 +152,10 @@
         "java.awt"
       ],
       "answer": "A",
-      "explain": "Scanner thuộc `java.util`."
+      "explain": "`Scanner` nằm trong `java.util` — cần `import java.util.Scanner;`."
     },
     {
-      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  private double salary;\n  public void setSalary(double s) { this.salary = s; }\n  public double getSalary() { return salary; }\n  public String getId() { return id; }\n}\n\npublic static void main(String[] args) {\n  Employee e = new Employee();\n  e.setSalary(1000);\n  try {\n    if (e.getSalary() > 500 && e.getId().equals(\"NV001\")) {\n      System.out.println(\"This is a manager\");\n    }\n  } catch (Exception ex) {\n    System.out.println(\"Some error occurred!\");\n  }\n}\n```",
+      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  private double salary;\n  public void setSalary(double s) { this.salary = s; }\n  public double getSalary() { return salary; }\n  public String getId() { return id; }\n}\npublic static void main(String[] args) {\n  Employee e = new Employee();\n  e.setSalary(1000);\n  try {\n    if (e.getSalary() > 500 && e.getId().equals(\"NV001\")) {\n      System.out.println(\"This is a manager\");\n    }\n  } catch (Exception ex) {\n    System.out.println(\"Some error occurred!\");\n  }\n}\n```",
       "options": [
         "\"This is a manager\"",
         "\"Some error occurred!\"",
@@ -163,10 +163,10 @@
         "Nothing will be printed (Blank output)."
       ],
       "answer": "B",
-      "explain": "`e.getId()` null → NPE → catch → \"Some error occurred!\"."
+      "explain": "`id` chưa khởi tạo → `getId()` trả `null`. `null.equals(...)` ném NPE → catch → in \"Some error occurred!\"."
     },
     {
-      "q": "Given this declaration, what is the value of car immediately after declaration?\nCar car;",
+      "q": "Given this declaration, what is the value of car immediately after declaration?\n`Car car;`",
       "options": [
         "Undefined",
         "A new Car object",
@@ -174,7 +174,7 @@
         "null"
       ],
       "answer": "D",
-      "explain": "⚠️ Nếu là field kiểu tham chiếu thì mặc định null; biến cục bộ không có giá trị mặc định. Nếu là field → null. Nếu là local → không có giá trị, không dùng được (không có \"Undefined\" trong Java). Đề ngầm hiểu field."
+      "explain": "⚠️ ĐỀ THIẾU NGỮ CẢNH: Nếu `Car car;` là field thì Java tự gán `null` (đáp án D). Nếu là local variable thì chưa được khởi tạo và không thể đọc giá trị trước khi gán. Đề ngầm hiểu field."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\npublic class Test {\n  int x = 5;\n  int y = 2;\n  public static void main(String[] args) {\n    Test obj;\n    obj.x = 10;\n    obj.y = 20;\n    System.out.println(obj.x + obj.y);\n  }\n}\n```",
@@ -185,7 +185,7 @@
         "90"
       ],
       "answer": "A",
-      "explain": "`obj` chưa khởi tạo → compile error."
+      "explain": "`obj` là local chưa khởi tạo → truy cập `obj.x` bị lỗi biên dịch ('variable obj might not have been initialized')."
     },
     {
       "q": "What will be printed by the following code?\n\n```java\nclass Dog {\n  String name;\n  Dog(String n) { name = n; }\n  void bark() { System.out.println(name + \" says Woof!\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Dog d = new Dog(\"Buddy\");\n    d.bark();\n  }\n}\n```",
@@ -196,7 +196,7 @@
         "Compile error"
       ],
       "answer": "B",
-      "explain": "\"Buddy says Woof!\"."
+      "explain": "Constructor gán `name = \"Buddy\"`; `bark()` nối chuỗi → \"Buddy says Woof!\"."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\npublic class Person {\n  protected String id = \"New Id\";\n  public static void main(String[] args) {\n    Person p = new Person();\n    p.id = \"FPTU\";\n    System.out.println(p.id);\n  }\n}\n```",
@@ -207,7 +207,7 @@
         "Runtime error"
       ],
       "answer": "A",
-      "explain": "\"FPTU\"."
+      "explain": "`protected` cho phép truy cập từ chính class → gán lại `\"FPTU\"` rồi in → \"FPTU\"."
     },
     {
       "q": "What is the correct way to call an instance method fly() on an object bird?",
@@ -218,7 +218,7 @@
         "bird::fly();"
       ],
       "answer": "B",
-      "explain": "`bird.fly()`."
+      "explain": "Java dùng dấu `.` để gọi method instance: `bird.fly()`. `->` là C/C++; `::` là method reference."
     },
     {
       "q": "Which of the following statements related to the protected access modifier is true?",
@@ -229,7 +229,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "protected cho phép truy cập ngoài package qua subclass."
+      "explain": "`protected` cho phép truy cập cùng package + subclass ở package khác (qua thừa kế)."
     },
     {
       "q": "Given the following code, what will be the output?\n\n```java\nclass Animal {\n  void sound() { System.out.println(\"Animal sound\"); }\n}\nclass Dog extends Animal {\n  void sound() { System.out.println(\"Dog barks\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Animal a = new Dog();\n    a.sound();\n  }\n}\n```",
@@ -240,7 +240,7 @@
         "Runtime Error"
       ],
       "answer": "B",
-      "explain": "Dynamic dispatch → \"Dog barks\"."
+      "explain": "Dynamic dispatch: reference `Animal` nhưng object `Dog` → gọi method override của `Dog` → \"Dog barks\"."
     },
     {
       "q": "What is the output of the following Java program?\n\n```java\nclass A {\n  public static void show() { System.out.println(\"A::show\"); }\n}\nclass B extends A {\n  public static void show() { System.out.println(\"B::show\"); }\n}\nclass Main {\n  public static void main(String[] args) {\n    A b = new B();\n    b.show();\n  }\n}\n```",
@@ -251,7 +251,7 @@
         "Runtime error"
       ],
       "answer": "A",
-      "explain": "Static method theo reference type A → \"A::show\"."
+      "explain": "Static method không bị override (chỉ hiding), resolution theo reference type `A` → gọi `A.show()` → \"A::show\"."
     },
     {
       "q": "What is the output of the following Java program?\n\n```java\nclass A {\n  public int x = 1;\n  public void setX(int a) { x = a; }\n}\nclass B extends A {\n  public int getB() {\n    setX(2);\n    return x;\n  }\n}\npublic class Main {\n  public static void main(String[] args) {\n    A a = new A();\n    B b = new B();\n    System.out.println(a.x + \" \" + b.getB());\n  }\n}\n```",
@@ -262,7 +262,7 @@
         "2 2"
       ],
       "answer": "A",
-      "explain": "`a.x=1`; `b.getB()` → 2 → \"1 2\"."
+      "explain": "`a` là object riêng → `a.x = 1`. `b.getB()` gọi `setX(2)` trên `b` → `b.x = 2` → trả 2. Kết quả: `1 2`."
     },
     {
       "q": "Consider the code:\n\n```java\ninterface A { void methodA(); }\ninterface B { void methodB(); }\nclass C implements A, B {\n  public void methodA() { System.out.print(\"A\"); }\n  public static void main(String[] args) {\n    C obj = new C();\n    obj.methodA();\n    obj.methodB();\n  }\n}\n```\n\nWhat will the output be?",
@@ -273,7 +273,7 @@
         "Prints \"A\" only"
       ],
       "answer": "A",
-      "explain": "C thiếu `methodB()` → compile error."
+      "explain": "`C` không implement `methodB()` → class phải abstract hoặc implement đủ → compile error."
     },
     {
       "q": "What is the primary purpose of using a superclass and subclass relationship in Java?",
@@ -286,7 +286,7 @@
         "To establish a one-to-one mapping between classes."
       ],
       "answer": "D",
-      "explain": "Reusability + polymorphism."
+      "explain": "Kế thừa giúp tái sử dụng code + hỗ trợ đa hình (override + dynamic dispatch)."
     },
     {
       "q": "Which of the following statements about reference types in Java is TRUE?",
@@ -297,7 +297,7 @@
         "A reference variable stores the address of an object in memory."
       ],
       "answer": "D",
-      "explain": "Reference lưu địa chỉ object."
+      "explain": "Biến reference lưu địa chỉ object; default `null`; mảng là kiểu reference."
     },
     {
       "q": "Which of the following is/are advantages of packages?",
@@ -308,7 +308,7 @@
         "All of the mentioned"
       ],
       "answer": "D",
-      "explain": "Tất cả đều là ưu điểm của package."
+      "explain": "Package giúp tránh trùng tên, cho phép field package-private, và ẩn class nội bộ — tất cả đều đúng."
     },
     {
       "q": "What is the primary purpose of the this keyword in Java?",
@@ -319,10 +319,10 @@
         "It acts as a return keyword."
       ],
       "answer": "A",
-      "explain": "`this` = current object instance."
+      "explain": "`this` tham chiếu object hiện tại — dùng phân biệt field với tham số, gọi constructor khác, trả về chính object."
     },
     {
-      "q": "Given the Wage interface, Employee class and main method below, what will be printed?\n\n```java\npublic interface Wage {\n  default void notice() { System.out.println(\"Executing...\"); }\n  void increase();\n}\npublic class Employee implements Wage {\n  private String id;\n  private String name;\n  private int salary;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n    this.salary = 1000;\n  }\n  @Override\n  public void notice() {\n    System.out.println(\"Employee salary computed!\");\n  }\n  @Override\n  public void increase() {\n    this.salary += 200;\n  }\n  /* GETTERS AND SETTERS */\n}\npublic static void main(String[] args) {\n  Employee e = new Employee(\"EMP101\", \"John Doe\");\n  try {\n    e.increase();\n    System.out.println(\"Salary: \" + e.getSalary());\n  } catch (Exception ex) {\n    System.out.println(\"Cannot increase/decrease salary.\");\n  } finally {\n    e.notice();\n  }\n}\n```",
+      "q": "Given the Wage interface, Employee class and main method below, what will be printed?\n\n```java\npublic interface Wage {\n  default void notice() { System.out.println(\"Executing...\"); }\n  void increase();\n}\npublic class Employee implements Wage {\n  private String id;\n  private String name;\n  private int salary;\n  public Employee(String id, String name) {\n    this.id = id; this.name = name; this.salary = 1000;\n  }\n  public void notice() { System.out.println(\"Employee salary computed!\"); }\n  public void increase() { this.salary += 200; }\n  /* GETTERS AND SETTERS */\n}\npublic static void main(String[] args) {\n  Employee e = new Employee(\"EMP101\", \"John Doe\");\n  try {\n    e.increase();\n    System.out.println(\"Salary: \" + e.getSalary());\n  } catch (Exception ex) {\n    System.out.println(\"Cannot increase/decrease salary.\");\n  } finally {\n    e.notice();\n  }\n}\n```",
       "options": [
         "Salary: 1200 Employee salary computed!",
         "Salary: 1200 Cannot increase/decrease salary.",
@@ -331,10 +331,10 @@
         "The code doesn't compile."
       ],
       "answer": "A",
-      "explain": "increase 1200 + finally notice → \"Salary: 1200 Employee salary computed!\"."
+      "explain": "Giả sử phần `/* GETTERS AND SETTERS */` bao gồm `getSalary()`: `increase()` tăng salary từ 1000 lên 1200; không có exception nên catch bỏ qua; finally gọi `notice()` đã override → in `Employee salary computed!`. Nếu thiếu getter thật thì code không biên dịch."
     },
     {
-      "q": "What is the output of the following Java program?\n\n```java\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  @Override\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}\n```",
+      "q": "What is the output of the following Java program?\n\n```java\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}\n```",
       "options": [
         "@MyClass",
         "Runtime error in the statement: objA.show();",
@@ -342,7 +342,7 @@
         "None of the others"
       ],
       "answer": "A",
-      "explain": "`@MyClass`."
+      "explain": "Một method override thỏa cả IA và IB; gọi qua IA → `@MyClass`."
     },
     {
       "q": "Consider an abstract class \"Shape\" with an abstract method \"calculateArea()\". If a concrete subclass \"Circle\" extends \"Shape\" and provides an implementation for \"calculateArea()\", what happens when an object of the \"Circle\" class is created and the \"calculateArea()\" method is called?",
@@ -355,7 +355,7 @@
         "The result depends on whether the \"calculateArea()\" method is declared as static."
       ],
       "answer": "B",
-      "explain": "Concrete method của Circle được chạy."
+      "explain": "Đa hình: object `Circle` → gọi method override trong `Circle`. Abstract method không có thân để chạy."
     },
     {
       "q": "Choose multiple correct answers.",
@@ -369,7 +369,7 @@
         "A",
         "B"
       ],
-      "explain": "C, D sai."
+      "explain": "A/B đúng về kế thừa + `extends`. C sai (private không truy cập được). D sai (Java đơn kế thừa class)."
     },
     {
       "q": "Can a subclass override a method that is declared as final in its superclass?",
@@ -380,7 +380,7 @@
         "Only if the subclass is in a different package."
       ],
       "answer": "C",
-      "explain": "final method không override được."
+      "explain": "`final` method cấm override hoàn toàn — compiler báo lỗi nếu cố làm vậy, không phải warning."
     },
     {
       "q": "What happens when you try to assign an array to another array in Java?",
@@ -391,7 +391,7 @@
         "Java does not allow array assignment."
       ],
       "answer": "A",
-      "explain": "Cùng tham chiếu bộ nhớ."
+      "explain": "Gán mảng chỉ copy reference; muốn copy nội dung phải dùng `Arrays.copyOf()`/`System.arraycopy()`."
     },
     {
       "q": "Given the following code snippet: int[] arr = new int[100];\nWhich of the following statements is correct?",
@@ -402,7 +402,7 @@
         "Each element in the arr will be 1 by default"
       ],
       "answer": "A",
-      "explain": "100 phần tử, index 0–99, default 0."
+      "explain": "Mảng 100 phần tử, index 0..99. Default int là 0."
     },
     {
       "q": "Which method is used to convert an array to a List in Java?",
@@ -413,7 +413,7 @@
         "Arrays.arrayToList()"
       ],
       "answer": "A",
-      "explain": "`Arrays.asList()`."
+      "explain": "`Arrays.asList(T...)` trả List cố định kích thước backed bởi mảng. Các method khác không có trong API."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\nint sum = 0;\nfor (int i = 0; i <= 10; i++) {\n  sum += (i % 2 == 0 ? i : -i);\n}\nSystem.out.println(sum);\n```",
@@ -424,7 +424,7 @@
         "3"
       ],
       "answer": "A",
-      "explain": "Tổng = 5."
+      "explain": "Chuỗi: 0-1+2-3+4-5+6-7+8-9+10 = 5. Không có exception."
     },
     {
       "q": "Which of the following classes is used for shuffling an ArrayList in Java?",
@@ -435,7 +435,7 @@
         "Array.Util"
       ],
       "answer": "A",
-      "explain": "`Collections.shuffle()`."
+      "explain": "`Collections.shuffle(List)` xáo trộn ngẫu nhiên danh sách."
     },
     {
       "q": "Which of the following interfaces is the root interface of the Java Collections Framework?",
@@ -446,7 +446,7 @@
         "Set"
       ],
       "answer": "A",
-      "explain": "Collection là root."
+      "explain": "`Collection` là root của List/Set/Queue. `Map` đứng riêng, không extends Collection."
     },
     {
       "q": "What will be the output of the following Java code?\n\n```java\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    LinkedList<Integer> list = new LinkedList<>();\n    list.add(10);\n    list.addFirst(5);\n    list.addLast(15);\n    System.out.println(list);\n  }\n}\n```",
@@ -457,7 +457,7 @@
         "[10, 15, 5]"
       ],
       "answer": "A",
-      "explain": "add(10), addFirst(5), addLast(15) → [5, 10, 15]."
+      "explain": "add(10) → [10]; addFirst(5) → [5,10]; addLast(15) → [5,10,15]."
     },
     {
       "q": "What happens if you add a duplicate element to a TreeSet?",
@@ -468,7 +468,7 @@
         "A runtime exception is thrown."
       ],
       "answer": "C",
-      "explain": "TreeSet bỏ qua duplicate."
+      "explain": "TreeSet loại phần tử trùng theo `compareTo()`/`Comparator` — `add()` trả `false`, set không đổi."
     },
     {
       "q": "What must be implemented when storing custom objects in a TreeSet to ensure proper ordering?",
@@ -479,7 +479,7 @@
         "The toString() method must return values that can be compared lexicographically for automatic sorting."
       ],
       "answer": "A",
-      "explain": "Cần `Comparable.compareTo()`."
+      "explain": "TreeSet cần thứ tự tự nhiên qua `Comparable.compareTo()` hoặc `Comparator` truyền vào constructor."
     },
     {
       "q": "Which method is used to check if an element is present in an ArrayList?",
@@ -490,10 +490,10 @@
         "has()"
       ],
       "answer": "A",
-      "explain": "`contains()`."
+      "explain": "`ArrayList.contains(Object)` trả true nếu có phần tử bằng theo `.equals()`. Các method khác không có."
     },
     {
-      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n  }\n  /* Getter and Setter */\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}\n```",
+      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id; this.name = name;\n  }\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}\n```",
       "options": [
         "John Doe",
         "Rose Mary",
@@ -501,7 +501,7 @@
         "A runtime exception is thrown."
       ],
       "answer": "B",
-      "explain": "HashMap ghi đè key \"A\" → \"Rose Mary\"."
+      "explain": "HashMap ghi đè value khi key trùng → `\"A\"` map tới \"Rose Mary\"."
     },
     {
       "q": "What is the output of the following code snippet?\n\n```java\nString fName = \"test.txt\";\nFileInputStream fs = new FileInputStream(fName);\nbyte[] list = new byte[100];\nfs.read(list, 0, 4);\nSystem.out.format(\"%c%n\", list[1]);\n```\n\nIf test.txt has the content as follows: 01234567890",
@@ -512,7 +512,7 @@
         "3"
       ],
       "answer": "A",
-      "explain": "Byte 49 → ký tự '1'."
+      "explain": "Đọc 4 byte: '0','1','2','3' → `list[1]` = '1' (ASCII 49). In `%c` → ký tự '1'."
     },
     {
       "q": "Which of the following classes is used to iterate through lines in a text file when reading line by line?",
@@ -523,7 +523,7 @@
         "InputStreamReader"
       ],
       "answer": "A",
-      "explain": "`BufferedReader.readLine()`."
+      "explain": "`BufferedReader.readLine()` đọc từng dòng văn bản. FileReader/InputStreamReader chỉ wrap đọc, không có readLine."
     },
     {
       "q": "How do you check if a File object refers to a file (NOT a directory) in Java?",
@@ -534,7 +534,7 @@
         "notIsDirectory()"
       ],
       "answer": "A",
-      "explain": "`isFile()`."
+      "explain": "`File.isFile()` trả true nếu là file thường (không phải thư mục, không phải special)."
     },
     {
       "q": "To use the ObjectOutputStream object for writing an object to a destination file, which interface should the target class implement?",
@@ -545,7 +545,7 @@
         "Comparable"
       ],
       "answer": "A",
-      "explain": "`Serializable`."
+      "explain": "`Serializable` là marker interface bắt buộc để serialize object — nếu không sẽ ném `NotSerializableException`."
     },
     {
       "q": "Which of the following methods of File class is used to check a file already exists?",
@@ -556,7 +556,7 @@
         "fileExists()"
       ],
       "answer": "A",
-      "explain": "`exists()`."
+      "explain": "`File.exists()` trả true nếu file/thư mục tồn tại; chỉ method này có trong API."
     },
     {
       "q": "Which of the following statements is used to add the content to an existing text file?",
@@ -567,7 +567,7 @@
         "All of the others"
       ],
       "answer": "A",
-      "explain": "`FileWriter(file, true)`."
+      "explain": "`new FileWriter(file, true)` mở ở chế độ append. File không có tham số append; OutputStream cũng không có flag append trực tiếp."
     }
   ]
 }
