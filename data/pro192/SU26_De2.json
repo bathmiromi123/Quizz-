@@ -1,0 +1,573 @@
+{
+  "title": "PRO192 SU26 – Đề 2",
+  "description": "50 câu PRO192, đã đối chiếu đáp án với AI khác. Câu có lỗi hoặc mơ hồ được ghi chú trong giải thích.",
+  "timeLimitMinutes": 0,
+  "mode": "practice",
+  "shuffleQuestions": true,
+  "shuffleOptions": false,
+  "autoNext": false,
+  "questions": [
+    {
+      "q": "Which of the following is NOT a basic component of a computer?",
+      "options": [
+        "CPU",
+        "Memory",
+        "Monitor",
+        "Refrigerator"
+      ],
+      "answer": "D",
+      "explain": "Refrigerator."
+    },
+    {
+      "q": "Which is a valid keyword in Java?",
+      "options": [
+        "interface",
+        "include",
+        "Float",
+        "Integer"
+      ],
+      "answer": "A",
+      "explain": "`interface` là keyword."
+    },
+    {
+      "q": "Which of the following statements about the Java language is true?",
+      "options": [
+        "Java language is case-sensitive.",
+        "Java is not a fully object-oriented language.",
+        "Using a colon to end the command.",
+        "The Java code only runs on the Windows platform."
+      ],
+      "answer": "A",
+      "explain": "Java case-sensitive."
+    },
+    {
+      "q": "In order to compile a program named Hello.java, what do you type at the command line?",
+      "options": [
+        "java Hello",
+        "java Hello.java",
+        "javac Hello",
+        "javac Hello.java"
+      ],
+      "answer": "D",
+      "explain": "`javac Hello.java`."
+    },
+    {
+      "q": "What is the purpose of a Java Virtual Machine (JVM)?",
+      "options": [
+        "It is used to interpret and execute Java bytecode",
+        "It is used to write the bytecode into the .class file",
+        "It is used to verify and improve performance of Java programs",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "JVM interpret bytecode."
+    },
+    {
+      "q": "Which of the following related to the comment in Java is false?",
+      "options": [
+        "/* comment",
+        "/* comment */",
+        "/** comment */",
+        "//comment"
+      ],
+      "answer": "A",
+      "explain": "`/* comment` thiếu `*/`."
+    },
+    {
+      "q": "A Java source code will be compiled to the file in which of the following extensions?",
+      "options": [
+        ".class",
+        ".java",
+        ".exe",
+        ".bat"
+      ],
+      "answer": "A",
+      "explain": "Compile ra `.class`."
+    },
+    {
+      "q": "Choose multiple correct answers.",
+      "options": [
+        "The default value of an uninitialized int variable in Java is 0",
+        "Constants can be changed during the execution of a program",
+        "Variables and constants are both used to store values in Java",
+        "Variables can be changed during the execution of a program"
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explain": "⚠️ Giá trị mặc định 0 chỉ áp dụng cho field hoặc phần tử mảng int; biến cục bộ phải được gán trước khi đọc. A chỉ đúng khi là field/array element; local int không có default."
+    },
+    {
+      "q": "What keyword is used in Java to declare a constant value that cannot be changed?",
+      "options": [
+        "constant",
+        "const",
+        "final",
+        "static"
+      ],
+      "answer": "C",
+      "explain": "`final`."
+    },
+    {
+      "q": "What is the output of the following Java code?\npublic class StringTest {\n  public static void main(String[] args) {\n    String s1 = \"hello\";\n    String s2 = new String(\"hello\");\n    System.out.println(s1 == s2);\n  }\n}",
+      "options": [
+        "true",
+        "false",
+        "Compile-time error",
+        "null"
+      ],
+      "answer": "B",
+      "explain": "`s1 == s2` so reference → false."
+    },
+    {
+      "q": "What will be the output of the following code?\npublic class Test10 {\n  public static void main(String[] args) {\n    Integer x = new Integer(5);\n    Integer y = new Integer(10);\n    System.out.println((String)(x+y));\n  }\n}",
+      "options": [
+        "15",
+        "510",
+        "Runtime error",
+        "Compiler Error"
+      ],
+      "answer": "D",
+      "explain": "`(String)(x+y)` → compiler error."
+    },
+    {
+      "q": "What is the output of the code snippet?\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}",
+      "options": [
+        "0",
+        "1",
+        "null",
+        "[I@15db9742"
+      ],
+      "answer": "A",
+      "explain": "for-each không đổi mảng → `a[1]=0`."
+    },
+    {
+      "q": "Which of the following packages contains the Scanner class used to input data via keyboard?",
+      "options": [
+        "java.util",
+        "java.net",
+        "java.io",
+        "java.awt"
+      ],
+      "answer": "A",
+      "explain": "Scanner thuộc `java.util`."
+    },
+    {
+      "q": "Given the Employee class and main method below, what will be printed?\npublic class Employee {\n  private String id;\n  private String name;\n  private double salary;\n  public void setSalary(double s) { this.salary = s; }\n  public double getSalary() { return salary; }\n  public String getId() { return id; }\n}\n\npublic static void main(String[] args) {\n  Employee e = new Employee();\n  e.setSalary(1000);\n  try {\n    if (e.getSalary() > 500 && e.getId().equals(\"NV001\")) {\n      System.out.println(\"This is a manager\");\n    }\n  } catch (Exception ex) {\n    System.out.println(\"Some error occurred!\");\n  }\n}",
+      "options": [
+        "\"This is a manager\"",
+        "\"Some error occurred!\"",
+        "The code doesn't compile.",
+        "Nothing will be printed (Blank output)."
+      ],
+      "answer": "B",
+      "explain": "`e.getId()` null → NPE → catch → \"Some error occurred!\"."
+    },
+    {
+      "q": "Given this declaration, what is the value of car immediately after declaration?\nCar car;",
+      "options": [
+        "Undefined",
+        "A new Car object",
+        "0",
+        "null"
+      ],
+      "answer": "D",
+      "explain": "⚠️ Nếu là field kiểu tham chiếu thì mặc định null; biến cục bộ không có giá trị mặc định. Nếu là field → null. Nếu là local → không có giá trị, không dùng được (không có \"Undefined\" trong Java). Đề ngầm hiểu field."
+    },
+    {
+      "q": "What is the output of the following code snippet?\npublic class Test {\n  int x = 5;\n  int y = 2;\n  public static void main(String[] args) {\n    Test obj;\n    obj.x = 10;\n    obj.y = 20;\n    System.out.println(obj.x + obj.y);\n  }\n}",
+      "options": [
+        "Compile error",
+        "7",
+        "30",
+        "90"
+      ],
+      "answer": "A",
+      "explain": "`obj` chưa khởi tạo → compile error."
+    },
+    {
+      "q": "What will be printed by the following code?\nclass Dog {\n  String name;\n  Dog(String n) { name = n; }\n  void bark() { System.out.println(name + \" says Woof!\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Dog d = new Dog(\"Buddy\");\n    d.bark();\n  }\n}",
+      "options": [
+        "Woof!",
+        "Buddy says Woof!",
+        "Buddy Woof!",
+        "Compile error"
+      ],
+      "answer": "B",
+      "explain": "\"Buddy says Woof!\"."
+    },
+    {
+      "q": "What is the output of the following code snippet?\npublic class Person {\n  protected String id = \"New Id\";\n  public static void main(String[] args) {\n    Person p = new Person();\n    p.id = \"FPTU\";\n    System.out.println(p.id);\n  }\n}",
+      "options": [
+        "FPTU",
+        "null",
+        "New Id",
+        "Runtime error"
+      ],
+      "answer": "A",
+      "explain": "\"FPTU\"."
+    },
+    {
+      "q": "What is the correct way to call an instance method fly() on an object bird?",
+      "options": [
+        "bird->fly();",
+        "bird.fly();",
+        "fly.bird();",
+        "bird::fly();"
+      ],
+      "answer": "B",
+      "explain": "`bird.fly()`."
+    },
+    {
+      "q": "Which of the following statements related to the protected access modifier is true?",
+      "options": [
+        "It allows the outside package access",
+        "It does not allow within-package access",
+        "The protected members must be initialized before use",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "protected cho phép truy cập ngoài package qua subclass."
+    },
+    {
+      "q": "Given the following code, what will be the output?\nclass Animal {\n  void sound() { System.out.println(\"Animal sound\"); }\n}\nclass Dog extends Animal {\n  void sound() { System.out.println(\"Dog barks\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Animal a = new Dog();\n    a.sound();\n  }\n}",
+      "options": [
+        "Animal sound",
+        "Dog barks",
+        "Compilation Error",
+        "Runtime Error"
+      ],
+      "answer": "B",
+      "explain": "Dynamic dispatch → \"Dog barks\"."
+    },
+    {
+      "q": "What is the output of the following Java program?\nclass A {\n  public static void show() { System.out.println(\"A::show\"); }\n}\nclass B extends A {\n  public static void show() { System.out.println(\"B::show\"); }\n}\nclass Main {\n  public static void main(String[] args) {\n    A b = new B();\n    b.show();\n  }\n}",
+      "options": [
+        "A::show",
+        "B::show",
+        "A::B::show",
+        "Runtime error"
+      ],
+      "answer": "A",
+      "explain": "Static method theo reference type A → \"A::show\"."
+    },
+    {
+      "q": "What is the output of the following Java program?\nclass A {\n  public int x = 1;\n  public void setX(int a) { x = a; }\n}\nclass B extends A {\n  public int getB() {\n    setX(2);\n    return x;\n  }\n}\npublic class Main {\n  public static void main(String[] args) {\n    A a = new A();\n    B b = new B();\n    System.out.println(a.x + \" \" + b.getB());\n  }\n}",
+      "options": [
+        "1 2",
+        "2 1",
+        "1 1",
+        "2 2"
+      ],
+      "answer": "A",
+      "explain": "`a.x=1`; `b.getB()` → 2 → \"1 2\"."
+    },
+    {
+      "q": "Consider the code:\ninterface A { void methodA(); }\ninterface B { void methodB(); }\nclass C implements A, B {\n  public void methodA() { System.out.print(\"A\"); }\n  public static void main(String[] args) {\n    C obj = new C();\n    obj.methodA();\n    obj.methodB();\n  }\n}\nWhat will the output be?",
+      "options": [
+        "Compilation error",
+        "Prints \"A\" then throws a runtime exception.",
+        "Prints \"AB\"",
+        "Prints \"A\" only"
+      ],
+      "answer": "A",
+      "explain": "C thiếu `methodB()` → compile error."
+    },
+    {
+      "q": "What is the primary purpose of using a superclass and subclass relationship in Java?",
+      "options": [
+        "To restrict access to certain methods or fields.",
+        "To create multiple instances of a class.",
+        "To implement multiple inheritance.",
+        "To achieve code reusability and facilitate polymorphism.",
+        "To enforce encapsulation.",
+        "To establish a one-to-one mapping between classes."
+      ],
+      "answer": "D",
+      "explain": "Reusability + polymorphism."
+    },
+    {
+      "q": "Which of the following statements about reference types in Java is TRUE?",
+      "options": [
+        "Reference types hold actual data values, not addresses.",
+        "The default value for a reference variable is 0.",
+        "Arrays are considered primitive types.",
+        "A reference variable stores the address of an object in memory."
+      ],
+      "answer": "D",
+      "explain": "Reference lưu địa chỉ object."
+    },
+    {
+      "q": "Which of the following is/are advantages of packages?",
+      "options": [
+        "Packages avoid name clashes",
+        "Classes, even though they are visible outside their package, can have fields visible to packages only",
+        "We can have hidden classes that are used by the packages, but not visible outside.",
+        "All of the mentioned"
+      ],
+      "answer": "D",
+      "explain": "Tất cả đều là ưu điểm của package."
+    },
+    {
+      "q": "What is the primary purpose of the this keyword in Java?",
+      "options": [
+        "It refers to the current object instance.",
+        "It refers to the superclass.",
+        "It accesses static fields.",
+        "It acts as a return keyword."
+      ],
+      "answer": "A",
+      "explain": "`this` = current object instance."
+    },
+    {
+      "q": "Given the Wage interface, Employee class and main method below, what will be printed?\npublic interface Wage {\n  default void notice() { System.out.println(\"Executing...\"); }\n  void increase();\n}\npublic class Employee implements Wage {\n  private String id;\n  private String name;\n  private int salary;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n    this.salary = 1000;\n  }\n  @Override\n  public void notice() {\n    System.out.println(\"Employee salary computed!\");\n  }\n  @Override\n  public void increase() {\n    this.salary += 200;\n  }\n  /* GETTERS AND SETTERS */\n}\npublic static void main(String[] args) {\n  Employee e = new Employee(\"EMP101\", \"John Doe\");\n  try {\n    e.increase();\n    System.out.println(\"Salary: \" + e.getSalary());\n  } catch (Exception ex) {\n    System.out.println(\"Cannot increase/decrease salary.\");\n  } finally {\n    e.notice();\n  }\n}",
+      "options": [
+        "Salary: 1200 Employee salary computed!",
+        "Salary: 1200 Cannot increase/decrease salary.",
+        "Cannot increase/decrease salary.",
+        "Salary: 1200 Cannot increase/decrease salary. Employee salary computed!",
+        "The code doesn't compile."
+      ],
+      "answer": "A",
+      "explain": "increase 1200 + finally notice → \"Salary: 1200 Employee salary computed!\"."
+    },
+    {
+      "q": "What is the output of the following Java program?\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  @Override\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}",
+      "options": [
+        "@MyClass",
+        "Runtime error in the statement: objA.show();",
+        "Compile error in the statement: IA objA = new MyClass();",
+        "None of the others"
+      ],
+      "answer": "A",
+      "explain": "`@MyClass`."
+    },
+    {
+      "q": "Consider an abstract class \"Shape\" with an abstract method \"calculateArea()\". If a concrete subclass \"Circle\" extends \"Shape\" and provides an implementation for \"calculateArea()\", what happens when an object of the \"Circle\" class is created and the \"calculateArea()\" method is called?",
+      "options": [
+        "The abstract method in the superclass is executed.",
+        "The concrete method in the subclass is executed.",
+        "The program will not compile.",
+        "An exception is thrown at runtime.",
+        "Both the abstract method in the superclass and the concrete method in the subclass are executed.",
+        "The result depends on whether the \"calculateArea()\" method is declared as static."
+      ],
+      "answer": "B",
+      "explain": "Concrete method của Circle được chạy."
+    },
+    {
+      "q": "Choose multiple correct answers.",
+      "options": [
+        "Inheritance allows a class to inherit the properties and methods of another class",
+        "The keyword \"extends\" is used to indicate inheritance in Java. It is used in the declaration of a subclass to specify the superclass that it is inheriting from.",
+        "A subclass can access the private members of the superclass",
+        "Java supports both multiple inheritance of classes and interfaces"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explain": "C, D sai."
+    },
+    {
+      "q": "Can a subclass override a method that is declared as final in its superclass?",
+      "options": [
+        "Yes, under certain circumstances and a warning will be issued by the compiler.",
+        "Yes, but a warning will be issued by the compiler.",
+        "No, a final method cannot be overridden by any subclass.",
+        "Only if the subclass is in a different package."
+      ],
+      "answer": "C",
+      "explain": "final method không override được."
+    },
+    {
+      "q": "What happens when you try to assign an array to another array in Java?",
+      "options": [
+        "Both arrays reference to the same memory location.",
+        "A new copy of the array is created.",
+        "It results in a compilation error.",
+        "Java does not allow array assignment."
+      ],
+      "answer": "A",
+      "explain": "Cùng tham chiếu bộ nhớ."
+    },
+    {
+      "q": "Given the following code snippet: int[] arr = new int[100];\nWhich of the following statements is correct?",
+      "options": [
+        "The maximum number of elements of the arr is 100",
+        "The maximum index of the arr is 100",
+        "arr[100] = 100",
+        "Each element in the arr will be 1 by default"
+      ],
+      "answer": "A",
+      "explain": "100 phần tử, index 0–99, default 0."
+    },
+    {
+      "q": "Which method is used to convert an array to a List in Java?",
+      "options": [
+        "Arrays.asList()",
+        "Arrays.toList()",
+        "Arrays.convertToList()",
+        "Arrays.arrayToList()"
+      ],
+      "answer": "A",
+      "explain": "`Arrays.asList()`."
+    },
+    {
+      "q": "What is the output of the following code snippet?\nint sum = 0;\nfor (int i = 0; i <= 10; i++) {\n  sum += (i % 2 == 0 ? i : -i);\n}\nSystem.out.println(sum);",
+      "options": [
+        "5",
+        "2",
+        "The program will raise an exception.",
+        "3"
+      ],
+      "answer": "A",
+      "explain": "Tổng = 5."
+    },
+    {
+      "q": "Which of the following classes is used for shuffling an ArrayList in Java?",
+      "options": [
+        "Collections",
+        "CollectionList",
+        "Arrays",
+        "Array.Util"
+      ],
+      "answer": "A",
+      "explain": "`Collections.shuffle()`."
+    },
+    {
+      "q": "Which of the following interfaces is the root interface of the Java Collections Framework?",
+      "options": [
+        "Collection",
+        "Map",
+        "List",
+        "Set"
+      ],
+      "answer": "A",
+      "explain": "Collection là root."
+    },
+    {
+      "q": "What will be the output of the following Java code?\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    LinkedList<Integer> list = new LinkedList<>();\n    list.add(10);\n    list.addFirst(5);\n    list.addLast(15);\n    System.out.println(list);\n  }\n}",
+      "options": [
+        "[5, 10, 15]",
+        "[10, 5, 15]",
+        "[5, 15, 10]",
+        "[10, 15, 5]"
+      ],
+      "answer": "A",
+      "explain": "add(10), addFirst(5), addLast(15) → [5, 10, 15]."
+    },
+    {
+      "q": "What happens if you add a duplicate element to a TreeSet?",
+      "options": [
+        "It is added, and the set will contain two identical elements.",
+        "It replaces the existing element.",
+        "It is ignored, and the set remains unchanged.",
+        "A runtime exception is thrown."
+      ],
+      "answer": "C",
+      "explain": "TreeSet bỏ qua duplicate."
+    },
+    {
+      "q": "What must be implemented when storing custom objects in a TreeSet to ensure proper ordering?",
+      "options": [
+        "The compareTo() method from the Comparable interface.",
+        "The equals() and hashCode() methods must be overridden to maintain consistent ordering behavior.",
+        "A custom sorting algorithm that handles the specific data types and their natural ordering requirements.",
+        "The toString() method must return values that can be compared lexicographically for automatic sorting."
+      ],
+      "answer": "A",
+      "explain": "Cần `Comparable.compareTo()`."
+    },
+    {
+      "q": "Which method is used to check if an element is present in an ArrayList?",
+      "options": [
+        "contains()",
+        "exists()",
+        "includes()",
+        "has()"
+      ],
+      "answer": "A",
+      "explain": "`contains()`."
+    },
+    {
+      "q": "Given the Employee class and main method below, what will be printed?\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n  }\n  /* Getter and Setter */\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}",
+      "options": [
+        "John Doe",
+        "Rose Mary",
+        "John DoeRose Mary",
+        "A runtime exception is thrown."
+      ],
+      "answer": "B",
+      "explain": "HashMap ghi đè key \"A\" → \"Rose Mary\"."
+    },
+    {
+      "q": "What is the output of the following code snippet?\nString fName = \"test.txt\";\nFileInputStream fs = new FileInputStream(fName);\nbyte[] list = new byte[100];\nfs.read(list, 0, 4);\nSystem.out.format(\"%c%n\", list[1]);\nIf test.txt has the content as follows: 01234567890",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "answer": "A",
+      "explain": "Byte 49 → ký tự '1'."
+    },
+    {
+      "q": "Which of the following classes is used to iterate through lines in a text file when reading line by line?",
+      "options": [
+        "BufferedReader",
+        "FileReader",
+        "FileInputStream",
+        "InputStreamReader"
+      ],
+      "answer": "A",
+      "explain": "`BufferedReader.readLine()`."
+    },
+    {
+      "q": "How do you check if a File object refers to a file (NOT a directory) in Java?",
+      "options": [
+        "isFile()",
+        "checkFile()",
+        "isNotDirectory()",
+        "notIsDirectory()"
+      ],
+      "answer": "A",
+      "explain": "`isFile()`."
+    },
+    {
+      "q": "To use the ObjectOutputStream object for writing an object to a destination file, which interface should the target class implement?",
+      "options": [
+        "Serializable",
+        "Interpretable",
+        "Writable",
+        "Comparable"
+      ],
+      "answer": "A",
+      "explain": "`Serializable`."
+    },
+    {
+      "q": "Which of the following methods of File class is used to check a file already exists?",
+      "options": [
+        "exists()",
+        "isExists()",
+        "checkFile()",
+        "fileExists()"
+      ],
+      "answer": "A",
+      "explain": "`exists()`."
+    },
+    {
+      "q": "Which of the following statements is used to add the content to an existing text file?",
+      "options": [
+        "Set the append parameter to true in the constructor of the FileWriter object",
+        "Set the append parameter to true in the constructor of the File object",
+        "Set append parameter of true in the constructor of OutputStream object",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "`FileWriter(file, true)`."
+    }
+  ]
+}
