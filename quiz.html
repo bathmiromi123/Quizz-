@@ -107,6 +107,18 @@ body:has(#quiz[hidden]) .quiz-nav-meta,body:has(#quiz[hidden]) .quiz-progress-tr
   .quiz-menu summary{width:36px;height:36px}
   .wrap{padding-top:8px}
 }
+
+/* Java snippets in questions, answers and explanations */
+.rich-plain{white-space:pre-wrap;overflow-wrap:anywhere}
+.java-code{display:block;max-width:100%;margin:10px 0;padding:13px 14px;
+  border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);
+  font:400 .88rem/1.55 ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
+  white-space:pre;overflow-x:auto;tab-size:4;overscroll-behavior-x:contain}
+.java-code code{font:inherit;white-space:inherit}
+.opt span{min-width:0;flex:1}
+.opt .java-code{margin:6px 0;max-width:100%;font-size:.81rem}
+.ex .java-code{background:var(--card)}
+@media(max-width:540px){.java-code{font-size:.8rem;padding:10px 11px}}
 </style>
 </head>
 <body>

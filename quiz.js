@@ -2,6 +2,28 @@
 (function(){
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+// Format fenced Java code and clearly recognizable multi-line Java snippets safely.
+function richText(value){
+  const input=String(value??'').replace(/\r\n?/g,'\n');
+  const codeLine=s=>/^(?:\s*(?:@Override|public\b|private\b|protected\b|static\b|final\b|abstract\b|class\b|interface\b|enum\b|import\b|package\b|new\s+\w+|return\b|throw\b|throws\b|try\s*\{|catch\s*\(|finally\s*\{|if\s*\(|else\b|for\s*\(|while\s*\(|do\s*\{|switch\s*\(|case\b|default\s*:|System\.|[A-Za-z_$][\w$<>\[\], ?]*\s+[A-Za-z_$][\w$]*\s*(?:=|;|\(|\[)|[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)+\s*\(|\/\/|\/\*|\*|\{|\}|\);?\s*$|\);?\s*$|\);?\s*$))/.test(s);
+  const block=code=>'<pre class="java-code"><code>'+esc(code.replace(/^\n+|\n+$/g,''))+'</code></pre>';
+  const plain=s=>{
+    if(!s)return '';
+    const lines=s.split('\n');let out='',pending=[];
+    const flush=()=>{if(pending.length){out+='<div class="rich-plain">'+esc(pending.join('\n'))+'</div>';pending=[]}};
+    for(let i=0;i<lines.length;){
+      let j=i;while(j<lines.length&&(codeLine(lines[j])||(!lines[j].trim()&&j+1<lines.length&&codeLine(lines[j+1]))))j++;
+      const chunk=lines.slice(i,j),significant=chunk.filter(x=>x.trim());
+      if(significant.length>=2&&significant.some(x=>/[;{}]/.test(x))){flush();out+=block(chunk.join('\n'));i=j;continue}
+      pending.push(lines[i]);i++;
+    }
+    flush();return out;
+  };
+  const fence=/^\s*```(?:java|js|javascript|text)?\s*\n([\s\S]*?)\n\s*```\s*$/gim;
+  let out='',last=0,m;
+  while((m=fence.exec(input))!==null){out+=plain(input.slice(last,m.index));out+=block(m[1]);last=fence.lastIndex}
+  return out+plain(input.slice(last));
+}
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const toIdx=v=>typeof v==='string'?v.trim().toUpperCase().charCodeAt(0)-65:Number(v);
 let D,Q,A,CK,TRY,cur,S,tick,left,t0,review,warned,lastWrong=[];
@@ -114,7 +136,7 @@ function render(){
   const nd=CK.filter(Boolean).length,ng=Q.filter((_,i)=>CK[i]&&right(i)).length;
   $('#live').textContent=S.mode==='instant'&&!review?'Đúng '+ng+' · Sai '+(nd-ng):'';
   $('#navsum').textContent='Danh sách câu ('+A.filter(s=>s.size).length+'/'+Q.length+' đã làm)';
-  let h='<div class="question-heading"><p class="qt">'+esc(q.q)+'</p>' +
+  let h='<div class="question-heading"><div class="qt">'+richText(q.q)+'</div>' +
     '<button type="button" id="star-toggle" class="star-toggle'+(stars.has(q.id)?' starred':'')+'" aria-pressed="'+stars.has(q.id)+'" title="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'" aria-label="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'">'+(stars.has(q.id)?'★':'☆')+'</button></div>';
   if(q.img)h+='<img src="'+esc(q.img)+'" alt="">';
   if(q.multi)h+='<p class="hint">Có nhiều đáp án đúng, chọn tất cả</p>';
@@ -122,9 +144,9 @@ function render(){
     const sel=A[cur].has(i);let c='opt'+(sel?' sel':'');
     if(done){c='opt';if(o.c)c+=' ok';else if(sel)c+=' bad'}
     else if(S.mode==='instant'&&TRY[cur]&&sel){c='opt'+(o.c?' ok':' bad')}
-    return '<button class="'+c+'" data-i="'+i+'"'+(done?' disabled':'')+'><b>'+String.fromCharCode(65+i)+'</b><span>'+esc(o.t)+'</span></button>';
+    return '<button class="'+c+'" data-i="'+i+'"'+(done?' disabled':'')+'><b>'+String.fromCharCode(65+i)+'</b><span>'+richText(o.t)+'</span></button>';
   }).join('')+'</div>';
-  if(done&&q.ex)h+='<div class="ex">'+esc(q.ex)+'</div>';
+  if(done&&q.ex)h+='<div class="ex">'+richText(q.ex)+'</div>';
   if(!done&&S.mode==='instant'&&TRY[cur])h+='<p class="err">Chưa chính xác, hãy thử lại.</p>';
   if(!done&&q.multi&&S.mode==='instant')h+='<div style="margin-top:14px"><button id="chk" class="btn">Kiểm tra</button></div>';
   $('#card').innerHTML=h;
