@@ -121,7 +121,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What is the output of the code snippet?\npublic class Test {\n  public static void main(String[] args) {\n    int result;\n    System.out.println(result = true ? 100 : 5);\n  }\n}",
+      "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int result;\n    System.out.println(result = true ? 100 : 5);\n  }\n}\n```",
       "options": [
         "100",
         "5",
@@ -132,7 +132,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What is the output of the code snippet?\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}",
+      "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}\n```",
       "options": [
         "0",
         "1",
@@ -217,7 +217,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What is the output of the following code snippet?\npublic class Main {\n  public int a;\n  public long b;\n  public void test(long b) { System.out.println(\"long b\"); }\n  public void test(int a) { System.out.println(\"int a\"); }\n  public static void main(String[] args) {\n    Main e = new Main();\n    e.test(9*1000000000);\n  }\n}",
+      "q": "What is the output of the following code snippet?\n\n```java\npublic class Main {\n  public int a;\n  public long b;\n  public void test(long b) { System.out.println(\"long b\"); }\n  public void test(int a) { System.out.println(\"int a\"); }\n  public static void main(String[] args) {\n    Main e = new Main();\n    e.test(9*1000000000);\n  }\n}\n```",
       "options": [
         "int a",
         "long a",
@@ -272,7 +272,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "Consider the code:\ninterface Animal {\n  void makeSound();\n  void move();\n}\ninterface Pet {\n  void play();\n}\nclass Dog implements Animal, Pet {\n  @Override public void makeSound() { System.out.println(\"Woof!\"); }\n  @Override public void play() { System.out.println(\"Playing fetch\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Dog dog = new Dog();\n    Animal animal = dog;\n    Pet pet = dog;\n    animal.makeSound();\n    pet.play();\n  }\n}",
+      "q": "Consider the code:\n\n```java\ninterface Animal {\n  void makeSound();\n  void move();\n}\ninterface Pet {\n  void play();\n}\nclass Dog implements Animal, Pet {\n  @Override public void makeSound() { System.out.println(\"Woof!\"); }\n  @Override public void play() { System.out.println(\"Playing fetch\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Dog dog = new Dog();\n    Animal animal = dog;\n    Pet pet = dog;\n    animal.makeSound();\n    pet.play();\n  }\n}\n```",
       "options": [
         "Compilation error occurs",
         "Woof! Playing fetch",
@@ -309,7 +309,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What is the output of the following Java program?\nclass A { public A() { System.out.print(\"A\"); } }\nclass B extends A { public B() { System.out.print(\"B\"); } }\nclass C extends B { public C() { System.out.println(\"C\"); } }\npublic class Test {\n  public static void main(String[] args) { C c = new C(); }\n}",
+      "q": "What is the output of the following Java program?\n\n```java\nclass A { public A() { System.out.print(\"A\"); } }\nclass B extends A { public B() { System.out.print(\"B\"); } }\nclass C extends B { public C() { System.out.println(\"C\"); } }\npublic class Test {\n  public static void main(String[] args) { C c = new C(); }\n}\n```",
       "options": [
         "A,B,C",
         "B,C,A",
@@ -320,7 +320,7 @@
       "explain": "⚠️ Thực tế in ABC liền nhau, không có dấu phẩy; A chỉ đúng về thứ tự. Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What is the output following the code snippet?\nclass DemoClass {\n  static void m() { System.out.println(\"A\"); }\n}\nclass DemoClassChild extends DemoClass {\n  static void m() { System.out.println(\"B\"); }\n}\npublic class Main {\n  public static void main(String[] args) { DemoClassChild.m(); }\n}",
+      "q": "What is the output following the code snippet?\n\n```java\nclass DemoClass {\n  static void m() { System.out.println(\"A\"); }\n}\nclass DemoClassChild extends DemoClass {\n  static void m() { System.out.println(\"B\"); }\n}\npublic class Main {\n  public static void main(String[] args) { DemoClassChild.m(); }\n}\n```",
       "options": [
         "A",
         "B",
@@ -369,7 +369,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "Which of the following statements best describes the correctness or incorrectness of the Moveable interface in the provided Java code?\npublic interface Moveable {\n  default static final double SPEED = 10.0;\n  default void run() {\n    // Logic in method run\n  }\n  void stop();\n}",
+      "q": "Which of the following statements best describes the correctness or incorrectness of the Moveable interface in the provided Java code?\n\n```java\npublic interface Moveable {\n  default static final double SPEED = 10.0;\n  default void run() {\n    // Logic in method run\n  }\n  void stop();\n}\n```",
       "options": [
         "The default static final double SPEED declaration is incorrect.",
         "The default void run() method is invalid because interfaces cannot include method implementations.",
@@ -482,7 +482,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What will the following Java code print?\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    TreeMap<Integer, String> map = new TreeMap<>();\n    map.put(3, \"C\");\n    map.put(1, \"A\");\n    map.put(2, \"B\");\n    map.put(5, \"E\");\n    map.headMap(3).forEach((k,v) -> System.out.print(v));\n  }\n}",
+      "q": "What will the following Java code print?\n\n```java\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    TreeMap<Integer, String> map = new TreeMap<>();\n    map.put(3, \"C\");\n    map.put(1, \"A\");\n    map.put(2, \"B\");\n    map.put(5, \"E\");\n    map.headMap(3).forEach((k,v) -> System.out.print(v));\n  }\n}\n```",
       "options": [
         "C",
         "AB",
@@ -560,7 +560,7 @@
       "explain": "Đáp án dự kiến theo kiến thức Java và kết quả kiểm tra chéo."
     },
     {
-      "q": "What is the output of the following code snippet?\nString fName = \"output.txt\";\nbyte[] array = {65, 66, 67};\nbyte[] arr = new byte[3];\ntry {\n  RandomAccessFile f = new RandomAccessFile(fName, \"rw\");\n  f.write(array);\n  f.seek(0);\n  f.read(arr);\n  String str1 = new String(arr);\n  System.out.println(str1);\n} catch (Exception e) {\n  System.out.println(e);\n}",
+      "q": "What is the output of the following code snippet?\n\n```java\nString fName = \"output.txt\";\nbyte[] array = {65, 66, 67};\nbyte[] arr = new byte[3];\ntry {\n  RandomAccessFile f = new RandomAccessFile(fName, \"rw\");\n  f.write(array);\n  f.seek(0);\n  f.read(arr);\n  String str1 = new String(arr);\n  System.out.println(str1);\n} catch (Exception e) {\n  System.out.println(e);\n}\n```",
       "options": [
         "ABC",
         "ACB",

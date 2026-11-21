@@ -111,7 +111,7 @@
       "explain": "`final`."
     },
     {
-      "q": "What is the output of the following Java code?\npublic class StringTest {\n  public static void main(String[] args) {\n    String s1 = \"hello\";\n    String s2 = new String(\"hello\");\n    System.out.println(s1 == s2);\n  }\n}",
+      "q": "What is the output of the following Java code?\n\n```java\npublic class StringTest {\n  public static void main(String[] args) {\n    String s1 = \"hello\";\n    String s2 = new String(\"hello\");\n    System.out.println(s1 == s2);\n  }\n}\n```",
       "options": [
         "true",
         "false",
@@ -122,7 +122,7 @@
       "explain": "`s1 == s2` so reference → false."
     },
     {
-      "q": "What will be the output of the following code?\npublic class Test10 {\n  public static void main(String[] args) {\n    Integer x = new Integer(5);\n    Integer y = new Integer(10);\n    System.out.println((String)(x+y));\n  }\n}",
+      "q": "What will be the output of the following code?\n\n```java\npublic class Test10 {\n  public static void main(String[] args) {\n    Integer x = new Integer(5);\n    Integer y = new Integer(10);\n    System.out.println((String)(x+y));\n  }\n}\n```",
       "options": [
         "15",
         "510",
@@ -133,7 +133,7 @@
       "explain": "`(String)(x+y)` → compiler error."
     },
     {
-      "q": "What is the output of the code snippet?\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}",
+      "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n  public static void main(String[] args) {\n    int[] a = new int[5];\n    for (int i : a) {\n      i = 1;\n    }\n    System.out.println(a[1]);\n  }\n}\n```",
       "options": [
         "0",
         "1",
@@ -155,7 +155,7 @@
       "explain": "Scanner thuộc `java.util`."
     },
     {
-      "q": "Given the Employee class and main method below, what will be printed?\npublic class Employee {\n  private String id;\n  private String name;\n  private double salary;\n  public void setSalary(double s) { this.salary = s; }\n  public double getSalary() { return salary; }\n  public String getId() { return id; }\n}\n\npublic static void main(String[] args) {\n  Employee e = new Employee();\n  e.setSalary(1000);\n  try {\n    if (e.getSalary() > 500 && e.getId().equals(\"NV001\")) {\n      System.out.println(\"This is a manager\");\n    }\n  } catch (Exception ex) {\n    System.out.println(\"Some error occurred!\");\n  }\n}",
+      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  private double salary;\n  public void setSalary(double s) { this.salary = s; }\n  public double getSalary() { return salary; }\n  public String getId() { return id; }\n}\n\npublic static void main(String[] args) {\n  Employee e = new Employee();\n  e.setSalary(1000);\n  try {\n    if (e.getSalary() > 500 && e.getId().equals(\"NV001\")) {\n      System.out.println(\"This is a manager\");\n    }\n  } catch (Exception ex) {\n    System.out.println(\"Some error occurred!\");\n  }\n}\n```",
       "options": [
         "\"This is a manager\"",
         "\"Some error occurred!\"",
@@ -177,7 +177,7 @@
       "explain": "⚠️ Nếu là field kiểu tham chiếu thì mặc định null; biến cục bộ không có giá trị mặc định. Nếu là field → null. Nếu là local → không có giá trị, không dùng được (không có \"Undefined\" trong Java). Đề ngầm hiểu field."
     },
     {
-      "q": "What is the output of the following code snippet?\npublic class Test {\n  int x = 5;\n  int y = 2;\n  public static void main(String[] args) {\n    Test obj;\n    obj.x = 10;\n    obj.y = 20;\n    System.out.println(obj.x + obj.y);\n  }\n}",
+      "q": "What is the output of the following code snippet?\n\n```java\npublic class Test {\n  int x = 5;\n  int y = 2;\n  public static void main(String[] args) {\n    Test obj;\n    obj.x = 10;\n    obj.y = 20;\n    System.out.println(obj.x + obj.y);\n  }\n}\n```",
       "options": [
         "Compile error",
         "7",
@@ -188,7 +188,7 @@
       "explain": "`obj` chưa khởi tạo → compile error."
     },
     {
-      "q": "What will be printed by the following code?\nclass Dog {\n  String name;\n  Dog(String n) { name = n; }\n  void bark() { System.out.println(name + \" says Woof!\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Dog d = new Dog(\"Buddy\");\n    d.bark();\n  }\n}",
+      "q": "What will be printed by the following code?\n\n```java\nclass Dog {\n  String name;\n  Dog(String n) { name = n; }\n  void bark() { System.out.println(name + \" says Woof!\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    Dog d = new Dog(\"Buddy\");\n    d.bark();\n  }\n}\n```",
       "options": [
         "Woof!",
         "Buddy says Woof!",
@@ -199,7 +199,7 @@
       "explain": "\"Buddy says Woof!\"."
     },
     {
-      "q": "What is the output of the following code snippet?\npublic class Person {\n  protected String id = \"New Id\";\n  public static void main(String[] args) {\n    Person p = new Person();\n    p.id = \"FPTU\";\n    System.out.println(p.id);\n  }\n}",
+      "q": "What is the output of the following code snippet?\n\n```java\npublic class Person {\n  protected String id = \"New Id\";\n  public static void main(String[] args) {\n    Person p = new Person();\n    p.id = \"FPTU\";\n    System.out.println(p.id);\n  }\n}\n```",
       "options": [
         "FPTU",
         "null",
@@ -232,7 +232,7 @@
       "explain": "protected cho phép truy cập ngoài package qua subclass."
     },
     {
-      "q": "Given the following code, what will be the output?\nclass Animal {\n  void sound() { System.out.println(\"Animal sound\"); }\n}\nclass Dog extends Animal {\n  void sound() { System.out.println(\"Dog barks\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Animal a = new Dog();\n    a.sound();\n  }\n}",
+      "q": "Given the following code, what will be the output?\n\n```java\nclass Animal {\n  void sound() { System.out.println(\"Animal sound\"); }\n}\nclass Dog extends Animal {\n  void sound() { System.out.println(\"Dog barks\"); }\n}\npublic class Test {\n  public static void main(String[] args) {\n    Animal a = new Dog();\n    a.sound();\n  }\n}\n```",
       "options": [
         "Animal sound",
         "Dog barks",
@@ -243,7 +243,7 @@
       "explain": "Dynamic dispatch → \"Dog barks\"."
     },
     {
-      "q": "What is the output of the following Java program?\nclass A {\n  public static void show() { System.out.println(\"A::show\"); }\n}\nclass B extends A {\n  public static void show() { System.out.println(\"B::show\"); }\n}\nclass Main {\n  public static void main(String[] args) {\n    A b = new B();\n    b.show();\n  }\n}",
+      "q": "What is the output of the following Java program?\n\n```java\nclass A {\n  public static void show() { System.out.println(\"A::show\"); }\n}\nclass B extends A {\n  public static void show() { System.out.println(\"B::show\"); }\n}\nclass Main {\n  public static void main(String[] args) {\n    A b = new B();\n    b.show();\n  }\n}\n```",
       "options": [
         "A::show",
         "B::show",
@@ -254,7 +254,7 @@
       "explain": "Static method theo reference type A → \"A::show\"."
     },
     {
-      "q": "What is the output of the following Java program?\nclass A {\n  public int x = 1;\n  public void setX(int a) { x = a; }\n}\nclass B extends A {\n  public int getB() {\n    setX(2);\n    return x;\n  }\n}\npublic class Main {\n  public static void main(String[] args) {\n    A a = new A();\n    B b = new B();\n    System.out.println(a.x + \" \" + b.getB());\n  }\n}",
+      "q": "What is the output of the following Java program?\n\n```java\nclass A {\n  public int x = 1;\n  public void setX(int a) { x = a; }\n}\nclass B extends A {\n  public int getB() {\n    setX(2);\n    return x;\n  }\n}\npublic class Main {\n  public static void main(String[] args) {\n    A a = new A();\n    B b = new B();\n    System.out.println(a.x + \" \" + b.getB());\n  }\n}\n```",
       "options": [
         "1 2",
         "2 1",
@@ -265,7 +265,7 @@
       "explain": "`a.x=1`; `b.getB()` → 2 → \"1 2\"."
     },
     {
-      "q": "Consider the code:\ninterface A { void methodA(); }\ninterface B { void methodB(); }\nclass C implements A, B {\n  public void methodA() { System.out.print(\"A\"); }\n  public static void main(String[] args) {\n    C obj = new C();\n    obj.methodA();\n    obj.methodB();\n  }\n}\nWhat will the output be?",
+      "q": "Consider the code:\n\n```java\ninterface A { void methodA(); }\ninterface B { void methodB(); }\nclass C implements A, B {\n  public void methodA() { System.out.print(\"A\"); }\n  public static void main(String[] args) {\n    C obj = new C();\n    obj.methodA();\n    obj.methodB();\n  }\n}\n```\n\nWhat will the output be?",
       "options": [
         "Compilation error",
         "Prints \"A\" then throws a runtime exception.",
@@ -322,7 +322,7 @@
       "explain": "`this` = current object instance."
     },
     {
-      "q": "Given the Wage interface, Employee class and main method below, what will be printed?\npublic interface Wage {\n  default void notice() { System.out.println(\"Executing...\"); }\n  void increase();\n}\npublic class Employee implements Wage {\n  private String id;\n  private String name;\n  private int salary;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n    this.salary = 1000;\n  }\n  @Override\n  public void notice() {\n    System.out.println(\"Employee salary computed!\");\n  }\n  @Override\n  public void increase() {\n    this.salary += 200;\n  }\n  /* GETTERS AND SETTERS */\n}\npublic static void main(String[] args) {\n  Employee e = new Employee(\"EMP101\", \"John Doe\");\n  try {\n    e.increase();\n    System.out.println(\"Salary: \" + e.getSalary());\n  } catch (Exception ex) {\n    System.out.println(\"Cannot increase/decrease salary.\");\n  } finally {\n    e.notice();\n  }\n}",
+      "q": "Given the Wage interface, Employee class and main method below, what will be printed?\n\n```java\npublic interface Wage {\n  default void notice() { System.out.println(\"Executing...\"); }\n  void increase();\n}\npublic class Employee implements Wage {\n  private String id;\n  private String name;\n  private int salary;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n    this.salary = 1000;\n  }\n  @Override\n  public void notice() {\n    System.out.println(\"Employee salary computed!\");\n  }\n  @Override\n  public void increase() {\n    this.salary += 200;\n  }\n  /* GETTERS AND SETTERS */\n}\npublic static void main(String[] args) {\n  Employee e = new Employee(\"EMP101\", \"John Doe\");\n  try {\n    e.increase();\n    System.out.println(\"Salary: \" + e.getSalary());\n  } catch (Exception ex) {\n    System.out.println(\"Cannot increase/decrease salary.\");\n  } finally {\n    e.notice();\n  }\n}\n```",
       "options": [
         "Salary: 1200 Employee salary computed!",
         "Salary: 1200 Cannot increase/decrease salary.",
@@ -334,7 +334,7 @@
       "explain": "increase 1200 + finally notice → \"Salary: 1200 Employee salary computed!\"."
     },
     {
-      "q": "What is the output of the following Java program?\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  @Override\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}",
+      "q": "What is the output of the following Java program?\n\n```java\ninterface IA { void show(); }\ninterface IB { void show(); }\nclass MyClass implements IA, IB {\n  @Override\n  public void show() { System.out.println(\"@MyClass\"); }\n}\npublic class Main {\n  public static void main(String[] args) {\n    IA objA = new MyClass();\n    objA.show();\n  }\n}\n```",
       "options": [
         "@MyClass",
         "Runtime error in the statement: objA.show();",
@@ -416,7 +416,7 @@
       "explain": "`Arrays.asList()`."
     },
     {
-      "q": "What is the output of the following code snippet?\nint sum = 0;\nfor (int i = 0; i <= 10; i++) {\n  sum += (i % 2 == 0 ? i : -i);\n}\nSystem.out.println(sum);",
+      "q": "What is the output of the following code snippet?\n\n```java\nint sum = 0;\nfor (int i = 0; i <= 10; i++) {\n  sum += (i % 2 == 0 ? i : -i);\n}\nSystem.out.println(sum);\n```",
       "options": [
         "5",
         "2",
@@ -449,7 +449,7 @@
       "explain": "Collection là root."
     },
     {
-      "q": "What will be the output of the following Java code?\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    LinkedList<Integer> list = new LinkedList<>();\n    list.add(10);\n    list.addFirst(5);\n    list.addLast(15);\n    System.out.println(list);\n  }\n}",
+      "q": "What will be the output of the following Java code?\n\n```java\nimport java.util.*;\npublic class Test {\n  public static void main(String[] args) {\n    LinkedList<Integer> list = new LinkedList<>();\n    list.add(10);\n    list.addFirst(5);\n    list.addLast(15);\n    System.out.println(list);\n  }\n}\n```",
       "options": [
         "[5, 10, 15]",
         "[10, 5, 15]",
@@ -493,7 +493,7 @@
       "explain": "`contains()`."
     },
     {
-      "q": "Given the Employee class and main method below, what will be printed?\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n  }\n  /* Getter and Setter */\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}",
+      "q": "Given the Employee class and main method below, what will be printed?\n\n```java\npublic class Employee {\n  private String id;\n  private String name;\n  public Employee(String id, String name) {\n    this.id = id;\n    this.name = name;\n  }\n  /* Getter and Setter */\n}\npublic static void main(String[] args) {\n  Map<String, Employee> emp = new HashMap<>();\n  emp.put(\"A\", new Employee(\"A\", \"John Doe\"));\n  emp.put(\"B\", new Employee(\"B\", \"Mark David\"));\n  emp.put(\"A\", new Employee(\"A\", \"Rose Mary\"));\n  System.out.println(emp.get(\"A\").getName());\n}\n```",
       "options": [
         "John Doe",
         "Rose Mary",
@@ -504,7 +504,7 @@
       "explain": "HashMap ghi đè key \"A\" → \"Rose Mary\"."
     },
     {
-      "q": "What is the output of the following code snippet?\nString fName = \"test.txt\";\nFileInputStream fs = new FileInputStream(fName);\nbyte[] list = new byte[100];\nfs.read(list, 0, 4);\nSystem.out.format(\"%c%n\", list[1]);\nIf test.txt has the content as follows: 01234567890",
+      "q": "What is the output of the following code snippet?\n\n```java\nString fName = \"test.txt\";\nFileInputStream fs = new FileInputStream(fName);\nbyte[] list = new byte[100];\nfs.read(list, 0, 4);\nSystem.out.format(\"%c%n\", list[1]);\n```\n\nIf test.txt has the content as follows: 01234567890",
       "options": [
         "1",
         "0",
