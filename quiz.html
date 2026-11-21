@@ -41,7 +41,8 @@ textarea{width:100%;min-height:150px;margin:10px 0;padding:10px;font:13px/1.5 ui
 #timer.low{color:var(--bad)}
 .qt{font-size:1.15rem;font-weight:600;margin:0;white-space:pre-wrap}
 .question-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin:0 0 14px}
-.question-heading .qt{flex:1;min-width:0}
+.question-heading .qt{flex:1;min-width:0;order:0}
+.question-heading .star-toggle{order:1}
 .star-toggle{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--mute);border-radius:10px;font:700 1.7rem/1 sans-serif;cursor:pointer;min-width:44px;min-height:44px;padding:4px}
 .star-toggle.starred{border-color:#d59b12;background:#fff3d6;color:#a36c00}
 .star-toggle:hover{border-color:#d59b12}
@@ -118,7 +119,18 @@ body:has(#quiz[hidden]) .quiz-nav-meta,body:has(#quiz[hidden]) .quiz-progress-tr
 .opt span{min-width:0;flex:1}
 .opt .java-code{margin:6px 0;max-width:100%;font-size:.81rem}
 .ex .java-code{background:var(--card)}
-@media(max-width:540px){.java-code{font-size:.8rem;padding:10px 11px}}
+@media(max-width:540px){
+  /* Mobile: star sits beside the opening question text, not beside the code block. */
+  #card{min-width:0;padding:16px 14px}
+  .question-heading{display:block;min-width:0;flow-root:initial}
+  .question-heading .star-toggle{float:right;width:36px;height:36px;min-width:36px;min-height:36px;
+    margin:0 0 8px 10px;padding:0;border-radius:9px;font-size:1.35rem;line-height:1}
+  .question-heading .qt{display:block;min-width:0;overflow-wrap:anywhere}
+  .question-heading .java-code{clear:both;width:100%;max-width:100%;font-size:.8rem;padding:10px 11px;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;overflow-wrap:normal}
+  .question-heading .java-code code{white-space:pre;overflow-wrap:normal}
+  .opt{min-width:0}
+}
 </style>
 </head>
 <body>

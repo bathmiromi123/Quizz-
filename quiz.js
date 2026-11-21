@@ -136,8 +136,9 @@ function render(){
   const nd=CK.filter(Boolean).length,ng=Q.filter((_,i)=>CK[i]&&right(i)).length;
   $('#live').textContent=S.mode==='instant'&&!review?'Đúng '+ng+' · Sai '+(nd-ng):'';
   $('#navsum').textContent='Danh sách câu ('+A.filter(s=>s.size).length+'/'+Q.length+' đã làm)';
-  let h='<div class="question-heading"><div class="qt">'+richText(q.q)+'</div>' +
-    '<button type="button" id="star-toggle" class="star-toggle'+(stars.has(q.id)?' starred':'')+'" aria-pressed="'+stars.has(q.id)+'" title="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'" aria-label="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'">'+(stars.has(q.id)?'★':'☆')+'</button></div>';
+  let h='<div class="question-heading">' +
+    '<button type="button" id="star-toggle" class="star-toggle'+(stars.has(q.id)?' starred':'')+'" aria-pressed="'+stars.has(q.id)+'" title="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'" aria-label="'+(stars.has(q.id)?'Bỏ đánh dấu sao':'Đánh dấu sao')+'">'+(stars.has(q.id)?'★':'☆')+'</button>' +
+    '<div class="qt">'+richText(q.q)+'</div></div>';
   if(q.img)h+='<img src="'+esc(q.img)+'" alt="">';
   if(q.multi)h+='<p class="hint">Có nhiều đáp án đúng, chọn tất cả</p>';
   h+='<div class="opts">'+q.o.map((o,i)=>{
