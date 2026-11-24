@@ -1,0 +1,580 @@
+{
+  "title": "PRO192 SU25 – Đề 6",
+  "description": "50 câu PRO192. Đã rà soát đáp án và định dạng; câu đề lỗi được ghi chú trong lời giải.",
+  "timeLimitMinutes": 0,
+  "mode": "practice",
+  "shuffleQuestions": true,
+  "shuffleOptions": false,
+  "autoNext": false,
+  "questions": [
+    {
+      "q": "Which of the following statements about the Java language is true?",
+      "options": [
+        "Java language is case-sensitive.",
+        "Java is not a fully object-oriented language.",
+        "Using a colon to end the command.",
+        "The Java code only runs on the Windows platform."
+      ],
+      "answer": "A",
+      "explain": "⚠️ ĐỀ LỖI: A và B đều đúng. Java phân biệt hoa thường và không thuần OOP vì có primitive types. C và D sai. Giữ A theo nguồn."
+    },
+    {
+      "q": "What is the purpose of a Java Virtual Machine(JVM)?",
+      "options": [
+        "It is used to interpret and execute Java bytecode",
+        "It is used to write the bytecode into the .class file",
+        "It is used to verify and improve performance the of Java programs",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "JVM có chức năng chính là giải thích và thực thi bytecode Java. Các lựa chọn khác sai: bytecode được tạo bởi compiler, không phải JVM; JVM không trực tiếp tối ưu hiệu năng hay viết file .class."
+    },
+    {
+      "q": "Which of the following statements is used to compile the program.java file?",
+      "options": [
+        "javac program.java",
+        "java -java program.java",
+        "javac -c program.java",
+        "java -j program.java"
+      ],
+      "answer": "A",
+      "explain": "Lệnh javac program.java là lệnh chuẩn để biên dịch file Java thành bytecode. Các lựa chọn còn lại không tồn tại hoặc sai cú pháp. java dùng để chạy, không phải biên dịch."
+    },
+    {
+      "q": "Which is a valid keyword in Java?",
+      "options": [
+        "interface",
+        "include",
+        "Float",
+        "Integer"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, 'interface' là từ khóa hợp lệ dùng để khai báo giao diện. 'include' không phải từ khóa Java, 'Float' và 'Integer' là tên lớp, không phải từ khóa."
+    },
+    {
+      "q": "Which of the following concepts does not belong to object-oriented programming features?",
+      "options": [
+        "Cross-platform",
+        "Inheritance",
+        "Polymorphism",
+        "Encapsulation"
+      ],
+      "answer": "A",
+      "explain": "Cross-platform là khả năng chạy trên nhiều nền tảng, không phải trụ cột OOP. B/C/D lần lượt là inheritance, polymorphism và encapsulation."
+    },
+    {
+      "q": "Which of the following is NOT a Java feature?",
+      "options": [
+        "Use of pointers.",
+        "Ease of learning.",
+        "It is a secure language.",
+        "Independent Platform."
+      ],
+      "answer": "A",
+      "explain": "Java không cung cấp con trỏ tường minh và phép toán con trỏ như C/C++. Các lựa chọn còn lại là đặc điểm thường được nêu của Java."
+    },
+    {
+      "q": "A Java source code will be compiled to the file in which of the following extensions?",
+      "options": [
+        ".class",
+        ".java",
+        ".exe",
+        ".bat"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, mã nguồn (.java) sau khi biên dịch sẽ tạo ra file bytecode có đuôi .class, được JVM thực thi. .exe và .bat là định dạng file thực thi trên Windows, không phải của Java."
+    },
+    {
+      "q": "Which of the following is a primitive data type in Java?",
+      "options": [
+        "String",
+        "Float",
+        "byte",
+        "ArrayList",
+        "Integer",
+        "Character"
+      ],
+      "answer": "C",
+      "explain": "Trong Java, 'byte' là kiểu dữ liệu nguyên thủy (primitive). Các lựa chọn khác như String, Float, ArrayList, Integer, Character đều là lớp (reference types), không phải kiểu nguyên thủy."
+    },
+    {
+      "q": "Which of the following is a Java primitive type?",
+      "options": [
+        "boolean",
+        "String",
+        "Object",
+        "Class"
+      ],
+      "answer": "A",
+      "explain": "boolean là kiểu dữ liệu nguyên thủy trong Java. Các lựa chọn khác như String, Object, Class đều là lớp (reference types), không phải kiểu nguyên thủy."
+    },
+    {
+      "q": "Concerning rules and conventions for naming variables in Java, choose an incorrect statement.",
+      "options": [
+        "An identifier can begin with any character except '$' and '_'",
+        "An identifier can begin with a character.",
+        "An identifier can begin with the dollar sign character.",
+        "An identifier can begin with the underscore character."
+      ],
+      "answer": "A",
+      "explain": "Trong Java, identifier có thể bắt đầu bằng chữ cái, dấu gạch dưới () hoặc ký tự tiền tệ ($). Câu A sai vì nó nói ngược lại — đúng là identifier CÓ THỂ bắt đầu bằng '$' và ''."
+    },
+    {
+      "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int result;\n        System.out.println(result = true ? 100 : 5);\n    }\n}\n```",
+      "options": [
+        "100",
+        "5",
+        "0",
+        "Runtime error."
+      ],
+      "answer": "A",
+      "explain": "The ternary operator 'true ? 100 : 5' evaluates to 100. The assignment 'result = 100' is valid and printed. No error — Java allows assignment in println if type matches."
+    },
+    {
+      "q": "Which of the following packages contains the Scanner class used to input data via keyboard?",
+      "options": [
+        "java.util",
+        "java.net",
+        "java.io",
+        "java.awt"
+      ],
+      "answer": "A",
+      "explain": "Lớp Scanner nằm trong gói java.util, dùng để nhập dữ liệu từ bàn phím hoặc file. Các gói khác: java.io (I/O cơ bản), java.net (mạng), java.awt (giao diện đồ họa)."
+    },
+    {
+      "q": "Which of the following is one of the exception types in Java?",
+      "options": [
+        "RuntimeException",
+        "CompileException",
+        "SyntaxException",
+        "LogicException"
+      ],
+      "answer": "A",
+      "explain": "RuntimeException là một trong các loại ngoại lệ trong Java, thuộc nhóm unchecked exception. Các lựa chọn còn lại (CompileException, SyntaxException, LogicException) không tồn tại trong thư viện chuẩn Java. RuntimeException bao gồm các lỗi như NullPointerException, ArrayIndexOutOfBoundsException."
+    },
+    {
+      "q": "What will be the output of the following code snippet?\n\n```java\nclass A {\n    public void methodA() {\n        System.out.println(\"Class A\");\n    }\n}\n\nclass B extends A {\n    public void methodA() {\n        System.out.println(\"Class B\");\n    }\n\n    public void methodB() {\n        System.out.println(\"Class B - methodB\");\n    }\n}\n\npublic class Test {\n    public static void main(String[] args) {\n        A obj = new B();\n        obj.methodA();\n    }\n}\n```",
+      "options": [
+        "Class A",
+        "Class B",
+        "Compilation error due to the obj.methodB() line",
+        "Runtime error"
+      ],
+      "answer": "B",
+      "explain": "Biến obj kiểu A nhưng tham chiếu đến đối tượng lớp B. Do methodA() được ghi đè (override) trong lớp B, nên khi gọi obj.methodA() sẽ thực thi phiên bản của lớp B → in ra \"Class B\"."
+    },
+    {
+      "q": "What loop is specifically designed for iterating through array elements?",
+      "options": [
+        "for-each loop",
+        "for loop",
+        "while loop",
+        "do-while loop"
+      ],
+      "answer": "A",
+      "explain": "Vòng lặp for-each (enhanced for loop) trong Java được thiết kế đặc biệt để lặp qua các phần tử mảng hoặc collection mà không cần chỉ số."
+    },
+    {
+      "q": "Which of the following statements is one of the advantages of OOP?",
+      "options": [
+        "The systems can be easily upgraded from small to large systems.",
+        "OOP leads to higher programmer productivity, better software quality, and higher maintenance costs.",
+        "OOP language did not allow breaking the program into bit-sized problems that can be solved easily",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Một lợi thế của OOP là khả năng mở rộng hệ thống từ nhỏ đến lớn một cách dễ dàng nhờ tính kế thừa, đóng gói và đa hình. Đáp án B sai vì OOP giúp giảm chi phí bảo trì, C sai vì OOP cho phép chia nhỏ vấn đề, D sai vì không phải tất cả đều đúng."
+    },
+    {
+      "q": "Which of the following statements related to the constructors is false?",
+      "options": [
+        "The constructor can be overridden.",
+        "The constructor can be overloaded.",
+        "The \"this\" keyword and \"super\" keyword can be used in the constructor.",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Constructor không thể bị override (ghi đè) trong Java, vì constructor không được kế thừa. Tuy nhiên, constructor có thể được overload (nạp chồng) và dùng được 'this'/'super'."
+    },
+    {
+      "q": "What operator is used to access the member(field or method) of the object?",
+      "options": [
+        ".",
+        "{}",
+        "[]",
+        ":"
+      ],
+      "answer": "A",
+      "explain": "Toán tử '.' được dùng để truy cập thành viên (field/method) của đối tượng trong Java/C#/C++. Các toán tử khác: {} dùng cho khối, [] cho mảng, : dùng trong switch hoặc ternary."
+    },
+    {
+      "q": "Which access modifier is commonly used for setter methods in Java?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static",
+        "final",
+        "abstract"
+      ],
+      "answer": "A",
+      "explain": "Setter method trong Java thường được khai báo là public để cho phép truy cập từ bên ngoài lớp, nhằm thiết lập giá trị cho thuộc tính private. Đây là nguyên tắc Encapsulation cơ bản."
+    },
+    {
+      "q": "What is the output of the following code snippet?\n\n```java\npublic class Person {\n    protected String id;\n    public void calPerson(Person p){\n        p.id = \"HCM\";\n        System.out.print(p.id);\n    }\n    public static void main(String[] args) {\n        Person p = new Person();\n        p.id = \"FPT\";\n        p.calPerson(p);\n    }\n}\n```",
+      "options": [
+        "HCM",
+        "FPT",
+        "FPTHCM",
+        "HCMFPT"
+      ],
+      "answer": "A",
+      "explain": "The method calPerson modifies the id of the passed Person object (p) to \"HCM\" and prints it. Even though p.id was initially \"FPT\", the method overwrites it and prints \"HCM\" — so output is \"HCM\"."
+    },
+    {
+      "q": "Which of the following statements related to the protected access modifier is true?",
+      "options": [
+        "It allows the outside package access",
+        "It does not allow within-package access",
+        "The protected members must be initialized before use",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Protected access modifier in Java allows access within the same package and also by subclasses even if they are in different packages. So it does allow outside-package access via inheritance. Other options are false: it allows within-package access, and no initialization requirement."
+    },
+    {
+      "q": "What is a superclass in Java inheritance?",
+      "options": [
+        "The class from which the subclass is derived",
+        "The class that inherits from another class",
+        "The final class in the inheritance chain",
+        "The class that has abstract methods"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, superclass (lớp cha) là lớp mà subclass (lớp con) kế thừa từ đó. Lớp con kế thừa thuộc tính và phương thức từ superclass. Các lựa chọn khác mô tả sai vai trò của superclass."
+    },
+    {
+      "q": "What is the output of the following Java program?\n\n```java\nclass A {\n    public int x = 1;\n    public void setX(int a) {\n        x = a;\n    }\n}\nclass B extends A {\n    public int getB() {\n        setX(2);\n        return x;\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        A a = new A();\n        B b = new B();\n        System.out.println(a.x + \" \" + b.getB());\n    }\n}\n```",
+      "options": [
+        "1 2",
+        "2 1",
+        "1 1",
+        "2 2"
+      ],
+      "answer": "A",
+      "explain": "Biến a.x vẫn giữ giá trị 1 vì không bị thay đổi. Đối tượng b gọi getB() → gọi setX(2) → gán x=2 trong đối tượng b, trả về 2. Kết quả in ra: '1 2'."
+    },
+    {
+      "q": "What is the purpose of the \"super\" keyword in Java?",
+      "options": [
+        "To call the constructor or methods of the parent class",
+        "To call the constructor or methods of the child class",
+        "To call the members of the same class",
+        "To define a static method"
+      ],
+      "answer": "A",
+      "explain": "In Java, 'super' refers to the parent class — used to invoke parent constructors or methods. It does not refer to child class or static methods. Option A is the standard definition."
+    },
+    {
+      "q": "What is the primary purpose of using a superclass and subclass relationship in Java?",
+      "options": [
+        "To restrict access to certain methods or fields.",
+        "To create multiple instances of a class.",
+        "To implement multiple inheritance.",
+        "To achieve code reusability and facilitate polymorphism.",
+        "To enforce encapsulation.",
+        "To establish a one-to-one mapping between classes."
+      ],
+      "answer": "D",
+      "explain": "Quan hệ superclass-subclass trong Java nhằm tái sử dụng mã (kế thừa) và hỗ trợ đa hình (polymorphism), cho phép gọi phương thức của lớp con qua tham chiếu lớp cha. Các lựa chọn khác như giới hạn truy cập (A), tạo nhiều thể hiện (B), kế thừa đa (C) — Java không hỗ trợ kế thừa đa lớp — đều sai."
+    },
+    {
+      "q": "Choose multiple correct answers.",
+      "options": [
+        "private access modifier should be used for a variable or method to only be accessed within the same class",
+        "public access modifier should be used for a variable or method that should be accessible from any class, regardless of the package",
+        "protected access modifier should be used for a variable or method that should only be accessed within the same class and subclasses, in the same package",
+        "default (no modifier) access modifier only allows access in the same class"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explain": "A đúng: private chỉ truy cập trong lớp. B đúng: public truy cập từ bất kỳ đâu. C sai: protected cho phép truy cập trong cùng package và subclass (kể cả khác package). D sai: default cho phép truy cập trong cùng package, không chỉ trong lớp."
+    },
+    {
+      "q": "What is the \"instanceof\" operator used for?",
+      "options": [
+        "To check whether an object is an instance of a particular class or not",
+        "To create a new instance of a class",
+        "To compare two objects for equality",
+        "To check if an object is null"
+      ],
+      "answer": "A",
+      "explain": "Toán tử instanceof trong Java dùng để kiểm tra xem một đối tượng có phải là thể hiện của một lớp cụ thể hay không, trả về true/false."
+    },
+    {
+      "q": "Choose the correct statement about overloading in Java.",
+      "options": [
+        "Overloading is based on having multiple methods with the same name but different by the number of input parameters or type of input parameters, or a mixture of both.",
+        "Overloading is based on having multiple methods with the same name.",
+        "Overloading is based on having multiple methods with the same name, parameter types, and number of parameters.",
+        "Overloading is based on having multiple methods with the same name but different return types."
+      ],
+      "answer": "A",
+      "explain": "Trong Java, overloading xảy ra khi có nhiều phương thức cùng tên nhưng khác nhau về số lượng hoặc kiểu tham số (hoặc cả hai). Return type không ảnh hưởng đến overloading."
+    },
+    {
+      "q": "What is the output following the code snippet?\n\n```java\npublic class DemoClass {\n    void add(int x, int y){\n        System.out.println(\"1. Addition is: \" +(x+y));\n    }\n    void add(int y, int x){\n        System.out.println(\"2. Addition is: \" +(x+y));\n    }\n    public static void main(String[] args){\n        DemoClass obj = new DemoClass ();\n        obj.add(20, 30);\n    }\n}\n```",
+      "options": [
+        "Compile error",
+        "2. Addition of two numbers: 50",
+        "1. Addition of two numbers: 50",
+        "20, 30"
+      ],
+      "answer": "A",
+      "explain": "Hai phương thức add(int x, int y) và add(int y, int x) có cùng signature (kiểu tham số và số lượng), nên không thể overload → lỗi biên dịch."
+    },
+    {
+      "q": "Which of the following statements is correct for a declaration of the interface named MyInterface?",
+      "options": [
+        "interface MyInterface{/* something */}",
+        "public MyInterface interface{/* something */}",
+        "final interface MyInterface{/* something */}",
+        "default interface MyInterface {/* something */}"
+      ],
+      "answer": "A",
+      "explain": "Cú pháp đúng để khai báo interface trong Java là 'interface TênInterface { ... }'. Không dùng 'public', 'final', 'default' ở trước từ khóa interface. Đáp án A đúng."
+    },
+    {
+      "q": "Consider an abstract class \"Shape\" with an abstract method \"calculateArea()\". If a concrete subclass \"Circle\" extends \"Shape\" and provides an implementation for \"calculateArea()\", what happens when an object of the \"Circle\" class is created and the \"calculateArea()\" method is called?",
+      "options": [
+        "The abstract method in the superclass is executed.",
+        "The concrete method in the subclass is executed.",
+        "The program will not compile.",
+        "An exception is thrown at runtime.",
+        "Both the abstract method in the superclass and the concrete method in the subclass are executed.",
+        "The result depends on whether the \"calculateArea()\" method is declared as static."
+      ],
+      "answer": "B",
+      "explain": "Khi tạo đối tượng lớp con Circle (đã override phương thức abstract calculateArea), phương thức được gọi là phiên bản đã triển khai trong lớp con, không phải abstract ở superclass. (Câu hỏi nguồn bị cắt cuối; đã bổ sung phần hỏi gọi method dựa trên ngữ cảnh.)"
+    },
+    {
+      "q": "Choose the correct statement about the anonymous class.",
+      "options": [
+        "An anonymous class can be used to implement an interface",
+        "Anonymous class used to extend methods",
+        "Anonymous class is used to define a set of constants",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Lớp ẩn danh (anonymous class) trong Java thường dùng để triển khai interface hoặc mở rộng lớp trừu tượng, không dùng để định nghĩa hằng số hay mở rộng phương thức một cách chung chung. Đáp án D sai vì không phải tất cả đều đúng."
+    },
+    {
+      "q": "What is the output of the following Java program?\n\n```java\nclass A{\n    int i = 100;\n    public void printValue(){\n        System.out.print(\"A\");\n    }\n}\nclass B extends A{\n    int i = 120;\n    public void printValue(){\n        System.out.print(\"B\");\n    }\n}\npublic class Main{\n    public static void main(String args[]){\n        A a = new B();\n        a.printValue();\n        System.out.print(a.i);\n    }\n}\n```",
+      "options": [
+        "B100",
+        "B120",
+        "A100",
+        "A120"
+      ],
+      "answer": "A",
+      "explain": "Biến 'a' kiểu A nhưng tham chiếu đến đối tượng B. Phương thức printValue() được ghi đè → in 'B'. Biến 'i' không được ghi đè → truy cập i của lớp A → 100. Kết quả: B100."
+    },
+    {
+      "q": "Which of the following is the best description of polymorphism?",
+      "options": [
+        "It is the ability for a message/data to be processed in more than one form.",
+        "It is the ability for many messages/data to be processed in one way",
+        "It is the ability for a message/data to be processed in only one form",
+        "None of the others"
+      ],
+      "answer": "A",
+      "explain": "Đa hình (polymorphism) trong lập trình là khả năng xử lý cùng một thông điệp hoặc dữ liệu theo nhiều cách khác nhau, tùy vào đối tượng cụ thể. Đây là đặc điểm cốt lõi của OOP, giúp code linh hoạt và tái sử dụng."
+    },
+    {
+      "q": "In a banking application, you need to represent customer accounts using object arrays. Which OOP concept allows you to create a blueprint for the Account class?",
+      "options": [
+        "Inheritance",
+        "Abstraction",
+        "Encapsulation",
+        "Polymorphism",
+        "Composition",
+        "Interface"
+      ],
+      "answer": "B",
+      "explain": "Abstraction cho phép tạo 'bản thiết kế' (blueprint) cho lớp (class) — định nghĩa các thuộc tính và phương thức mà đối tượng sẽ có, mà không cần triển khai chi tiết. Đây là nền tảng để tạo các đối tượng từ lớp."
+    },
+    {
+      "q": "Which of the following statements is used to determine the maximum capacity of an ArrayList named al?",
+      "options": [
+        "al.size()",
+        "al.length()",
+        "al.size",
+        "al.length"
+      ],
+      "answer": "A",
+      "explain": "⚠️ ĐỀ LỖI: size() trả số phần tử hiện tại, không phải maximum capacity. ArrayList không có public method trả capacity tối đa. A là lựa chọn dự kiến nếu đề muốn hỏi size."
+    },
+    {
+      "q": "What is the default value of boolean elements in an array if NOT initialized?",
+      "options": [
+        "false",
+        "0",
+        "null",
+        "true"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, các phần tử boolean trong mảng nếu không được khởi tạo sẽ mặc định có giá trị false. Đây là hành vi chuẩn của JVM với kiểu dữ liệu nguyên thủy boolean."
+    },
+    {
+      "q": "Which of the following classes is used for shuffling an ArrayList in Java?",
+      "options": [
+        "Collections",
+        "CollectionList",
+        "Arrays",
+        "Array.Util"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, lớp Collections cung cấp phương thức shuffle() để xáo trộn ArrayList. Các lớp khác như CollectionList, Arrays, Array.Util không tồn tại hoặc không có chức năng này."
+    },
+    {
+      "q": "You are tasked with implementing a system that tracks the frequency of words in a large text document. Explain how you would use a Java collection to efficiently achieve this, emphasizing the principles of abstraction and encapsulation.",
+      "options": [
+        "Utilize a HashMap<String, Integer> for efficient word frequency tracking.",
+        "Implement a LinkedList<String> to store words and their occurrences.",
+        "Use a PriorityQueue<String> to prioritize words based on frequency.",
+        "Employ a HashSet<String> for unique word storage.",
+        "Implement a custom WordFrequencyTracker class using a binary search tree.",
+        "Utilize a TreeMap<String, Integer> for a sorted mapping of words and frequencies."
+      ],
+      "answer": "A",
+      "explain": "HashMap provides O(1) average time complexity for insertions and lookups, ideal for counting word frequencies. It supports abstraction (hiding internal hash logic) and encapsulation (data + methods in one structure)."
+    },
+    {
+      "q": "In a financial application, you need to store unique customer IDs efficiently, ensuring rapid lookup and insertion. Describe the Java collection you would choose, the reasons behind your choice, and how you would handle potential duplicates.",
+      "options": [
+        "Choose a TreeSet<Integer> to automatically handle duplicates and ensure quick lookups.",
+        "Implement a custom CustomerIDManager class with an embedded array for efficient management.",
+        "Utilize a LinkedHashSet<Integer> to maintain insertion order while ensuring uniqueness.",
+        "Design a HashMap<Integer, Boolean> where uniqueness is enforced through key existence.",
+        "Use a BitSet to represent customer IDs with efficient storage.",
+        "Implement a custom hash table for direct control over insertion and lookup processes."
+      ],
+      "answer": "C",
+      "explain": "LinkedHashSet đảm bảo duy nhất và tra cứu/thêm trung bình O(1), đồng thời giữ thứ tự chèn. HashMap cũng có thể dùng khóa duy nhất với O(1) trung bình, nhưng không cần value khi chỉ lưu ID. C phù hợp nhất."
+    },
+    {
+      "q": "In a logistics application, you need to associate each product with its corresponding warehouse location. Illustrate how you would use a Java collection to model this relationship, considering the principles of association and key-value mapping.",
+      "options": [
+        "Use a HashMap<Product, WarehouseLocation> for direct key-value mapping.",
+        "Implement a custom ProductWarehouseAssociation class with parallel arrays.",
+        "Utilize a LinkedHashMap<Product, WarehouseLocation> to maintain insertion order.",
+        "Design a TreeMap<Product, WarehouseLocation> for sorted key-value mapping.",
+        "Choose a HashSet<ProductWarehousePair> for efficient storage of associations.",
+        "Implement a custom graph structure to represent the relationships between products and locations."
+      ],
+      "answer": "A",
+      "explain": "HashMap là cấu trúc phù hợp nhất để ánh xạ quan hệ key-value (sản phẩm → vị trí kho) với độ phức tạp truy xuất O(1). Các lựa chọn khác như TreeMap, LinkedHashMap, HashSet hoặc cấu trúc tùy chỉnh đều không tối ưu hoặc không phù hợp với yêu cầu đơn giản này."
+    },
+    {
+      "q": "What is the output of the following code snippet?\n\n```java\nSet<Integer> set1 = new HashSet<>();\nset1.add(1);\nset1.add(2);\nset1.add(3);\nset1.add(1);\nSet<Integer> set2 = new HashSet<>();\nset2.add(1);\nset2.add(4);\nset1.removeAll(set2);\nSystem.out.println(set1);\n```",
+      "options": [
+        "[2, 3]",
+        "[3, 1]",
+        "[1, 2]",
+        "[4, 1]"
+      ],
+      "answer": "A",
+      "explain": "HashSet loại bỏ phần tử trùng lặp. set1 ban đầu là {1,2,3}, set2 là {1,4}. Khi gọi removeAll(set2), phần tử 1 bị xóa khỏi set1 → còn lại {2,3}. Thứ tự in ra có thể thay đổi nhưng nội dung là [2,3]."
+    },
+    {
+      "q": "Which method is used to check if an element is present in an ArrayList?",
+      "options": [
+        "contains()",
+        "exists()",
+        "includes()",
+        "has()"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, phương thức contains() được dùng để kiểm tra xem một phần tử có tồn tại trong ArrayList hay không. Các phương thức như exists(), includes(), has() không tồn tại trong ArrayList."
+    },
+    {
+      "q": "What is the size of an ArrayList if capacity is NOT specified during initialization?",
+      "options": [
+        "0",
+        "1",
+        "16",
+        "10"
+      ],
+      "answer": "A",
+      "explain": "`ArrayList.size()` ngay sau khi khởi tạo là 0 (chưa có phần tử). Capacity không phải size; không được lấy 10 làm đáp án cho câu hỏi về size."
+    },
+    {
+      "q": "In the RandomAccessFile class, which mode supports metadata changes (file attributes) of the file immediately?",
+      "options": [
+        "\"rws\"",
+        "\"rw\"",
+        "\"rwd\"",
+        "\"r\""
+      ],
+      "answer": "A",
+      "explain": "Trong RandomAccessFile, chế độ \"rws\" đảm bảo ghi metadata (thuộc tính file) ngay lập tức ra đĩa, trong khi \"rwd\" chỉ ghi dữ liệu, không metadata. \"rw\" không đảm bảo đồng bộ hóa, \"r\" chỉ đọc."
+    },
+    {
+      "q": "Which of the following methods of File class is used to check a file is hidden?",
+      "options": [
+        "isHidden()",
+        "isDisplay()",
+        "isWrite()",
+        "isRead()"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, lớp File có phương thức isHidden() để kiểm tra một tệp có bị ẩn hay không. Các phương thức như isDisplay(), isWrite(), isRead() không tồn tại trong lớp File chuẩn. Đây là kiến thức cơ bản trong lập trình Java."
+    },
+    {
+      "q": "Which of the following objects is a parameter of the constructor of the DataInputStream class?",
+      "options": [
+        "An object of the FileInputStream class",
+        "An object of the File class",
+        "An object of the BufferedReader class",
+        "An object of the RandomAccessFile class"
+      ],
+      "answer": "A",
+      "explain": "Constructor của DataInputStream yêu cầu một InputStream làm tham số. FileInputStream là lớp con của InputStream → hợp lệ. Các lựa chọn khác không phải InputStream."
+    },
+    {
+      "q": "What is the output of the following code snippet:\n\n```java\nString fName=\"test.txt\";\nFileInputStream fs = new FileInputStream(fName);\nbyte[] list = new byte[100];\nfs.read(list,0,4);\nSystem.out.format(\"%c%n\",list[1]);\n```\n\nIf test.txt has the content as follows: 01234567890",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "answer": "A",
+      "explain": "FileInputStream.read(list,0,4) đọc 4 byte đầu tiên từ file: '0','1','2','3' → list[0]=48, list[1]=49 → System.out.format(\"%c%n\", list[1]) in ra ký tự có mã ASCII 49 → là '1'."
+    },
+    {
+      "q": "Which of the following statements about the low-level stream and the high-level stream is true?",
+      "options": [
+        "The low-level stream's data unit is a byte, high-level stream's data unit is a primitive type.",
+        "The low-level stream's data unit is character UTF-8, high-level stream's data unit is character UNICODE.",
+        "The low-level stream's data unit is a character type, high-level stream's data unit is an object type.",
+        "The low-level stream's data unit is primitive, high-level stream's data unit is character."
+      ],
+      "answer": "A",
+      "explain": "A là cách phân biệt theo giáo trình giữa byte stream cấp thấp và DataInputStream/DataOutputStream cấp cao xử lý primitive. Tuy nhiên không phải mọi high-level stream đều xử lý primitive; có stream xử lý object, ký tự hoặc buffering."
+    },
+    {
+      "q": "Which of the following statements is used to add the content to an existing text file?",
+      "options": [
+        "Set the append parameter to true in the constructor of the FileWriter object",
+        "Set the append parameter to true in the constructor of the File object",
+        "Set append parameter of true in the constructor of OutputStream object",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, để ghi thêm nội dung vào file hiện có, ta dùng FileWriter với tham số append = true. Các lựa chọn khác sai vì File và OutputStream không có tham số append như vậy."
+    }
+  ]
+}

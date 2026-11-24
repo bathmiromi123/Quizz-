@@ -1,0 +1,590 @@
+{
+  "title": "PRO192 FA25 – Đề 4",
+  "description": "50 câu PRO192. Đã rà soát đáp án và định dạng; câu đề lỗi được ghi chú trong lời giải.",
+  "timeLimitMinutes": 0,
+  "mode": "practice",
+  "shuffleQuestions": true,
+  "shuffleOptions": false,
+  "autoNext": false,
+  "questions": [
+    {
+      "q": "How does Java handle the concept of multiple inheritance?",
+      "options": [
+        "Through the use of interfaces",
+        "By allowing multiple parent classes",
+        "By using overload methods",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Java chỉ cho class kế thừa trực tiếp một superclass, nhưng có thể implements nhiều interface. Đây là đa kế thừa kiểu (multiple inheritance of type), không đồng nghĩa với polymorphism."
+    },
+    {
+      "q": "What is the file extension for compiled Java bytecode files?",
+      "options": [
+        ".class",
+        ".exe",
+        ".java",
+        ".jar"
+      ],
+      "answer": "A",
+      "explain": "Tệp bytecode sau khi biên dịch từ mã nguồn Java (.java) sẽ có phần mở rộng .class, được JVM thực thi. .exe là file thực thi Windows, .jar là gói nhiều class, .java là mã nguồn."
+    },
+    {
+      "q": "Which access modifier allows you to access method calls in libraries not created in Java?",
+      "options": [
+        "public",
+        "static",
+        "native",
+        "transient",
+        "volatile"
+      ],
+      "answer": "C",
+      "explain": "`native` là method modifier (không phải access modifier), cho biết method được triển khai bằng mã native, chẳng hạn qua JNI."
+    },
+    {
+      "q": "To run a Java program, which the software must be installed?",
+      "options": [
+        "Java Runtime Environment (JRE)",
+        "Eclipse",
+        "Java Development Kit (JDK)",
+        "Netbeans"
+      ],
+      "answer": "A",
+      "explain": "Để chạy chương trình Java, chỉ cần cài đặt JRE — chứa JVM và thư viện cần thiết. JDK dùng để phát triển, còn Eclipse/Netbeans là IDE hỗ trợ viết code, không bắt buộc để chạy."
+    },
+    {
+      "q": "What is the role of the Garbage Collection?",
+      "options": [
+        "It frees heap memory by destroying unreachable objects.",
+        "It deletes all the Java files available on the memory.",
+        "It loads a Java program into memory.",
+        "It checks the output of any Java program and deletes anything that does not make sense at all."
+      ],
+      "answer": "A",
+      "explain": "Garbage Collection trong Java tự động giải phóng bộ nhớ heap bằng cách xóa các đối tượng không còn được tham chiếu (unreachable). Nó không xóa file Java, không tải chương trình, và không kiểm tra đầu ra."
+    },
+    {
+      "q": "What is the meaning of platform-independent?",
+      "options": [
+        "write once, run anywhere",
+        "not easy to execute on any system after compilation.",
+        "the execution of the program is restricted by the type of OS environment provided.",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Platform-independent means code can be written once and executed on any platform without modification — a key feature of languages like Java. Other options contradict this definition."
+    },
+    {
+      "q": "What is the role of the Java Development Kit (JDK) in java programming? Choose multiple correct answers.",
+      "options": [
+        "A cross-platformed software development environment that offers a collection of tools and libraries necessary for developing Java-based software applications.",
+        "A core package used in Java programming, along with the JVM (Java Virtual Machine) and the JRE (Java Runtime Environment) to develop and deploy applications",
+        "A software for building applications that combines common developer tools into a single graphical user interface (GUI).",
+        "A text editor that can assist in writing software code with features such as syntax highlighting with visual cues"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explain": "JDK là bộ công cụ phát triển Java, bao gồm trình biên dịch, thư viện và công cụ cần thiết (A đúng). Nó là thành phần cốt lõi cùng JVM và JRE để phát triển và triển khai ứng dụng (B đúng). C và D mô tả sai về JDK."
+    },
+    {
+      "q": "Which of the following statements about the Java language is true?",
+      "options": [
+        "Java language is case-sensitive.",
+        "Java is not a fully object-oriented language.",
+        "Using a colon to end the command.",
+        "The Java code only runs on the Windows platform."
+      ],
+      "answer": "A",
+      "explain": "⚠️ ĐỀ LỖI: A và B đều đúng. Java phân biệt hoa thường và không thuần hướng đối tượng vì vẫn có primitive types. C sai (dùng dấu chấm phẩy), D sai. Giữ A theo đáp án nguồn."
+    },
+    {
+      "q": "A Java source code will be compiled to the file in which of the following extensions?",
+      "options": [
+        ".class",
+        ".java",
+        ".exe",
+        ".bat"
+      ],
+      "answer": "A",
+      "explain": "Mã nguồn Java (.java) được biên dịch thành file bytecode có phần mở rộng .class, sau đó chạy trên JVM."
+    },
+    {
+      "q": "What is the file extension of Java source code?",
+      "options": [
+        ".java",
+        ".class",
+        ".jar",
+        ".rar"
+      ],
+      "answer": "A",
+      "explain": "Tệp mã nguồn Java có phần mở rộng là .java. Sau khi biên dịch, nó tạo ra tệp .class. .jar là tệp nén chứa nhiều lớp Java, còn .rar không liên quan đến Java."
+    },
+    {
+      "q": "Which of the following is a primitive data type in Java?",
+      "options": [
+        "String",
+        "Float",
+        "byte",
+        "ArrayList",
+        "Integer",
+        "Character"
+      ],
+      "answer": "C",
+      "explain": "Trong Java, 'byte' là kiểu dữ liệu nguyên thủy (primitive). Các lựa chọn khác như String, Float, Integer, Character, ArrayList đều là lớp (reference types)."
+    },
+    {
+      "q": "Which of the following is a Java primitive type?",
+      "options": [
+        "boolean",
+        "String",
+        "Object",
+        "Class"
+      ],
+      "answer": "A",
+      "explain": "Java primitive types include boolean, byte, short, int, long, float, double, and char. String, Object, and Class are reference types (objects), not primitives."
+    },
+    {
+      "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int x = -1;\n        String y = x+3;\n        System.out.format(\"%d %s\",x,y);\n    }\n}\n```",
+      "options": [
+        "Compile error",
+        "-1 -13",
+        "-1 4",
+        "-1 2"
+      ],
+      "answer": "A",
+      "explain": "`x + 3` là phép cộng hai số nguyên, kết quả có kiểu `int` (giá trị 2). Không thể gán trực tiếp `int` cho `String y`, nên chương trình bị lỗi biên dịch. Muốn chuyển thành chuỗi cần `String.valueOf(x + 3)`."
+    },
+    {
+      "q": "What is the output of the code snippet?\n\n```java\npublic class Test {\n    public static void main(String[] args) {\n        int []a = new int [5];\n        for(int i : a){\n            i = 1;\n        }\n        System.out.println(a[1]);\n    }\n}\n```",
+      "options": [
+        "0",
+        "1",
+        "null",
+        "[I@15db9742"
+      ],
+      "answer": "A",
+      "explain": "Vòng lặp for-each chỉ thay đổi biến 'i' (bản sao giá trị), không thay đổi phần tử trong mảng 'a'. Mảng 'a' vẫn giữ giá trị mặc định là 0 cho tất cả phần tử. Do đó, a[1] = 0."
+    },
+    {
+      "q": "Which of the following packages contains the Scanner class used to input data via keyboard?",
+      "options": [
+        "java.util",
+        "java.net",
+        "java.io",
+        "java.awt"
+      ],
+      "answer": "A",
+      "explain": "The Scanner class is located in the java.util package. It is used to parse primitive types and strings using regular expressions, commonly for keyboard input via System.in."
+    },
+    {
+      "q": "Which of the following is true about constructors in Java?",
+      "options": [
+        "Constructors can return a value.",
+        "Constructors have the same name as the class.",
+        "Constructors must be declared as static.",
+        "Constructors cannot have parameters."
+      ],
+      "answer": "B",
+      "explain": "Constructor có tên trùng class, không có return type, không được static và có thể có tham số."
+    },
+    {
+      "q": "Which of the following statements correctly creates an object of the Employee class and assigns it to a variable named emp?",
+      "options": [
+        "Employee emp = new Employee();",
+        "Employee emp = new Employee;",
+        "Employee emp = createInstance Employee();",
+        "Employee emp = create Employee();"
+      ],
+      "answer": "A",
+      "explain": "Cú pháp đúng trong Java để tạo đối tượng là 'ClassName objectName = new ClassName();'. Các lựa chọn khác sai cú pháp hoặc không tồn tại trong Java."
+    },
+    {
+      "q": "Which of the following modifiers is used to hide information of a class from the classes outside?",
+      "options": [
+        "private",
+        "public",
+        "protected",
+        "default"
+      ],
+      "answer": "A",
+      "explain": "Từ khóa 'private' trong Java dùng để ẩn thông tin của lớp khỏi các lớp khác, chỉ cho phép truy cập trong chính lớp đó. 'public' cho phép truy cập từ mọi nơi, 'protected' cho phép truy cập trong gói và lớp con, 'default' (không có từ khóa) chỉ trong gói."
+    },
+    {
+      "q": "In Java, if a class does not explicitly define a constructor, what type of constructor is automatically provided?",
+      "options": [
+        "Parameterized constructor",
+        "Default constructor",
+        "Private constructor",
+        "Static constructor",
+        "Overloaded constructor",
+        "Abstract constructor"
+      ],
+      "answer": "B",
+      "explain": "Trong Java, nếu lớp không định nghĩa constructor nào, trình biên dịch tự động tạo constructor không tham số (default constructor). Các lựa chọn khác không đúng: parameterized (A), private (C), static (D), overloaded (E), abstract (F) đều không được tự động tạo."
+    },
+    {
+      "q": "Which access modifier is commonly used for setter methods in Java?",
+      "options": [
+        "public",
+        "private",
+        "protected",
+        "static",
+        "final",
+        "abstract"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, setter methods thường được khai báo là public để cho phép truy cập từ bên ngoài lớp, nhằm thiết lập giá trị cho các thuộc tính private — tuân thủ nguyên tắc đóng gói (encapsulation)."
+    },
+    {
+      "q": "Which of the following statements related to the protected access modifier is true?",
+      "options": [
+        "It allows the outside package access",
+        "It does not allow within-package access",
+        "The protected members must be initialized before use",
+        "All of the others"
+      ],
+      "answer": "A",
+      "explain": "Protected trong Java cho phép truy cập từ lớp con (kể cả trong package khác) và trong cùng package. Không phải 'all others' vì B, C sai. A là đúng nhất."
+    },
+    {
+      "q": "Which of the following statements is correct about constructors in inheritance?",
+      "options": [
+        "A constructor of the parent class is automatically inherited by the child class.",
+        "The constructor of a parent class is called first when a subclass object is created.",
+        "The parent class constructor cannot be called from a subclass.",
+        "A child class must override the constructor of the parent class."
+      ],
+      "answer": "B",
+      "explain": "Constructor superclass được gọi trong chuỗi khởi tạo trước khi thân constructor subclass hoàn tất; kể cả khi dùng this(), cuối cùng chuỗi vẫn gọi constructor superclass. Constructor không được kế thừa hoặc override."
+    },
+    {
+      "q": "What happens if a subclass does not implement all the abstract methods of its superclass?",
+      "options": [
+        "The subclass must be declared abstract.",
+        "The subclass can still be instantiated.",
+        "The subclass will compile but throw an error at runtime.",
+        "The subclass does not need to implement the abstract methods."
+      ],
+      "answer": "A",
+      "explain": "Nếu một lớp con không triển khai tất cả các phương thức trừu tượng từ lớp cha, nó phải được khai báo là abstract. Nếu không, trình biên dịch sẽ báo lỗi. Đây là quy tắc bắt buộc trong Java để đảm bảo tính toàn vẹn của lớp trừu tượng."
+    },
+    {
+      "q": "Which of the following can be declared as static?",
+      "options": [
+        "Methods",
+        "Local variables",
+        "Instance variables",
+        "Parameters"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, chỉ có methods, fields (biến tĩnh), và classes (lớp tĩnh) có thể được khai báo là static. Biến cục bộ (local variables) và tham số (parameters) không thể là static."
+    },
+    {
+      "q": "Assume the following code snippet: `Object objA = new Object();` `Object objB = new Object();` Which of the following statements is correct to compare objA with objB?",
+      "options": [
+        "objA.equals(objB)",
+        "compareObjects(objA, objB)",
+        "Object.compareTo(objA, objB)",
+        "Object.compare(objA, objB)"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, để so sánh hai đối tượng, ta dùng phương thức equals(). Mặc định, equals() so sánh tham chiếu (giống ==), nhưng có thể ghi đè để so sánh nội dung. Các lựa chọn B, C, D không tồn tại hoặc không hợp lệ trong ngữ cảnh này."
+    },
+    {
+      "q": "Choose multiple correct answers.",
+      "options": [
+        "The purpose of a getter method in Java is to get the value of a variable",
+        "The purpose of a setter method in Java is to set the value of a variable",
+        "return keyword used to define getter and setter method in Java",
+        "Access modifiers often used for getter or setter method is public"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "explain": "Getter dùng để lấy giá trị biến, setter dùng để gán giá trị biến, và thường dùng access modifier public. Return keyword không dùng để định nghĩa getter/setter mà là để trả về giá trị trong getter. Do đó, C sai."
+    },
+    {
+      "q": "What is a way to group related classes in Java and it is called a namespace?",
+      "options": [
+        "package",
+        "file",
+        "software",
+        "folder"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, 'package' dùng để nhóm các lớp liên quan và hoạt động như namespace, giúp tránh xung đột tên và tổ chức mã nguồn rõ ràng."
+    },
+    {
+      "q": "What is method overriding in Java?",
+      "options": [
+        "Re-implementing a method in the subclass with the same signature as in the superclass",
+        "Creating multiple methods with the same name but different parameters",
+        "Calling a method from another method",
+        "Re-implementing another method in the same class with the same signature"
+      ],
+      "answer": "A",
+      "explain": "Method overriding in Java occurs when a subclass provides a specific implementation of a method already defined in its superclass, using the same name, return type, and parameters."
+    },
+    {
+      "q": "Consider an abstract class \"Shape\" with an abstract method \"calculateArea().\" If a concrete subclass \"Circle\" extends \"Shape\" and provides an implementation for \"calculateArea(),\" what happens when an object of the \"Circle\" class is created and the \"calculateArea()\" method is called?",
+      "options": [
+        "The abstract method in the superclass is executed.",
+        "The concrete method in the subclass is executed.",
+        "The program will not compile.",
+        "An exception is thrown at runtime.",
+        "Both the abstract method in the superclass and the concrete method in the subclass are executed.",
+        "The result depends on whether the \"calculateArea()\" method is declared as static."
+      ],
+      "answer": "B",
+      "explain": "Khi tạo đối tượng lớp con 'Circle' và gọi phương thức 'calculateArea()', phương thức được ghi đè trong lớp con sẽ được thực thi — đây là nguyên lý đa hình trong OOP. Lớp trừu tượng không có cài đặt, nên không thể thực thi trực tiếp. (Câu hỏi nguồn bị cắt cuối; đã bổ sung phần hỏi gọi method dựa trên ngữ cảnh.)"
+    },
+    {
+      "q": "What is the difference between composition and inheritance in Java?",
+      "options": [
+        "Composition is a way to create objects dynamically, while inheritance is a way to reuse code",
+        "Composition is a way to create objects statically, while inheritance is a way to create objects dynamically",
+        "Composition is a way to reuse code, while inheritance is a way to create objects dynamically",
+        "Composition is a way to create objects by combining existing objects, while inheritance is a way to reuse code"
+      ],
+      "answer": "D",
+      "explain": "Composition trong Java là kỹ thuật xây dựng đối tượng bằng cách kết hợp các đối tượng khác, trong khi kế thừa (inheritance) cho phép tái sử dụng mã từ lớp cha. Đây là sự khác biệt cốt lõi về thiết kế hướng đối tượng."
+    },
+    {
+      "q": "What is the output following the code snippet?\n\n```java\nclass StaticTest {\n    static void staticMethod() {\n        System.out.println(\"Static Method\");\n    }\n}\npublic class Main {\n    public static void main(String[] args) {\n        StaticTest first = null;\n        first.staticMethod();\n    }\n}\n```",
+      "options": [
+        "Static Method",
+        "Throws a NullPointerException",
+        "null",
+        "None of the others"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, phương thức static được gọi thông qua lớp, không cần đối tượng. Dù biến 'first' là null, JVM vẫn gọi được staticMethod() vì nó không phụ thuộc vào instance. Không ném NullPointerException."
+    },
+    {
+      "q": "What is the output following code snippet:\n\n```java\nint sum=0;\nfor(int i=0;\ni<=10;\ni++){\n    sum+=(i%2==0?i:-i);\n}\nSystem.out.println(sum);\n```",
+      "options": [
+        "5",
+        "2",
+        "The program will raise an exception.",
+        "3"
+      ],
+      "answer": "A",
+      "explain": "Vòng lặp i từ 0 đến 10. Biểu thức (i%2==0?i:-i) cộng i nếu chẵn, trừ i nếu lẻ. Tổng: 0-1+2-3+4-5+6-7+8-9+10 = (0+2+4+6+8+10) - (1+3+5+7+9) = 30 - 25 = 5. Không có lỗi, nên không chọn C."
+    },
+    {
+      "q": "In a banking application, you need to represent customer accounts using object arrays. Which OOP concept allows you to create a blueprint for the Account class?",
+      "options": [
+        "Inheritance",
+        "Abstraction",
+        "Encapsulation",
+        "Polymorphism",
+        "Composition",
+        "Interface"
+      ],
+      "answer": "B",
+      "explain": "Abstraction allows creating a blueprint (class) that defines structure and behavior without implementation details. In OOP, classes serve as blueprints for objects — this is abstraction."
+    },
+    {
+      "q": "Which of the following classes is used for shuffling an ArrayList in Java?",
+      "options": [
+        "Collections",
+        "CollectionList",
+        "Arrays",
+        "Array.Util"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, phương thức Collections.shuffle() được dùng để xáo trộn ngẫu nhiên các phần tử trong ArrayList. Các lựa chọn khác không tồn tại hoặc không đúng chức năng."
+    },
+    {
+      "q": "What is the output of the following code snippet?\n\n```java\nMap<Integer, Integer> myMap = new TreeMap<>();\nmyMap.put(3, 4);\nmyMap.put(1, 4);\nmyMap.put(2, 5);\nSystem.out.println(myMap);\n```",
+      "options": [
+        "{1=4, 2=5, 3=4}",
+        "{3=4, 2=5, 1=4}",
+        "{1=4, 3=4, 2=5}",
+        "{3=4, 1=4, 2=5}"
+      ],
+      "answer": "A",
+      "explain": "TreeMap trong Java sắp xếp các key theo thứ tự tăng dần. Sau khi thêm các cặp (3,4), (1,4), (2,5), map sẽ hiển thị theo thứ tự key: 1, 2, 3 → {1=4, 2=5, 3=4}."
+    },
+    {
+      "q": "What is the output of the following code?\n\n```java\nArrayList list = new ArrayList();\nlist.add(5);\nlist.add(3);\nlist.add(1);\nlist.add(2);\nlist.add(5);\nCollections.reverse(list);\nCollections.sort(list);\nSystem.out.println(list);\n```",
+      "options": [
+        "[1, 2, 3, 5, 5]",
+        "[1, 2, 5, 3, 5]",
+        "[5, 5, 3, 2, 1]",
+        "[5, 3, 1, 2, 5]"
+      ],
+      "answer": "A",
+      "explain": "Code thêm các số vào ArrayList, sau đó đảo ngược danh sách (reverse) → [5,2,1,3,5], rồi sắp xếp (sort) → [1,2,3,5,5]. Kết quả in ra là [1, 2, 3, 5, 5]. Đây là hành vi chuẩn của Collections.sort() và reverse()."
+    },
+    {
+      "q": "Which method is used to add an element at a specific position in a List in Java?",
+      "options": [
+        "add(Object element)",
+        "add(int index, Object element)",
+        "insert(int index, Object element)",
+        "put(int index, Object element)"
+      ],
+      "answer": "B",
+      "explain": "Trong Java, phương thức add(int index, Object element) của interface List cho phép chèn phần tử vào vị trí cụ thể. Các phương thức khác như insert hay put không tồn tại trong List chuẩn."
+    },
+    {
+      "q": "You are tasked with implementing a system that tracks the frequency of words in a large text document. Explain how you would use a Java collection to efficiently achieve this, emphasizing the principles of abstraction and encapsulation.",
+      "options": [
+        "Utilize a HashMap<String, Integer> for efficient word frequency tracking.",
+        "Implement a LinkedList<String> to store words and their occurrences.",
+        "Use a PriorityQueue<String> to prioritize words based on frequency.",
+        "Employ a HashSet<String> for unique word storage.",
+        "Implement a custom WordFrequencyTracker class using a binary search tree.",
+        "Utilize a TreeMap<String, Integer> for a sorted mapping of words and frequencies."
+      ],
+      "answer": "A",
+      "explain": "HashMap cung cấp độ phức tạp trung bình O(1) cho thao tác thêm/sửa/xóa, phù hợp để đếm tần suất từ. Nó thể hiện nguyên lý trừu tượng (ẩn chi tiết triển khai) và đóng gói (tách biệt dữ liệu và hành vi). Các lựa chọn khác như LinkedList, PriorityQueue, HashSet không phù hợp vì thiếu khả năng lưu trữ cặp key-value hoặc hiệu suất thấp."
+    },
+    {
+      "q": "All abstract data structures: List, Set, Map is implemented in which of the following types?",
+      "options": [
+        "Interface",
+        "Abstract class",
+        "Concrete class",
+        "Derived class"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, các cấu trúc dữ liệu trừu tượng như List, Set, Map đều được định nghĩa dưới dạng Interface. Các lớp cụ thể (concrete class) như ArrayList, HashSet, HashMap mới là triển khai của chúng."
+    },
+    {
+      "q": "What is the output of the following code snippet?\n\n```java\npublic class Program {\n    void swap(Integer t1, Integer t2){\n        int temp = t1;\n        t1 = t2;\n        t2 = temp;\n    }\n    void f1(){\n        List<Integer> list = new ArrayList();\n        list.add(1);\n        list.add(2);\n        swap(list.get(0), list.get(1));\n        System.out.println(list);\n    }\n    public static void main(String[] args) {\n        new Program().f1();\n    }\n}\n```",
+      "options": [
+        "[1, 2]",
+        "[2, 1]",
+        "[1, 1]",
+        "[2, 2]"
+      ],
+      "answer": "A",
+      "explain": "Java truyền tham số bằng giá trị (pass-by-value). Dù tham số là Integer (đối tượng), biến tham chiếu được sao chép, nên việc hoán đổi trong hàm swap không ảnh hưởng đến danh sách gốc. Do đó, list vẫn giữ nguyên [1, 2]."
+    },
+    {
+      "q": "How do you convert an ArrayList to an array?",
+      "options": [
+        "toArray()",
+        "copyToArray()",
+        "convertArray()",
+        "makeArray()"
+      ],
+      "answer": "A",
+      "explain": "Trong Java, phương thức toArray() của ArrayList được dùng để chuyển đổi ArrayList thành mảng. Các lựa chọn còn lại không tồn tại trong API chuẩn của Java."
+    },
+    {
+      "q": "What is the output of the following code snippet?\n\n```java\nTreeMap<String, Integer> t = new TreeMap();\nt.put(\"c\", 1);\nt.put(\"b\", 2);\nt.put(\"a\", 3);\nSystem.out.println(t.values());\n```",
+      "options": [
+        "[3,2,1]",
+        "[\"c\",\"b\",\"a\"]",
+        "[\"a\",\"b\",\"c\"]",
+        "[1,2,3]"
+      ],
+      "answer": "A",
+      "explain": "TreeMap sắp xếp key theo thứ tự tăng dần (a, b, c). Khi gọi values(), nó trả về Collection các giá trị tương ứng với thứ tự key: 3 (cho 'a'), 2 (cho 'b'), 1 (cho 'c') → [3,2,1]."
+    },
+    {
+      "q": "Which are incorrect about Collection framework in Java?",
+      "options": [
+        "Collection framework provides an architecture to store and manage a group of objects.",
+        "Collection framework provides data structures as well as algorithms to manipulate data.",
+        "Collection framework support various operations such as Searching, Sorting, Insertion, Manipulation, and Deletion data",
+        "Collection framework has classes in Collection Framework allow data to be sorted from the start"
+      ],
+      "answer": "D",
+      "explain": "⚠️ ĐỀ LỖI: Không có phương án sai rõ ràng. D nói framework có các class tự sắp xếp, điều này đúng với TreeSet và TreeMap. D chỉ sai nếu đề muốn nói tất cả class đều tự sắp xếp. Giữ D theo nguồn."
+    },
+    {
+      "q": "Which of these statements are correct?",
+      "options": [
+        "java.io.File can not reading and writing data",
+        "java.io.File can created file on disk",
+        "Class declared implements Serializable to read data by Object",
+        "The constructor of high-level I/O classes can accepts a high-level I/O object as an argument"
+      ],
+      "answer": [
+        "A",
+        "B"
+      ],
+      "explain": "⚠️ ĐỀ LỖI: A và B đúng: File không trực tiếp đọc/ghi dữ liệu và có createNewFile(). D cũng có thể đúng: BufferedReader có thể bọc Reader cấp cao khác, chẳng hạn InputStreamReader hoặc BufferedReader. C diễn đạt mơ hồ về Serializable. Giữ A/B theo đáp án nguồn yêu cầu 2 lựa chọn."
+    },
+    {
+      "q": "What will be the output of the following code?\n\n```java\npublic class Ex1 {\n    public static void main(String[] args) {\n        try {\n            int intArray[] = new int[10];\n            intArray[10] = 10;\n            System.out.println(\"arr[10] = \" + intArray[9]);\n        } catch (NullPointerException ex) {\n            System.out.println(ex);\n        } finally {\n            System.out.println(\"Finally statement\");\n        }\n\n        System.out.println(\"Finished!\");\n    }\n}\n```",
+      "options": [
+        "Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: 10",
+        "arr[10] = 10 Finished!",
+        "Khối lệnh finally Exception in thread \"main\" java.lang.ArrayIndexOutOfBoundsException: 10",
+        "arr[10] = 10 Khối lệnh finally Finished!"
+      ],
+      "answer": "C",
+      "explain": "⚠️ ĐỀ LỖI: A không đầy đủ. Code in `Finally statement`, sau đó ngoại lệ ArrayIndexOutOfBoundsException không được bắt và chương trình dừng; không in Finished!. C gần đúng nhất về trình tự, nhưng dòng chữ finally không khớp nguyên văn. Chọn C để ôn kiến thức; không có lựa chọn hoàn toàn đúng."
+    },
+    {
+      "q": "Major reasons why an exception occurs: Choose multiple correct answers.",
+      "options": [
+        "Invalid user input",
+        "Null reference",
+        "Type mismatch",
+        "Syntax Error"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explain": "Lỗi ngoại lệ (exception) thường xảy ra do đầu vào không hợp lệ (A), tham chiếu null (B), hoặc không khớp kiểu dữ liệu (C). Lỗi cú pháp (D) xảy ra ở thời điểm biên dịch, không phải runtime nên không phải exception."
+    },
+    {
+      "q": "Which of the following exceptions might arise when using the File object to generate a new file?",
+      "options": [
+        "IOException exception",
+        "FileNotFound exception",
+        "FileError Exception",
+        "IOAccessDenied exception"
+      ],
+      "answer": "A",
+      "explain": "Khi tạo file mới bằng đối tượng File trong Java, ngoại lệ có thể xảy ra là IOException — do lỗi I/O như quyền truy cập, ổ đĩa đầy, v.v. Các ngoại lệ như FileNotFound, FileError, IOAccessDenied không tồn tại trong Java chuẩn."
+    },
+    {
+      "q": "What classes are best suited for handling the reading and writing of character streams?",
+      "options": [
+        "FileReader and FileWriter",
+        "FileInputStream and FileOutputStream",
+        "BufferedReader and FilePrinter",
+        "None of the others"
+      ],
+      "answer": "A",
+      "explain": "FileReader và FileWriter là các lớp trong Java dùng để đọc/ghi luồng ký tự (character streams). Các lớp FileInputStream/FileOutputStream dùng cho byte streams, không phải ký tự."
+    },
+    {
+      "q": "You are developing an e-commerce platform, and you need to display a list of products sorted by their prices in ascending order. Explain how you would use Java collections to achieve efficient sorting, and choose the most suitable sorting algorithm for this scenario.",
+      "options": [
+        "Use Collections.sort() with a custom comparator.",
+        "Implement a custom quicksort algorithm for precise control.",
+        "Choose Arrays.sort() for simplicity and performance.",
+        "Utilize a PriorityQueue for automatic sorting during insertion.",
+        "Implement a custom bubble sort algorithm for educational purposes.",
+        "Use Comparator.reverseOrder() for descending order sorting."
+      ],
+      "answer": "A",
+      "explain": "Để sắp xếp danh sách sản phẩm theo giá tăng dần, dùng Collections.sort() với Comparator tùy chỉnh là hiệu quả và chuẩn trong Java. Các lựa chọn khác không tối ưu hoặc sai mục đích."
+    },
+    {
+      "q": "What is the output of the following code snippet?\n\n```java\nString fName = \"output.txt\";\nbyte[] array = {65, 66, 67};\nbyte[] arr = new byte[3];\ntry {\n    RandomAccessFile f = new RandomAccessFile(fName, \"rw\");\n    f.write(array);\n    f.seek(0);\n    f.read(arr);\n    String str1 = new String(arr);\n    System.out.println(str1);\n} catch (Exception e) {\n    System.out.println(e);\n}\n```",
+      "options": [
+        "ABC",
+        "ACB",
+        "BAC",
+        "BCA"
+      ],
+      "answer": "A",
+      "explain": "Mảng byte {65, 66, 67} tương ứng với mã ASCII của 'A', 'B', 'C'. Sau khi ghi vào file và đọc lại, mảng arr sẽ chứa đúng các giá trị này. Khi chuyển sang chuỗi, kết quả là 'ABC'. Không có thay đổi thứ tự hay lỗi xảy ra."
+    }
+  ]
+}
