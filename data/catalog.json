@@ -67,6 +67,16 @@
           "count": 50
         },
         {
+          "term": "SU25_DE6",
+          "file": "data/pro192/SU25_De6.json",
+          "count": 50
+        },
+        {
+          "term": "SU25_DE4",
+          "file": "data/pro192/SU25_De4.json",
+          "count": 50
+        },
+        {
           "term": "SP26_DE2",
           "file": "data/pro192/SP26_De2.json",
           "count": 50
@@ -74,6 +84,16 @@
         {
           "term": "SP26_DE1",
           "file": "data/pro192/SP26_De1.json",
+          "count": 50
+        },
+        {
+          "term": "FA25_DE5",
+          "file": "data/pro192/FA25_De5.json",
+          "count": 50
+        },
+        {
+          "term": "FA25_DE4",
+          "file": "data/pro192/FA25_De4.json",
           "count": 50
         }
       ]
