@@ -54,6 +54,11 @@
           "term": "SP26_FE",
           "file": "data/osg202/SP26_FE.json",
           "count": 50
+        },
+        {
+          "term": "OSG202_75_CAU_TRONG_TAM",
+          "file": "data/osg202/OSG202_75_cau_trong_tam.json",
+          "count": 75
         }
       ]
     },
