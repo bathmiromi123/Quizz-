@@ -1,0 +1,1387 @@
+{
+  "title": "OSG202 – 75 nhóm câu lặp lại (đã kiểm tra)",
+  "description": "Từ 399 câu thuộc 8 đề; 75 nhóm trùng sau chuẩn hóa. Câu hỏi được diễn đạt lại, giữ kiến thức và thuật ngữ; câu mơ hồ được chỉnh. Hai nhóm chỉ lặp trong cùng đề. Tần suất là số lần xuất hiện, không phải xác suất ra đề.",
+  "timeLimitMinutes": 0,
+  "mode": "instant",
+  "shuffleQuestions": false,
+  "shuffleOptions": false,
+  "autoNext": false,
+  "questions": [
+    {
+      "q": "In UNIX, what do fork() and exec() do together?",
+      "options": [
+        "Control peripheral devices",
+        "Allocate disk blocks",
+        "Create a child and run a new program",
+        "Change CPU privilege only"
+      ],
+      "answer": "C",
+      "explain": "fork() tạo process con; exec() thay thế chương trình trong process hiện tại. Kết hợp lại thường dùng để chạy chương trình mới.",
+      "frequency": 4,
+      "sources": [
+        "SP26 Q2",
+        "SU26 RE Q24",
+        "SU26 B5 Q50",
+        "SU26 FE Q46"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What is another name for a virtual machine monitor (VMM)?",
+      "options": [
+        "Linker",
+        "Shell",
+        "Console",
+        "Hypervisor"
+      ],
+      "answer": "D",
+      "explain": "Hypervisor quản lý máy ảo và phân phối tài nguyên vật lý cho các guest OS.",
+      "frequency": 4,
+      "sources": [
+        "SP26 Q27",
+        "SU26 RE Q7",
+        "SU26 B5 Q40",
+        "SU26 FE Q38"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "How does a modified paravirtualized guest request privileged services from its hypervisor?",
+      "options": [
+        "Hardware interrupts only",
+        "Hypercalls",
+        "Ordinary user system calls only",
+        "File commands"
+      ],
+      "answer": "B",
+      "explain": "Paravirtualization sửa guest OS để gọi hypervisor thông qua hypercall thay vì tự thực thi một số lệnh nhạy cảm.",
+      "frequency": 4,
+      "sources": [
+        "SP26 Q30",
+        "SU26 RE Q35",
+        "SU26 B5 Q41",
+        "SU26 FE Q34"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which hardware cache reduces the cost of virtual-to-physical address translation?",
+      "options": [
+        "Translation Lookaside Buffer (TLB)",
+        "Page file",
+        "Instruction register",
+        "Disk buffer"
+      ],
+      "answer": "A",
+      "explain": "TLB cache các ánh xạ page → frame gần đây; TLB hit giúp tránh phải tra page table trong RAM.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q1",
+        "SU26 RE Q45",
+        "FA26 FE Q37"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Why is routine traditional defragmentation generally discouraged on SSDs?",
+      "options": [
+        "It is required to run TRIM",
+        "It improves mechanical seek time",
+        "It removes all wear leveling",
+        "It causes unnecessary flash write cycles"
+      ],
+      "answer": "D",
+      "explain": "SSD không có đầu đọc cơ học nên lợi ích gom dữ liệu thường rất thấp. Ghi lại dữ liệu không cần thiết làm tăng hao mòn flash; TRIM khác defrag.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q12",
+        "SU26 RE Q31",
+        "FA26 FE Q12"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which execution model allows parallel work on multiple cores while permitting blocking system calls?",
+      "options": [
+        "Threads",
+        "Single finite-state machine",
+        "Sequential batch job only",
+        "Single-threaded process only"
+      ],
+      "answer": "A",
+      "explain": "Nhiều threads có thể chạy song song trên nhiều core; một thread có thể block khi gọi I/O. Với kernel threads, thread khác vẫn có thể chạy.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q20",
+        "SU26 RE Q6",
+        "FA26 FE Q1"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "What are the two broad roles of an operating system?",
+      "options": [
+        "Debugging and compilation",
+        "Resource management and providing abstractions",
+        "Memory allocation and compilation",
+        "Network routing and power saving only"
+      ],
+      "answer": "B",
+      "explain": "OS quản lý CPU, RAM, I/O và tạo abstraction như process, file, virtual memory để che độ phức tạp phần cứng.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q28",
+        "SU26 RE Q34",
+        "FA26 FE Q30"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which is NOT a normal duty of clock software?",
+      "options": [
+        "Account for CPU usage",
+        "Maintain time of day",
+        "Handle timer alarms",
+        "Let processes exceed their allotted CPU time"
+      ],
+      "answer": "D",
+      "explain": "Clock quản lý thời gian, thống kê CPU và alarm; timer giúp giới hạn time slice, không kéo dài thời gian vượt giới hạn.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q47",
+        "SU25 D3 Q43",
+        "FA26 FE Q23"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "What is a typical benefit of memory virtualization for resource allocation, despite possible overhead?",
+      "options": [
+        "More flexible allocation and isolation of guest memory",
+        "Only faster network transfers",
+        "Guaranteed zero translation overhead",
+        "Elimination of physical RAM"
+      ],
+      "answer": "A",
+      "explain": "Ảo hóa bộ nhớ hỗ trợ ánh xạ, cô lập và phân phối RAM linh hoạt. Không bảo đảm hiệu năng tăng trong mọi trường hợp vì dịch địa chỉ và paging có overhead. Đề gốc mâu thuẫn A/B nên câu được làm rõ.",
+      "frequency": 3,
+      "sources": [
+        "SU26 RE Q20",
+        "FA25 D2 Q50",
+        "FA26 FE Q50"
+      ],
+      "recent": true,
+      "clarified": true
+    },
+    {
+      "q": "What does virtual memory allow Windows processes to use?",
+      "options": [
+        "A display configuration buffer",
+        "Only temporary application files",
+        "An address space potentially larger than available physical RAM",
+        "A disk area exclusively for OS files"
+      ],
+      "answer": "C",
+      "explain": "Virtual memory tách địa chỉ ảo khỏi RAM vật lý; trang chưa cần có thể ở backing store hoặc file. Windows dùng RAM và page file khi thích hợp.",
+      "frequency": 3,
+      "sources": [
+        "SU25 D3 Q17",
+        "FA25 D1 Q26",
+        "FA26 FE Q14"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which internal hardware resource is directly managed by the OS memory manager?",
+      "options": [
+        "Text editor",
+        "Command shell",
+        "Main memory",
+        "Web browser"
+      ],
+      "answer": "C",
+      "explain": "Memory manager theo dõi và phân phối RAM, bảo vệ các vùng nhớ. Browser và shell là phần mềm. Đề gốc có cả thiết bị I/O nên đã giới hạn rõ phạm vi.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q11",
+        "SU26 B5 Q43",
+        "SU26 FE Q49"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "Which resource request rule breaks the circular-wait condition of deadlock?",
+      "options": [
+        "Keep all resources while waiting without limits",
+        "Allow circular resource requests",
+        "Increase every process priority",
+        "Request resources in a fixed global order"
+      ],
+      "answer": "D",
+      "explain": "Đánh số tài nguyên và bắt buộc xin theo thứ tự tăng dần thì không thể tạo vòng chờ. Cấp toàn bộ tài nguyên trước chủ yếu phá hold-and-wait.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q13",
+        "SU26 RE Q47",
+        "SU26 B5 Q49"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which I/O software component hides device-specific controller details from higher layers?",
+      "options": [
+        "Device driver",
+        "File name resolver",
+        "User application",
+        "CPU scheduler"
+      ],
+      "answer": "A",
+      "explain": "Driver biết cách gửi lệnh/đọc trạng thái controller và cung cấp giao diện tương đối thống nhất cho lớp trên.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q22",
+        "SU26 RE Q49",
+        "SU26 B5 Q32"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which is NOT an inherent advantage of memory segmentation?",
+      "options": [
+        "Independent logical segment growth",
+        "Automatic optimization of CPU scheduling",
+        "Independent placement of segments",
+        "Separate segment protection"
+      ],
+      "answer": "B",
+      "explain": "Segmentation chia chương trình thành vùng logic như code, data, stack. Các segment có thể đặt ở các vị trí khác nhau; nó không tự tối ưu lịch CPU.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q23",
+        "SU26 RE Q39",
+        "SU26 B5 Q46"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which pair describes common DMA bus transfer modes?",
+      "options": [
+        "Word-at-a-time and block mode",
+        "Word-at-a-time and byte mode",
+        "Word-at-a-time and bit mode",
+        "Word-at-a-time and page mode"
+      ],
+      "answer": "A",
+      "explain": "Word-at-a-time (cycle stealing) truyền từng đơn vị bus; block/burst mode truyền một khối liên tục, giảm số lần xin bus.",
+      "frequency": 3,
+      "sources": [
+        "SP26 Q24",
+        "SU26 B5 Q30",
+        "FA25 D2 Q42"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What is the time needed for a disk head to move to the target cylinder called?",
+      "options": [
+        "Transfer time",
+        "Seek time",
+        "Rotational latency",
+        "Total access time"
+      ],
+      "answer": "B",
+      "explain": "Seek time = thời gian di chuyển đầu đọc. Rotational latency = đợi sector quay tới đầu đọc; transfer time = thời gian truyền dữ liệu.",
+      "frequency": 3,
+      "sources": [
+        "SU26 RE Q15",
+        "SU26 B5 Q34",
+        "SU26 FE Q5"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What is the main address-related function of an MMU?",
+      "options": [
+        "Schedule processes",
+        "Select disk requests",
+        "Maintain file directories",
+        "Translate virtual addresses into physical addresses"
+      ],
+      "answer": "D",
+      "explain": "MMU là phần cứng dịch địa chỉ và hỗ trợ kiểm tra quyền truy cập. OS cấu hình page table nhưng MMU thực hiện dịch địa chỉ.",
+      "frequency": 3,
+      "sources": [
+        "SU26 RE Q23",
+        "SU26 B5 Q14",
+        "SU25 D3 Q14"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What characterizes a mutually exclusive critical section?",
+      "options": [
+        "All threads must enter simultaneously",
+        "Interrupts must always be disabled",
+        "Only kernel processes may use it",
+        "Only one participating thread may execute it at a time"
+      ],
+      "answer": "D",
+      "explain": "Critical section truy cập dữ liệu chung. Mutual exclusion ngăn hai thread sửa dữ liệu cùng lúc gây race condition; không bắt buộc tắt interrupt.",
+      "frequency": 3,
+      "sources": [
+        "SU26 RE Q30",
+        "SU26 FE Q45",
+        "SU25 D3 Q12"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "How does the clock page-replacement implementation reduce Second Chance overhead?",
+      "options": [
+        "Load all pages into RAM",
+        "Guarantee fewer page faults",
+        "Use no reference bits",
+        "Move a circular pointer instead of rearranging queue entries"
+      ],
+      "answer": "D",
+      "explain": "Clock mô phỏng Second Chance bằng danh sách vòng và con trỏ; khi R=1 thì xóa R và đi tiếp. Không cần di chuyển entry trong queue và không bảo đảm ít fault hơn.",
+      "frequency": 3,
+      "sources": [
+        "SU26 RE Q50",
+        "SU25 D3 Q19",
+        "FA25 D2 Q28"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which allocation scheme places each process in one contiguous fixed-size memory partition?",
+      "options": [
+        "Paging",
+        "Demand paging",
+        "Segmentation with independent segments",
+        "Fixed-partition contiguous allocation"
+      ],
+      "answer": "D",
+      "explain": "Fixed partitioning chia RAM thành vùng liên tục; mỗi process chiếm một partition phù hợp. Paging cũng dùng khối cố định nhưng process có thể nằm ở nhiều frame rời rạc. Đã làm rõ đề gốc.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q6",
+        "FA26 FE Q11"
+      ],
+      "recent": true,
+      "clarified": true
+    },
+    {
+      "q": "Which file allocation scheme follows a pointer from one data block to the next?",
+      "options": [
+        "Indexed allocation",
+        "Contiguous allocation",
+        "Linked allocation",
+        "Hash allocation"
+      ],
+      "answer": "C",
+      "explain": "Linked allocation tạo chuỗi block qua con trỏ; contiguous dùng các block liền nhau, indexed dùng block chỉ mục chứa địa chỉ.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q14",
+        "FA26 FE Q43"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "When does a CPU cache hit occur?",
+      "options": [
+        "The requested data is present in cache",
+        "Data must be fetched from RAM after a miss",
+        "A cache line is evicted",
+        "Every cache line is occupied"
+      ],
+      "answer": "A",
+      "explain": "Cache hit tìm thấy dữ liệu ở cache, nên không cần đọc tầng nhớ thấp hơn cho lần truy cập đó. Cache miss thì phải lấy từ tầng tiếp theo.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q37",
+        "FA26 FE Q13"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which historical shift enabled interactive time-sharing in the 1960s?",
+      "options": [
+        "From GUI to batch processing",
+        "From multitasking to manual execution",
+        "From batch processing toward interactive computing",
+        "From cloud systems to single-user PCs"
+      ],
+      "answer": "C",
+      "explain": "Time-sharing cho phép nhiều người dùng tương tác bằng cách chia CPU thành các khoảng thời gian ngắn; batch truyền thống chạy job theo lô.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q42",
+        "FA26 FE Q10"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "For which I/O workload is DMA particularly useful?",
+      "options": [
+        "Only slow single-character transfers",
+        "Only memory-to-cache copies",
+        "Large high-speed transfers between memory and devices",
+        "Only tiny CPU register updates"
+      ],
+      "answer": "C",
+      "explain": "DMA controller chuyển khối dữ liệu giữa RAM và thiết bị mà CPU không phải copy từng byte; CPU thiết lập và nhận thông báo hoàn thành.",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q35",
+        "FA26 FE Q6"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which statement about resource allocation and deadlock avoidance is accurate?",
+      "options": [
+        "Banker's algorithm grants requests only if the resulting state is safe",
+        "A semaphore always prevents circular wait",
+        "IPC alone guarantees safe resource allocation",
+        "A mutex alone guarantees freedom from deadlock"
+      ],
+      "answer": "A",
+      "explain": "Banker kiểm tra safe state trước khi cấp phát. Mutex/semaphore hỗ trợ đồng bộ nhưng vẫn có thể deadlock. Câu gốc có đáp án A/C mâu thuẫn và không có định nghĩa đủ rõ; đã thay bằng câu cùng chủ đề có đáp án chắc chắn.",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q45",
+        "FA26 FE Q29"
+      ],
+      "recent": true,
+      "clarified": true
+    },
+    {
+      "q": "In a resource-allocation graph, what does a request edge P → R mean?",
+      "options": [
+        "P has released R",
+        "Process P is requesting resource R and waiting for it",
+        "R is allocated to P",
+        "P has completed execution"
+      ],
+      "answer": "B",
+      "explain": "Mũi tên process → resource là request edge (đang yêu cầu/chờ); resource → process là assignment edge (đã cấp).",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q47",
+        "FA26 FE Q38"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which pair contrasts single-CPU job interleaving with true simultaneous execution on multiple CPUs?",
+      "options": [
+        "Multiprocessing; single-tasking",
+        "Multiprogramming; multiprocessing",
+        "Multiprocessing; multiprogramming",
+        "Multiprogramming; uniprocessing"
+      ],
+      "answer": "B",
+      "explain": "Multiprogramming trên một CPU cho nhiều job luân phiên, chỉ một job thực thi tại một thời điểm. Multiprocessing có nhiều processor nên có thể chạy thực sự đồng thời.",
+      "frequency": 2,
+      "sources": [
+        "FA25 D1 Q18",
+        "FA26 FE Q40"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "What file access pattern was typical of early operating systems using tapes?",
+      "options": [
+        "Sequential access",
+        "Indexed access",
+        "Random access",
+        "Direct block hashing"
+      ],
+      "answer": "A",
+      "explain": "Băng từ đọc tuần tự từ đầu đến vị trí mong muốn; random access thuận tiện hơn với disk.",
+      "frequency": 2,
+      "sources": [
+        "FA25 D1 Q35",
+        "FA26 FE Q8"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Which technique is classified as deadlock avoidance rather than prevention?",
+      "options": [
+        "Break mutual exclusion",
+        "Break circular wait",
+        "Break hold and wait",
+        "Banker's algorithm"
+      ],
+      "answer": "D",
+      "explain": "Prevention phá ít nhất một trong bốn điều kiện cần; avoidance (Banker) chỉ cấp nếu trạng thái sau cấp phát còn an toàn.",
+      "frequency": 2,
+      "sources": [
+        "FA25 D2 Q47",
+        "FA26 FE Q17"
+      ],
+      "recent": true,
+      "clarified": false
+    },
+    {
+      "q": "Under normal POSIX rmdir semantics, when can a directory be removed?",
+      "options": [
+        "It contains only subdirectories",
+        "It is empty apart from dot and dotdot",
+        "It contains only regular files",
+        "It has no read permission"
+      ],
+      "answer": "B",
+      "explain": "rmdir yêu cầu directory rỗng (không có entry khác ngoài . và ..), đồng thời còn cần quyền phù hợp. Xóa đệ quy là thao tác khác.",
+      "frequency": 2,
+      "sources": [
+        "FA26 FE Q9",
+        "FA26 FE Q45"
+      ],
+      "recent": true,
+      "clarified": true
+    },
+    {
+      "q": "What is the collection of frequently used web pages kept in RAM to avoid disk reads called?",
+      "options": [
+        "Process queue",
+        "Thread table",
+        "Dispatcher",
+        "Cache"
+      ],
+      "answer": "D",
+      "explain": "Cache giữ dữ liệu hay dùng trong RAM để giảm truy cập disk. Buffer thường dùng giữ dữ liệu tạm trong quá trình truyền.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q3",
+        "SU26 RE Q11"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "FIFO replacement: 4 initially empty frames, references 0 1 7 2 3 2 7 1 0 3. How many page faults?",
+      "options": [
+        "7",
+        "5",
+        "4",
+        "6"
+      ],
+      "answer": "D",
+      "explain": "Fault ở lần tham chiếu 1,2,3,4,5,9 (0,1,7,2,3,0). Sau 3, FIFO thay 0; lần 0 tiếp theo thay 1. Các lần còn lại hit. Tổng 6.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q8",
+        "SU26 RE Q40"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In Round Robin, a running process uses its full quantum without completing or blocking. What is its next state?",
+      "options": [
+        "Terminated",
+        "Blocked",
+        "Ready",
+        "Suspended"
+      ],
+      "answer": "C",
+      "explain": "Hết quantum thì scheduler preempt process và đưa về ready queue. Blocked chỉ khi cần chờ sự kiện/I/O.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q15",
+        "SU26 RE Q46"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Best fit: holes 10, 18, 9, 14 MB; requests 11, 2, 9, 8 MB. Which hole sizes are selected in order?",
+      "options": [
+        "14, 3, 10, 9 MB",
+        "14, 3, 9, 10 MB",
+        "18, 7, 10, 9 MB",
+        "18, 7, 9, 10 MB"
+      ],
+      "answer": "B",
+      "explain": "Best fit lấy lỗ nhỏ nhất đủ chứa: 11→14 (dư 3); 2→3 (dư 1); 9→9; 8→10 (dư 2).",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q16",
+        "SU26 FE Q29"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In the textbook page-fault handling sequence, what saves general registers and volatile state after the trap?",
+      "options": [
+        "Disk controller",
+        "Page replacement algorithm",
+        "File-system cache",
+        "Low-level assembly-language routine"
+      ],
+      "answer": "D",
+      "explain": "Trap chuyển quyền điều khiển vào kernel; routine mức thấp lưu context cần thiết trước khi handler xử lý page fault. Chi tiết có thể khác theo kiến trúc.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q19",
+        "SU26 B5 Q19"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In a conventional two-mode OS model, which is the standard pair of execution modes?",
+      "options": [
+        "Ready mode and blocked mode",
+        "Real mode and batch mode",
+        "User mode and kernel mode",
+        "Thread mode and file mode"
+      ],
+      "answer": "C",
+      "explain": "Slide Chapter 1 dùng User và Kernel mode. Supervisor/system mode có thể là tên khác của privileged mode nên câu gốc hỏi NOT mode không có đáp án duy nhất; đã sửa.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q21",
+        "SU26 B5 Q1"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "Which core OS component mediates access from applications to hardware resources?",
+      "options": [
+        "Assembler",
+        "Compiler",
+        "Linker",
+        "Kernel"
+      ],
+      "answer": "D",
+      "explain": "Kernel xử lý system calls, quản lý tài nguyên và tương tác driver; compiler/assembler/linker là công cụ xây dựng chương trình.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q25",
+        "SU26 B5 Q42"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Select ALL three basic I/O execution techniques in the textbook classification.",
+      "options": [
+        "Programmed I/O",
+        "Memory-mapped I/O",
+        "Interrupt-driven I/O",
+        "DMA"
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D"
+      ],
+      "explain": "Ba cách thực hiện I/O là programmed (CPU polling), interrupt-driven (thiết bị báo ngắt), DMA (controller truyền khối). Memory-mapped I/O là phương pháp ánh xạ thanh ghi thiết bị vào address space, không phải một loại độc lập trong phân loại này.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q26",
+        "SU26 FE Q41"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "How does giving each process a protected address space improve safety?",
+      "options": [
+        "It forces CPU execution to slow down",
+        "It isolates process memory from unauthorized access",
+        "It eliminates address translation",
+        "It lets every process directly access all RAM"
+      ],
+      "answer": "B",
+      "explain": "Mỗi process có ánh xạ và quyền riêng; MMU kiểm tra quyền. Shared memory vẫn có thể được thiết lập có chủ đích.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q35",
+        "SU26 B5 Q15"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which deadlock recovery method explicitly takes an allocated resource away from a process?",
+      "options": [
+        "Resource preemption",
+        "Process creation",
+        "Increasing CPU quantum",
+        "Circular wait"
+      ],
+      "answer": "A",
+      "explain": "Preemption thu hồi resource, có thể cần rollback để giữ nhất quán; killing cũng là recovery nhưng không có cách nào luôn ít ảnh hưởng nhất. Câu gốc mâu thuẫn A/B nên đã hỏi rõ cơ chế.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q36",
+        "SU26 FE Q25"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "What is a preemptable resource?",
+      "options": [
+        "A resource that can be reclaimed without adverse effects to the process",
+        "A resource that always causes data corruption if reclaimed",
+        "A resource permanently owned by one process",
+        "A resource that must never be reclaimed"
+      ],
+      "answer": "A",
+      "explain": "Preemptable resource có thể thu hồi an toàn, ví dụ CPU hoặc RAM trong điều kiện thích hợp. Printer đang in thường khó thu hồi mà không có hậu quả.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q38",
+        "SU26 RE Q3"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "10 resource units total. P1 max/allocated 6/3, P2 5/4, P3 7/3. Is the state safe under Banker's test?",
+      "options": [
+        "Guaranteed currently deadlocked",
+        "Safe",
+        "Guaranteed starvation",
+        "Unsafe"
+      ],
+      "answer": "D",
+      "explain": "Allocated=3+4+3=10, Available=0. Need=(3,1,4); không process nào có Need ≤0 nên không tìm được safe sequence. Unsafe không tự động chứng minh deadlock hiện tại nếu chưa biết request thực tế.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q39",
+        "SU26 FE Q14"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What is the main reliability drawback of RAID 0?",
+      "options": [
+        "It mirrors every block",
+        "No redundancy to recover from a drive failure",
+        "It cannot improve throughput",
+        "It always uses parity"
+      ],
+      "answer": "B",
+      "explain": "RAID 0 striping tăng thông lượng nhưng không có mirror/parity; mất một ổ có thể mất toàn bộ array.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q43",
+        "SU25 D3 Q40"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In Dijkstra's THE layered OS model, which layer handles memory and drum management?",
+      "options": [
+        "Layer 0",
+        "Layer 1",
+        "Layer 3",
+        "Layer 2"
+      ],
+      "answer": "B",
+      "explain": "Theo mô hình THE: Layer 0 scheduling/processor allocation; Layer 1 memory/drum; Layer 2 operator-process communication; Layer 3 I/O. Đây là mô hình cụ thể, không áp dụng mọi layered OS.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q44",
+        "SU26 B5 Q45"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which disk scheduling policy serves requests in arrival order but can cause long head travel?",
+      "options": [
+        "C-SCAN",
+        "SCAN",
+        "FCFS",
+        "SSTF"
+      ],
+      "answer": "C",
+      "explain": "FCFS công bằng theo thứ tự đến, không bỏ qua request vì xa, nhưng đầu đọc có thể di chuyển qua lại nhiều. SSTF ưu tiên request gần nhất.",
+      "frequency": 2,
+      "sources": [
+        "SP26 Q46",
+        "FA25 D2 Q49"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "P1, P2, P3 occupy contiguous memory from address 0 with sizes 8, 4, 16 KiB. If limit means region length, what are P3's base and limit?",
+      "options": [
+        "8 KiB, 28 KiB",
+        "8 KiB, 24 KiB",
+        "12 KiB, 28 KiB",
+        "12 KiB, 16 KiB"
+      ],
+      "answer": "D",
+      "explain": "Base=8+4=12 KiB; limit là độ dài=16 KiB theo slide Chapter 3. 28 KiB là địa chỉ kết thúc không bao gồm, không phải limit theo định nghĩa này.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q10",
+        "SU26 FE Q10"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "In the Dining Philosophers synchronization problem, what do philosophers model?",
+      "options": [
+        "Concurrent processes competing for shared resources",
+        "Disk cylinders",
+        "File directories",
+        "Memory frames"
+      ],
+      "answer": "A",
+      "explain": "Philosophers là process/thread; forks là tài nguyên dùng chung. Mô hình minh họa mutual exclusion, deadlock và starvation.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q13",
+        "SU26 B5 Q10"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What is the broad purpose of an operating system?",
+      "options": [
+        "Only provide a graphical interface",
+        "Only execute games",
+        "Manage hardware resources and provide services to programs",
+        "Only compile source code"
+      ],
+      "answer": "C",
+      "explain": "OS phân phối CPU, RAM, I/O, bảo vệ tài nguyên và cung cấp dịch vụ/abstraction cho chương trình.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q17",
+        "SU26 FE Q2"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What distinguishes a traditional monolithic kernel?",
+      "options": [
+        "Every service has its own isolated user process",
+        "Only the file system is privileged",
+        "Core OS services and drivers run together in privileged kernel space",
+        "All device drivers must run in user space"
+      ],
+      "answer": "C",
+      "explain": "Monolithic kernel tích hợp nhiều dịch vụ trong kernel space; microkernel chuyển nhiều dịch vụ ra user space. User applications vẫn chạy user mode.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q32",
+        "SU26 FE Q22"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "During disk I/O to fetch a missing page after a page fault, what may the scheduler do?",
+      "options": [
+        "Run another ready process",
+        "Always busy-wait until disk I/O ends",
+        "Always halt the CPU",
+        "Permanently block the faulting process"
+      ],
+      "answer": "A",
+      "explain": "Process lỗi trang thường bị block trong lúc I/O; scheduler có thể cấp CPU cho process ready khác, sau I/O process cũ quay về ready.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q36",
+        "SU26 FE Q17"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which property is provided by separate protected virtual address spaces?",
+      "options": [
+        "Unrestricted access to other process memory",
+        "Isolation between processes",
+        "Memory management without OS involvement",
+        "Identical virtual and physical addresses in all cases"
+      ],
+      "answer": "B",
+      "explain": "Cùng một virtual address trong hai process có thể trỏ đến physical frame khác nhau. OS/MMU phối hợp kiểm tra quyền để bảo vệ process.",
+      "frequency": 2,
+      "sources": [
+        "SU26 RE Q43",
+        "SU26 B5 Q13"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What typically moves a blocked process into the ready state?",
+      "options": [
+        "It terminates",
+        "Completion of the I/O or event it awaits",
+        "The scheduler directly selects it to execute while blocked",
+        "Its time quantum expires"
+      ],
+      "answer": "B",
+      "explain": "Blocked → Ready khi sự kiện cần chờ hoàn thành. Ready → Running khi scheduler chọn; hết quantum Running → Ready.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q3",
+        "FA25 D2 Q13"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which of these standard batch scheduling algorithms is the preemptive version of SJF?",
+      "options": [
+        "Shortest Remaining Time First (SRTF/SRTN)",
+        "Round Robin",
+        "Non-preemptive SJF",
+        "First-Come First-Served"
+      ],
+      "answer": "A",
+      "explain": "SRTN preempt nếu job mới có remaining time ngắn hơn. RR là preemptive nhưng thường được phân vào interactive scheduling trong slide Chapter 2. Đề gốc ghi RR và hỏi batch preemptive only, không chuẩn; đã sửa.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q4",
+        "FA25 D2 Q10"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "What structure tracks user-level threads within each process?",
+      "options": [
+        "Disk allocation table",
+        "Interrupt vector",
+        "Page replacement queue",
+        "Thread table"
+      ],
+      "answer": "D",
+      "explain": "User-level thread library giữ thread table gồm trạng thái, register/context, stack pointer của từng thread; kernel có thể không biết từng user thread.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q5",
+        "FA25 D2 Q14"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In the textbook classification, which algorithm is usually grouped under interactive rather than batch scheduling?",
+      "options": [
+        "SJF",
+        "Round Robin",
+        "FCFS",
+        "SRTN"
+      ],
+      "answer": "B",
+      "explain": "Slide phân nhóm batch: FCFS, SJF, SRTN; interactive: Round Robin và các thuật toán khác. Trong thực tế RR vẫn có thể áp dụng cho workload batch.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q9",
+        "SU25 D3 Q13"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "What is a major memory-allocation benefit of paging?",
+      "options": [
+        "Noncontiguous allocation with no external fragmentation of page frames",
+        "Guaranteed zero internal fragmentation",
+        "Elimination of secondary storage",
+        "Guaranteed faster CPU execution"
+      ],
+      "answer": "A",
+      "explain": "Paging chia memory thành frame và process thành page cùng kích thước, nên không cần lỗ liên tục; vẫn có internal fragmentation ở trang cuối.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q12",
+        "FA25 D1 Q21"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What drawback can a large flat page table have for a sparse virtual address space?",
+      "options": [
+        "No support for page permissions",
+        "Excessive memory consumption",
+        "Inability to translate any virtual address",
+        "A requirement that all frames be contiguous"
+      ],
+      "answer": "B",
+      "explain": "Flat page table cần entry cho nhiều virtual pages kể cả chưa dùng, tốn RAM. Multi-level/inverted page tables giảm chi phí trong nhiều trường hợp.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q18",
+        "SU25 D3 Q21"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In the textbook disk-partition layout, what is the first block of a bootable partition called?",
+      "options": [
+        "Master boot record (MBR)",
+        "Boot block",
+        "Superblock",
+        "Free block"
+      ],
+      "answer": "B",
+      "explain": "Boot block chứa thông tin/mã boot của partition trong bố cục cổ điển; MBR nằm đầu disk chứ không phải đầu mỗi partition. Modern GPT/UEFI có bố cục khác.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q20",
+        "FA25 D2 Q34"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "Which POSIX function closes a directory stream opened by opendir()?",
+      "options": [
+        "unlink()",
+        "closedir()",
+        "readdir()",
+        "close()"
+      ],
+      "answer": "B",
+      "explain": "closedir() đóng DIR stream và giải phóng tài nguyên; readdir() đọc entry, unlink() xóa liên kết file, close() đóng file descriptor thông thường.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q23",
+        "SU25 D3 Q27"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Why do journaling file systems such as ext4 maintain a journal?",
+      "options": [
+        "Eliminate all fragmentation",
+        "Recover consistently after crashes, especially metadata",
+        "Automatically compress every file",
+        "Guarantee that no data is ever lost"
+      ],
+      "answer": "B",
+      "explain": "Journal ghi thông tin giao dịch trước khi hoàn tất cập nhật; sau crash có thể replay để khôi phục nhất quán metadata. Không thay thế backup.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q25",
+        "SU26 FE Q11"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What does the user application layer normally do for I/O?",
+      "options": [
+        "Directly control every device register",
+        "Request I/O through library calls or system calls",
+        "Perform DMA transfers itself",
+        "Schedule hardware interrupts"
+      ],
+      "answer": "B",
+      "explain": "Application gọi API như read/write; kernel và driver xử lý yêu cầu xuống phần cứng. User libraries có thể buffering.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q27",
+        "FA25 D1 Q40"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "How does interrupt-driven I/O differ from polling?",
+      "options": [
+        "Polling guarantees lower CPU cost",
+        "Polling is always initiated by device interrupts",
+        "A device signals asynchronously instead of requiring repeated CPU status checks",
+        "Interrupts require continual busy-waiting"
+      ],
+      "answer": "C",
+      "explain": "Polling kiểm tra trạng thái lặp đi lặp lại. Interrupt báo CPU khi có sự kiện, cho phép CPU làm việc khác giữa các ngắt; hiệu suất tùy workload.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q29",
+        "SU26 FE Q27"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which mechanism transfers data between devices and RAM without CPU copying every word?",
+      "options": [
+        "CPU polling",
+        "Programmed I/O",
+        "Memory-mapped registers alone",
+        "Direct Memory Access (DMA)"
+      ],
+      "answer": "D",
+      "explain": "DMA controller/thiết bị thực hiện transfer; CPU thiết lập địa chỉ, kích thước, hướng và xử lý hoàn thành.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q31",
+        "FA25 D1 Q38"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which UNIX operation sequence most closely corresponds to creating a new process that runs another program with Win32 CreateProcess?",
+      "options": [
+        "execve() alone",
+        "fork() followed only by waitpid()",
+        "waitpid() alone",
+        "fork() followed by execve() in the child"
+      ],
+      "answer": "D",
+      "explain": "fork tạo process con; execve thay chương trình trong con. execve một mình không tạo process mới; waitpid chờ process con.",
+      "frequency": 2,
+      "sources": [
+        "SU26 B5 Q44",
+        "SU26 FE Q4"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which traditional POSIX system call creates a child process?",
+      "options": [
+        "open()",
+        "fork()",
+        "execve()",
+        "waitpid()"
+      ],
+      "answer": "B",
+      "explain": "fork() tạo process con với PID riêng. execve thay program, waitpid chờ, open mở file.",
+      "frequency": 2,
+      "sources": [
+        "SU26 FE Q3",
+        "FA25 D1 Q10"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "Which filename extension conventionally denotes a backup copy?",
+      "options": [
+        ".o",
+        ".bak",
+        ".mpg",
+        ".txt"
+      ],
+      "answer": "B",
+      "explain": ".bak thường chỉ backup; .txt văn bản, .o object file, .mpg video. Extension là quy ước, không bảo đảm nội dung.",
+      "frequency": 2,
+      "sources": [
+        "SU26 FE Q18",
+        "SU25 D3 Q23"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What is a typical difference between pure user-level and kernel-managed threads?",
+      "options": [
+        "User-level switches can avoid kernel entry; kernel threads are scheduled by the OS",
+        "Kernel threads never require scheduling",
+        "Kernel threads share no process resources",
+        "User threads always run in parallel across cores"
+      ],
+      "answer": "A",
+      "explain": "User-level switching nhanh vì không cần kernel trong mô hình M:1; blocking call có thể block cả process. Kernel threads được OS lập lịch riêng và có thể chạy song song. Chi phí phụ thuộc implementation.",
+      "frequency": 2,
+      "sources": [
+        "SU26 FE Q30",
+        "FA25 D2 Q9"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "Why is a Type 1 hypervisor often preferred for server virtualization?",
+      "options": [
+        "It requires a desktop host OS",
+        "It runs directly on hardware rather than atop a conventional host OS",
+        "It always eliminates all overhead",
+        "It provides no hardware virtualization"
+      ],
+      "answer": "B",
+      "explain": "Type 1 bare-metal quản lý hardware trực tiếp; Type 2 hosted chạy trên host OS. Type 1 thường phù hợp server, không có bảo đảm luôn nhanh hơn mọi Type 2.",
+      "frequency": 2,
+      "sources": [
+        "SU26 FE Q31",
+        "FA25 D1 Q50"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "What disk area may hold anonymous virtual-memory pages evicted from RAM?",
+      "options": [
+        "Swap space",
+        "TLB",
+        "Page table",
+        "CPU cache"
+      ],
+      "answer": "A",
+      "explain": "Swap lưu trang anonymous bị đẩy khỏi RAM; file-backed pages có thể lấy lại từ file thay vì swap. Page table lưu ánh xạ, TLB cache ánh xạ.",
+      "frequency": 2,
+      "sources": [
+        "SU26 FE Q32",
+        "FA25 D1 Q22"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "What were the manually split program pieces used to overcome limited memory in early systems called?",
+      "options": [
+        "Overlays",
+        "Page table entries",
+        "Page faults",
+        "TLB entries"
+      ],
+      "answer": "A",
+      "explain": "Overlays là các phần do programmer chia thủ công, nạp vào RAM khi cần. Tanenbaum, Modern Operating Systems, mục Virtual Memory xác nhận thuật ngữ này; paging tự động là cơ chế khác. Hai đề gốc ghi pages sai.",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q18",
+        "FA25 D1 Q23"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "Which extension commonly represents a compressed archive?",
+      "options": [
+        ".zip",
+        ".bak",
+        ".gif",
+        ".mpg"
+      ],
+      "answer": "A",
+      "explain": "ZIP là định dạng lưu trữ archive thường hỗ trợ nén nhiều file. GIF là ảnh, MPG video, BAK bản sao dự phòng theo quy ước.",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q24",
+        "FA25 D1 Q29"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "In a conventional system without an IOMMU, which address type does a DMA controller normally use?",
+      "options": [
+        "File path strings",
+        "Physical (bus) addresses",
+        "Source-code line addresses",
+        "Process virtual addresses directly"
+      ],
+      "answer": "B",
+      "explain": "DMA truy cập bộ nhớ qua địa chỉ bus/vật lý. Với IOMMU có thể dùng I/O virtual address được dịch; câu đã thêm giả định để tránh tuyệt đối hóa.",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q34",
+        "FA25 D2 Q44"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "In the textbook two-drive stable-storage scheme, which operation writes and verifies the same block on both drives?",
+      "options": [
+        "File rename",
+        "Crash recovery",
+        "Stable write",
+        "Stable read"
+      ],
+      "answer": "C",
+      "explain": "Stable write ghi và kiểm tra trên từng ổ để có bản sao đáng tin cậy. Stable read đọc/kiểm tra dữ liệu; recovery xử lý trạng thái sau sự cố.",
+      "frequency": 2,
+      "sources": [
+        "SU25 D3 Q39",
+        "FA25 D1 Q42"
+      ],
+      "recent": false,
+      "clarified": false
+    },
+    {
+      "q": "A 4 TiB disk uses 4 KiB blocks and 4-byte block addresses. How many addresses fit in one free-list block, ignoring metadata?",
+      "options": [
+        "512",
+        "256",
+        "1024",
+        "2048"
+      ],
+      "answer": "C",
+      "explain": "4 KiB=4096 byte; mỗi địa chỉ 4 byte → 4096/4=1024. Số block toàn disk=2^30, đủ biểu diễn bằng địa chỉ 32-bit. Đề gốc không nói kích thước địa chỉ, đã bổ sung.",
+      "frequency": 2,
+      "sources": [
+        "FA25 D1 Q31",
+        "FA25 D2 Q35"
+      ],
+      "recent": false,
+      "clarified": true
+    },
+    {
+      "q": "FCFS, all arrivals at time 0, queue P2 → P3 → P1. Burst times P1=24, P2=3, P3=3. Average waiting time?",
+      "options": [
+        "3",
+        "6",
+        "2",
+        "9"
+      ],
+      "answer": "A",
+      "explain": "P2 chờ 0; P3 chờ 3; P1 chờ 6. Average WT=(0+3+6)/3=3. Hai bản lặp trong cùng đề FA25 D2 chọn 9 sai; đã sửa và nêu giả định tất cả đến cùng lúc.",
+      "frequency": 2,
+      "sources": [
+        "FA25 D2 Q12",
+        "FA25 D2 Q17"
+      ],
+      "recent": false,
+      "clarified": true
+    }
+  ]
+}
